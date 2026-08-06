@@ -1,0 +1,23 @@
+{
+  "name": "wallpaper-assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raj918/wallpaper-assets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raj918/wallpaper-assets/issues"
+  },
+  "homepage": "https://github.com/raj918/wallpaper-assets#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
