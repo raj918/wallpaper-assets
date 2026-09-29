@@ -1,0 +1,10 @@
+{
+  "cdnUrl": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images",
+  "thumbnailWidth": 520,
+  "port": 3000,
+  "git": {
+    "autoPush": false,
+    "remote": "origin",
+    "branch": "main"
+  }
+}

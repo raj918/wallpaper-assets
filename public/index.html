@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallpaper Studio &bull; GitHub & jsDelivr Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090a0f;
+      --surface-1: #10131a;
+      --surface-2: #161b24;
+      --surface-3: #1f2633;
+      --border: #232c3d;
+      --border-subtle: #19202c;
+      --border-focus: #3b82f6;
+      --text: #f1f5f9;
+      --text-muted: #8b99ad;
+      --text-dim: #546274;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.1);
+      --danger: #ef4444;
+      --danger-hover: #dc2626;
+      --warning: #f59e0b;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 8px;
+      --radius-sm: 5px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation Header */
+    header {
+      background: var(--surface-1);
+      border-bottom: 1px solid var(--border);
+      height: 52px;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .logo-badge {
+      width: 26px;
+      height: 26px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      color: #fff;
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      color: #fff;
+    }
+
+    .brand-sep {
+      color: var(--text-dim);
+      margin: 0 0.15rem;
+    }
+
+    .brand-sub {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.6rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .pill-badge.git-clean {
+      border-color: rgba(16, 185, 129, 0.35);
+      background: rgba(16, 185, 129, 0.08);
+      color: #34d399;
+    }
+
+    .pill-badge.git-dirty {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.08);
+      color: #fbbf24;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 500;
+      height: 30px;
+      padding: 0 0.8rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--surface-3);
+      border-color: #38465c;
+      color: #fff;
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+
+    .btn-git {
+      background: #238636;
+      border-color: #2ea043;
+      color: #fff;
+    }
+
+    .btn-git:hover {
+      background: #2ea043;
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+
+    .btn-danger:hover {
+      background: #ef4444;
+      border-color: #ef4444;
+      color: #fff;
+    }
+
+    .btn-xs {
+      height: 26px;
+      padding: 0 0.6rem;
+      font-size: 11px;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Toolbar Header */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 14px;
+    }
+
+    .breadcrumb-item {
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .breadcrumb-item:hover {
+      color: #fff;
+    }
+
+    .breadcrumb-sep {
+      color: var(--text-dim);
+    }
+
+    .breadcrumb-active {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    /* Category Grid */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cat-item-card {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+      cursor: pointer;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .cat-item-card:hover {
+      transform: translateY(-2px);
+      border-color: #3b82f6;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .cat-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cat-card-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cat-card-badge {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.15rem 0.5rem;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .cat-preview-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+      height: 95px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--surface-2);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .cat-preview-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease;
+    }
+
+    .cat-item-card:hover .cat-preview-strip img {
+      transform: scale(1.05);
+    }
+
+    .cat-empty-strip {
+      grid-column: 1 / -1;
+      display: grid;
+      place-items: center;
+      color: var(--text-dim);
+      font-size: 12px;
+      height: 100%;
+    }
+
+    /* Category View: Upload Area */
+    .dropzone-compact {
+      background: var(--surface-1);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .dropzone-compact:hover,
+    .dropzone-compact.drag-over {
+      border-color: var(--primary);
+      background: rgba(37, 99, 235, 0.05);
+    }
+
+    .dropzone-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .dropzone-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+    }
+
+    .dropzone-text h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .dropzone-text p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .dropzone-options {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .toggle-wrap input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    /* Upload Progress Tray */
+    .upload-tray {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+
+    .upload-tray.active {
+      display: block;
+    }
+
+    .upload-tray-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-bar-bg {
+      height: 6px;
+      background: var(--surface-3);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      width: 0%;
+      transition: width 0.2s ease;
+    }
+
+    .upload-preview-list {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .upload-thumb-chip {
+      width: 60px;
+      height: 80px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .upload-thumb-chip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Wallpaper Gallery Grid */
+    .wall-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .wall-grid.size-sm {
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+
+    .wall-grid.size-md {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .wall-grid.size-lg {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+    .wall-card {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      transition: all 0.18s ease;
+      cursor: pointer;
+    }
+
+    .wall-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .wall-card.selected {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+
+    .wall-card-img-wrap {
+      aspect-ratio: 9 / 16;
+      background: var(--surface-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wall-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.25s ease;
+    }
+
+    .wall-card:hover .wall-card-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .wall-card-check {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 5;
+      background: rgba(9, 10, 15, 0.7);
+      backdrop-filter: blur(4px);
+      width: 22px;
+      height: 22px;
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .wall-card-check input {
+      cursor: pointer;
+    }
+
+    .wall-card-actions {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      gap: 0.35rem;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      z-index: 5;
+    }
+
+    .wall-card:hover .wall-card-actions {
+      opacity: 1;
+    }
+
+    .icon-btn-round {
+      width: 26px;
+      height: 26px;
+      background: rgba(9, 10, 15, 0.8);
+      backdrop-filter: blur(4px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .icon-btn-round:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .icon-btn-round.danger:hover {
+      background: var(--danger);
+      border-color: var(--danger);
+    }
+
+    .wall-card-foot {
+      padding: 0.5rem 0.7rem;
+      background: var(--surface-1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .wall-card-name {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wall-card-size {
+      font-size: 10px;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+
+    /* Size toggles */
+    .size-toggle-wrap {
+      display: flex;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 2px;
+    }
+
+    .size-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      width: 26px;
+      height: 24px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .size-btn.active {
+      background: var(--surface-3);
+      color: #fff;
+    }
+
+    /* Modal Backdrop */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(5px);
+      display: none;
+      place-items: center;
+      z-index: 100;
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      display: grid;
+    }
+
+    .modal-dialog {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 480px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      animation: modalIn 0.15s ease-out;
+    }
+
+    @keyframes modalIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-head {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-head h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .modal-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .modal-foot {
+      padding: 0.85rem 1.25rem;
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .input-field {
+      width: 100%;
+      height: 34px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0 0.75rem;
+      color: #fff;
+      font-family: var(--font);
+      font-size: 13px;
+      outline: none;
+    }
+
+    .input-field:focus {
+      border-color: var(--border-focus);
+    }
+
+    /* Inspector Lightbox */
+    .inspector-box {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 860px;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      max-height: 85vh;
+    }
+
+    .inspector-media {
+      flex: 1;
+      background: #000;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+    }
+
+    .inspector-media img {
+      max-height: 75vh;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .inspector-sidebar {
+      width: 320px;
+      border-left: 1px solid var(--border);
+      background: var(--surface-1);
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      gap: 1.25rem;
+    }
+
+    .prop-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .prop-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .prop-val {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text);
+      word-break: break-all;
+      background: var(--surface-2);
+      border: 1px solid var(--border-subtle);
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    /* Toast Notification Tray */
+    .toast-tray {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast-msg {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1rem;
+      font-size: 12px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      pointer-events: auto;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
+
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-msg.success {
+      border-left: 3px solid var(--success);
+    }
+
+    .toast-msg.error {
+      border-left: 3px solid var(--danger);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Bar -->
+  <header>
+    <div class="brand-wrap" onclick="showHomeView()">
+      <div class="logo-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+      <span class="brand-title">Wallpaper Studio</span>
+      <span class="brand-sep">/</span>
+      <span class="brand-sub">GitHub & jsDelivr Automation</span>
+    </div>
+
+    <div class="header-right">
+      <div class="pill-badge" id="badgeGit">
+        <span class="status-dot"></span>
+        <span id="gitStatusText">main: Checking...</span>
+      </div>
+      <div class="pill-badge">
+        <span style="color: var(--text-dim);">VER:</span>
+        <strong id="badgeVersion" style="color: #fff;">v1</strong>
+      </div>
+      <div class="pill-badge">
+        <span style="color: var(--text-dim);">WALLPAPERS:</span>
+        <strong id="badgeTotalCount" style="color: #fff;">0</strong>
+      </div>
+      <button class="btn btn-xs" id="btnRebuildThumbs" onclick="triggerRebuildThumbnails()" title="Batch regenerate high-quality 520px retina thumbnails">
+        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        Rebuild Thumbs
+      </button>
+      <button class="btn btn-git btn-xs" id="btnPushGit" onclick="triggerGitPush()" title="Commit & push updates to GitHub origin main">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Push to GitHub
+      </button>
+      <button class="btn btn-xs" onclick="openConfigModal()">
+        Settings
+      </button>
+    </div>
+  </header>
+
+  <!-- Main View -->
+  <main>
+    <!-- VIEW 1: Categories Overview -->
+    <section id="categoriesView">
+      <div class="toolbar">
+        <div>
+          <h2 style="font-size: 16px; font-weight: 600; color: #fff;">Wallpaper Categories</h2>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+            1 full image in <code>images/&lt;category&gt;</code> & 1 crisp thumbnail in <code>images/&lt;category&gt;_thumb</code>.
+          </p>
+        </div>
+        <div class="toolbar-actions">
+          <input type="text" class="input-field" id="catSearchInput" placeholder="Filter categories..." style="width: 200px;" oninput="filterCategories()">
+          <button class="btn btn-primary" onclick="openNewCategoryModal()">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            New Category
+          </button>
+        </div>
+      </div>
+
+      <div class="cat-grid" id="categoryGrid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: Category Detail & Wallpaper Gallery -->
+    <section id="categoryDetailView" style="display: none;">
+      <div class="toolbar">
+        <div class="breadcrumbs">
+          <span class="breadcrumb-item" onclick="showHomeView()">Categories</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-active" id="activeCategoryName">Category</span>
+          <span class="pill-badge" id="categoryCountBadge" style="margin-left: 0.5rem;">0 wallpapers</span>
+        </div>
+
+        <div class="toolbar-actions">
+          <div class="size-toggle-wrap">
+            <button class="size-btn" id="sizeSm" onclick="setGridSize('sm')">S</button>
+            <button class="size-btn active" id="sizeMd" onclick="setGridSize('md')">M</button>
+            <button class="size-btn" id="sizeLg" onclick="setGridSize('lg')">L</button>
+          </div>
+
+          <button class="btn btn-danger btn-xs" id="btnDeleteSelected" style="display: none;" onclick="deleteSelectedWallpapers()">
+            Delete Selected (<span id="selectedCount">0</span>)
+          </button>
+
+          <button class="btn btn-xs" onclick="loadCategoryDetail(activeCategory)">
+            Refresh
+          </button>
+          <button class="btn btn-danger btn-xs" onclick="confirmDeleteCategory()">
+            Delete Category
+          </button>
+        </div>
+      </div>
+
+      <!-- Compact Upload Dropzone -->
+      <div class="dropzone-compact" id="dropzoneCompact" onclick="document.getElementById('fileInput').click()">
+        <div class="dropzone-left">
+          <div class="dropzone-icon-box">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg>
+          </div>
+          <div class="dropzone-text">
+            <h4>Drop wallpaper images here to bulk upload</h4>
+            <p>1 full image saved untouched, 1 crisp 520px retina thumbnail generated into <code>_thumb</code>, and <code>data/wallpapers.json</code> updated automatically.</p>
+          </div>
+        </div>
+
+        <div class="dropzone-options" onclick="event.stopPropagation()">
+          <label class="toggle-wrap">
+            <input type="checkbox" id="chkPreserveNames">
+            <span>Keep original filenames</span>
+          </label>
+          <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+            Select Files
+          </button>
+        </div>
+        <input type="file" id="fileInput" multiple accept="image/*" style="display: none;" onchange="handleFileSelection(event)">
+      </div>
+
+      <!-- Upload Tray -->
+      <div class="upload-tray" id="uploadTray">
+        <div class="upload-tray-head">
+          <span style="font-weight: 600; color: #fff;">
+            Selected <span id="queueCount">0</span> images
+          </span>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-xs" onclick="clearUploadQueue()">Cancel</button>
+            <button class="btn btn-primary btn-xs" id="btnUploadSubmit" onclick="submitUploadQueue()">
+              Upload All Now
+            </button>
+          </div>
+        </div>
+        <div class="progress-bar-bg" id="progressBarBg" style="display: none;">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <div class="upload-preview-list" id="uploadPreviewList"></div>
+      </div>
+
+      <!-- Wallpaper Grid -->
+      <div class="wall-grid size-md" id="wallpaperGrid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal: Create Category -->
+  <div class="modal-overlay" id="modalNewCategory">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3>Create New Category</h3>
+        <button class="btn btn-xs" onclick="closeModal('modalNewCategory')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12px; color: var(--text-muted);">
+          This automatically creates <code>images/&lt;name&gt;</code> and <code>images/&lt;name&gt;_thumb</code> folders.
+        </p>
+        <div class="prop-group">
+          <label class="prop-label">Category Name</label>
+          <input type="text" class="input-field" id="newCategoryInput" placeholder="e.g. Cyberpunk, 3D Render, Landscapes">
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-xs" onclick="closeModal('modalNewCategory')">Cancel</button>
+        <button class="btn btn-primary btn-xs" onclick="submitCreateCategory()">Create Category</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Inspector Lightbox -->
+  <div class="modal-overlay" id="modalInspector" onclick="if(event.target === this) closeModal('modalInspector')">
+    <div class="inspector-box">
+      <div class="inspector-media">
+        <img id="inspectorImg" src="" alt="Wallpaper Preview">
+      </div>
+      <div class="inspector-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-size: 14px; font-weight: 600; color: #fff;">Wallpaper Info</h3>
+          <button class="btn btn-xs" onclick="closeModal('modalInspector')">&times;</button>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label">Filename</label>
+          <div class="prop-val" id="inspFilename">-</div>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label">Category</label>
+          <div class="prop-val" id="inspCategory">-</div>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label">File Size</label>
+          <div class="prop-val" id="inspSize">-</div>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label">Full Wallpaper jsDelivr CDN URL</label>
+          <div class="prop-val" id="inspCdnUrl" style="max-height: 48px; overflow-y: auto;">-</div>
+          <button class="btn btn-xs" style="margin-top: 4px;" onclick="copyToClipboard(document.getElementById('inspCdnUrl').textContent)">
+            Copy Full CDN Link
+          </button>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label">Thumbnail jsDelivr CDN URL</label>
+          <div class="prop-val" id="inspThumbUrl" style="max-height: 48px; overflow-y: auto;">-</div>
+          <button class="btn btn-xs" style="margin-top: 4px;" onclick="copyToClipboard(document.getElementById('inspThumbUrl').textContent)">
+            Copy Thumbnail Link
+          </button>
+        </div>
+
+        <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+          <button class="btn btn-danger btn-xs" style="width: 100%;" onclick="deleteInspectingWallpaper()">
+            Delete Wallpaper
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Settings -->
+  <div class="modal-overlay" id="modalConfig">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3>Backend & CDN Settings</h3>
+        <button class="btn btn-xs" onclick="closeModal('modalConfig')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="prop-group">
+          <label class="prop-label">CDN Base URL</label>
+          <input type="text" class="input-field" id="cfgCdnUrl" placeholder="https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images">
+          <span style="font-size: 11px; color: var(--text-dim);">Default jsDelivr repository CDN URL</span>
+        </div>
+
+        <div class="prop-group">
+          <label class="prop-label">Thumbnail Width (px)</label>
+          <input type="number" class="input-field" id="cfgThumbWidth" placeholder="520">
+          <span style="font-size: 11px; color: var(--text-dim);">Default 520px sharp retina thumbnail</span>
+        </div>
+
+        <div class="prop-group">
+          <label class="toggle-wrap" style="color: #fff; font-weight: 500;">
+            <input type="checkbox" id="cfgAutoPush">
+            <span>Auto Git Commit & Push to GitHub on upload/delete</span>
+          </label>
+          <span style="font-size: 11px; color: var(--text-dim);">When checked, every upload or deletion is pushed to GitHub immediately.</span>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-xs" onclick="closeModal('modalConfig')">Cancel</button>
+        <button class="btn btn-primary btn-xs" onclick="submitSaveConfig()">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Tray -->
+  <div class="toast-tray" id="toastTray"></div>
+
+  <!-- Client JavaScript Logic -->
+  <script>
+    let activeCategory = null;
+    let allCategoriesData = [];
+    let selectedFiles = [];
+    let selectedWallpapers = new Set();
+    let isUploading = false;
+    let inspectingItem = null;
+
+    // Toast helper
+    function showToast(msg, type = 'success') {
+      const tray = document.getElementById('toastTray');
+      const el = document.createElement('div');
+      el.className = `toast-msg ${type}`;
+      el.innerHTML = `<span>${msg}</span>`;
+      tray.appendChild(el);
+      setTimeout(() => el.classList.add('show'), 10);
+      setTimeout(() => {
+        el.classList.remove('show');
+        setTimeout(() => el.remove(), 200);
+      }, 3500);
+    }
+
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text);
+      showToast('Copied to clipboard!');
+    }
+
+    function formatBytes(bytes, decimals = 1) {
+      if (!bytes) return '0 B';
+      const k = 1024;
+      const dm = decimals < 0 ? 0 : decimals;
+      const sizes = ['B', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    }
+
+    // Grid size control
+    function setGridSize(size) {
+      const grid = document.getElementById('wallpaperGrid');
+      grid.className = `wall-grid size-${size}`;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`size${size.charAt(0).toUpperCase() + size.slice(1)}`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Navigation Views
+    function showHomeView() {
+      activeCategory = null;
+      document.getElementById('categoriesView').style.display = 'block';
+      document.getElementById('categoryDetailView').style.display = 'none';
+      selectedWallpapers.clear();
+      updateSelectedUI();
+      loadCategories();
+      updateGitStatus();
+    }
+
+    function showCategoryDetail(name) {
+      activeCategory = name;
+      document.getElementById('categoriesView').style.display = 'none';
+      document.getElementById('categoryDetailView').style.display = 'block';
+      document.getElementById('activeCategoryName').textContent = name;
+      selectedFiles = [];
+      selectedWallpapers.clear();
+      updateSelectedUI();
+      updateTrayUI();
+      loadCategoryDetail(name);
+    }
+
+    // Fetch and render categories
+    async function loadCategories() {
+      try {
+        const res = await fetch('/api/categories');
+        const data = await res.json();
+
+        document.getElementById('badgeVersion').textContent = `v${data.version}`;
+        document.getElementById('badgeTotalCount').textContent = data.totalWallpapers;
+
+        allCategoriesData = data.categories;
+        renderCategoryCards(allCategoriesData);
+      } catch (err) {
+        showToast('Failed to load categories', 'error');
+      }
+    }
+
+    function renderCategoryCards(categories) {
+      const grid = document.getElementById('categoryGrid');
+      grid.innerHTML = '';
+
+      if (categories.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 3rem;">No categories found</div>`;
+        return;
+      }
+
+      categories.forEach(cat => {
+        const card = document.createElement('div');
+        card.className = 'cat-item-card';
+        card.onclick = () => showCategoryDetail(cat.name);
+
+        let previewHtml = '';
+        if (cat.previews && cat.previews.length > 0) {
+          previewHtml = cat.previews.map(url => `<img src="${url}" alt="Preview" loading="lazy">`).join('');
+        } else {
+          previewHtml = `<div class="cat-empty-strip">No wallpapers yet</div>`;
+        }
+
+        card.innerHTML = `
+          <div class="cat-card-header">
+            <span class="cat-card-title">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+              ${cat.name}
+            </span>
+            <span class="cat-card-badge">${cat.count}</span>
+          </div>
+          <div class="cat-preview-strip">
+            ${previewHtml}
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterCategories() {
+      const query = document.getElementById('catSearchInput').value.toLowerCase().trim();
+      const filtered = allCategoriesData.filter(c => c.name.toLowerCase().includes(query));
+      renderCategoryCards(filtered);
+    }
+
+    // Load category detail
+    async function loadCategoryDetail(catName) {
+      try {
+        const res = await fetch(`/api/category/${encodeURIComponent(catName)}`);
+        const data = await res.json();
+
+        document.getElementById('categoryCountBadge').textContent = `${data.count} wallpapers`;
+        const grid = document.getElementById('wallpaperGrid');
+        grid.innerHTML = '';
+
+        if (!data.wallpapers || data.wallpapers.length === 0) {
+          grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 4rem;">No wallpapers in this category yet. Drop some above!</div>`;
+          return;
+        }
+
+        data.wallpapers.forEach(w => {
+          const card = document.createElement('div');
+          card.className = 'wall-card';
+          card.id = `wall_${w.filename.replace(/[^a-zA-Z0-9]/g, '_')}`;
+
+          card.innerHTML = `
+            <div class="wall-card-img-wrap" onclick="openInspector(${JSON.stringify(w).replace(/"/g, '&quot;')})">
+              <img src="${w.localThumbnailUrl}" alt="${w.name}" loading="lazy">
+              <div class="wall-card-check" onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
+                <input type="checkbox" ${selectedWallpapers.has(w.filename) ? 'checked' : ''} onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
+              </div>
+              <div class="wall-card-actions" onclick="event.stopPropagation()">
+                <button class="icon-btn-round" title="Copy jsDelivr CDN link" onclick="copyToClipboard('${w.cdnUrl}')">
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
+                </button>
+                <button class="icon-btn-round danger" title="Delete wallpaper" onclick="deleteSingleWallpaper('${w.filename}')">
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="wall-card-foot" onclick="openInspector(${JSON.stringify(w).replace(/"/g, '&quot;')})">
+              <span class="wall-card-name" title="${w.filename}">${w.filename}</span>
+              <span class="wall-card-size">${formatBytes(w.sizeBytes)}</span>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        showToast('Failed to load category wallpapers', 'error');
+      }
+    }
+
+    // Inspector Lightbox
+    function openInspector(item) {
+      inspectingItem = item;
+      document.getElementById('inspectorImg').src = item.localUrl;
+      document.getElementById('inspFilename').textContent = item.filename;
+      document.getElementById('inspCategory').textContent = activeCategory;
+      document.getElementById('inspSize').textContent = formatBytes(item.sizeBytes);
+      document.getElementById('inspCdnUrl').textContent = item.cdnUrl;
+      document.getElementById('inspThumbUrl').textContent = item.cdnThumbnailUrl;
+      openModal('modalInspector');
+    }
+
+    async function deleteInspectingWallpaper() {
+      if (!inspectingItem) return;
+      if (!confirm(`Delete ${inspectingItem.filename}?`)) return;
+      await deleteSingleWallpaper(inspectingItem.filename);
+      closeModal('modalInspector');
+    }
+
+    // Wallpaper Selection
+    function toggleSelectWallpaper(filename) {
+      if (selectedWallpapers.has(filename)) {
+        selectedWallpapers.delete(filename);
+      } else {
+        selectedWallpapers.add(filename);
+      }
+      updateSelectedUI();
+    }
+
+    function updateSelectedUI() {
+      const count = selectedWallpapers.size;
+      const btn = document.getElementById('btnDeleteSelected');
+      const countSpan = document.getElementById('selectedCount');
+      if (count > 0) {
+        btn.style.display = 'inline-flex';
+        countSpan.textContent = count;
+      } else {
+        btn.style.display = 'none';
+      }
+
+      document.querySelectorAll('.wall-card').forEach(card => {
+        const check = card.querySelector('input[type="checkbox"]');
+        if (check) {
+          card.classList.toggle('selected', check.checked);
+        }
+      });
+    }
+
+    // Delete single wallpaper
+    async function deleteSingleWallpaper(filename) {
+      if (!confirm(`Delete ${filename}?`)) return;
+      try {
+        const res = await fetch('/api/wallpaper', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: activeCategory, filename })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Deleted ${filename}`);
+          loadCategoryDetail(activeCategory);
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to delete', 'error');
+        }
+      } catch (e) {
+        showToast('Delete error', 'error');
+      }
+    }
+
+    // Bulk delete wallpapers
+    async function deleteSelectedWallpapers() {
+      const files = Array.from(selectedWallpapers);
+      if (files.length === 0) return;
+      if (!confirm(`Are you sure you want to delete ${files.length} wallpapers?`)) return;
+
+      try {
+        const res = await fetch('/api/wallpapers/delete-bulk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: activeCategory, filenames: files })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Deleted ${data.count} wallpapers`);
+          selectedWallpapers.clear();
+          updateSelectedUI();
+          loadCategoryDetail(activeCategory);
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Bulk delete failed', 'error');
+        }
+      } catch (e) {
+        showToast('Bulk delete error', 'error');
+      }
+    }
+
+    // File Drag & Drop Handling
+    const dropzone = document.getElementById('dropzoneCompact');
+
+    ['dragenter', 'dragover'].forEach(name => {
+      dropzone.addEventListener(name, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add('drag-over');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(name => {
+      dropzone.addEventListener(name, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('drag-over');
+      });
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+      if (files.length > 0) {
+        addFilesToQueue(files);
+      }
+    });
+
+    function handleFileSelection(event) {
+      const files = Array.from(event.target.files).filter(f => f.type.startsWith('image/'));
+      if (files.length > 0) {
+        addFilesToQueue(files);
+      }
+      event.target.value = '';
+    }
+
+    function addFilesToQueue(files) {
+      selectedFiles = selectedFiles.concat(files);
+      updateTrayUI();
+    }
+
+    function clearUploadQueue() {
+      selectedFiles = [];
+      updateTrayUI();
+    }
+
+    function updateTrayUI() {
+      const tray = document.getElementById('uploadTray');
+      const countEl = document.getElementById('queueCount');
+      const listEl = document.getElementById('uploadPreviewList');
+
+      if (selectedFiles.length === 0) {
+        tray.classList.remove('active');
+        listEl.innerHTML = '';
+        return;
+      }
+
+      tray.classList.add('active');
+      countEl.textContent = selectedFiles.length;
+      listEl.innerHTML = '';
+
+      selectedFiles.slice(0, 30).forEach(file => {
+        const chip = document.createElement('div');
+        chip.className = 'upload-thumb-chip';
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        chip.appendChild(img);
+        listEl.appendChild(chip);
+      });
+    }
+
+    // Submit Upload Queue
+    async function submitUploadQueue() {
+      if (selectedFiles.length === 0 || isUploading) return;
+      isUploading = true;
+
+      const btn = document.getElementById('btnUploadSubmit');
+      const progressBg = document.getElementById('progressBarBg');
+      const progressFill = document.getElementById('progressBarFill');
+
+      btn.disabled = true;
+      btn.textContent = 'Uploading...';
+      progressBg.style.display = 'block';
+      progressFill.style.width = '30%';
+
+      const formData = new FormData();
+      formData.append('category', activeCategory);
+      formData.append('preserveOriginalNames', document.getElementById('chkPreserveNames').checked);
+
+      selectedFiles.forEach(file => {
+        formData.append('files', file);
+      });
+
+      try {
+        progressFill.style.width = '70%';
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+
+        progressFill.style.width = '100%';
+
+        if (data.success) {
+          showToast(`Successfully uploaded ${data.count} wallpapers!`);
+          selectedFiles = [];
+          updateTrayUI();
+          loadCategoryDetail(activeCategory);
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Upload failed', 'error');
+        }
+      } catch (err) {
+        showToast('Network upload error', 'error');
+      } finally {
+        isUploading = false;
+        btn.disabled = false;
+        btn.textContent = 'Upload All Now';
+        setTimeout(() => {
+          progressBg.style.display = 'none';
+          progressFill.style.width = '0%';
+        }, 500);
+      }
+    }
+
+    // Category Creation
+    function openNewCategoryModal() {
+      document.getElementById('newCategoryInput').value = '';
+      openModal('modalNewCategory');
+      document.getElementById('newCategoryInput').focus();
+    }
+
+    async function submitCreateCategory() {
+      const name = document.getElementById('newCategoryInput').value.trim();
+      if (!name) return alert('Please enter a category name');
+
+      try {
+        const res = await fetch('/api/categories', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name })
+        });
+        const data = await res.json();
+        if (data.success) {
+          closeModal('modalNewCategory');
+          showToast(`Created category "${data.category}"`);
+          loadCategories();
+          updateGitStatus();
+        } else {
+          alert(data.error || 'Failed to create category');
+        }
+      } catch (e) {
+        alert('Error creating category');
+      }
+    }
+
+    // Category Deletion
+    async function confirmDeleteCategory() {
+      if (!activeCategory) return;
+      if (!confirm(`Are you SURE you want to delete the entire category "${activeCategory}" and all its wallpapers? This cannot be undone.`)) {
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/category/${encodeURIComponent(activeCategory)}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Deleted category "${activeCategory}"`);
+          showHomeView();
+        } else {
+          showToast(data.error || 'Failed to delete category', 'error');
+        }
+      } catch (e) {
+        showToast('Delete category error', 'error');
+      }
+    }
+
+    // Git Status & 1-Click Push
+    async function updateGitStatus() {
+      try {
+        const res = await fetch('/api/git-status');
+        const data = await res.json();
+        const badge = document.getElementById('badgeGit');
+        const text = document.getElementById('gitStatusText');
+
+        if (data.clean && data.unpushedCount === 0) {
+          badge.className = 'pill-badge git-clean';
+          text.textContent = `${data.branch}: Synced`;
+        } else {
+          badge.className = 'pill-badge git-dirty';
+          const dirty = data.pendingCount > 0 ? `${data.pendingCount} local changes` : '';
+          const unpushed = data.unpushedCount > 0 ? `${data.unpushedCount} unpushed` : '';
+          text.textContent = `${data.branch}: ${[dirty, unpushed].filter(Boolean).join(', ')}`;
+        }
+      } catch (e) {}
+    }
+
+    async function triggerGitPush() {
+      const btn = document.getElementById('btnPushGit');
+      btn.disabled = true;
+      btn.innerHTML = 'Pushing to GitHub...';
+
+      try {
+        const res = await fetch('/api/git-sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: 'Wallpaper Studio: Synced wallpapers & catalog' })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Changes pushed to GitHub origin main!');
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Git push failed', 'error');
+        }
+      } catch (err) {
+        showToast('Git push failed', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `
+          <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          Push to GitHub
+        `;
+      }
+    }
+
+    // Rebuild All Thumbnails
+    async function triggerRebuildThumbnails() {
+      if (!confirm('Rebuild all thumbnails across all categories using Sharp?')) return;
+      const btn = document.getElementById('btnRebuildThumbs');
+      btn.disabled = true;
+      btn.textContent = 'Rebuilding...';
+
+      try {
+        const res = await fetch('/api/regenerate-thumbnails', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Generated ${data.count} crisp retina thumbnails!`);
+          if (activeCategory) {
+            loadCategoryDetail(activeCategory);
+          } else {
+            loadCategories();
+          }
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to rebuild thumbnails', 'error');
+        }
+      } catch (err) {
+        showToast('Error rebuilding thumbnails', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Rebuild Thumbs
+        `;
+      }
+    }
+
+    // Settings Modal
+    async function openConfigModal() {
+      try {
+        const res = await fetch('/api/config');
+        const data = await res.json();
+        document.getElementById('cfgCdnUrl').value = data.config.cdnUrl || '';
+        document.getElementById('cfgThumbWidth').value = data.config.thumbnailWidth || 520;
+        document.getElementById('cfgAutoPush').checked = !!(data.config.git && data.config.git.autoPush);
+        openModal('modalConfig');
+      } catch (e) {
+        showToast('Failed to load settings', 'error');
+      }
+    }
+
+    async function submitSaveConfig() {
+      const cdnUrl = document.getElementById('cfgCdnUrl').value.trim();
+      const thumbnailWidth = parseInt(document.getElementById('cfgThumbWidth').value, 10) || 520;
+      const autoPush = document.getElementById('cfgAutoPush').checked;
+
+      try {
+        const res = await fetch('/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            cdnUrl,
+            thumbnailWidth,
+            git: { autoPush }
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          closeModal('modalConfig');
+          showToast('Settings saved & catalog updated!');
+          loadCategories();
+        } else {
+          showToast(data.error || 'Failed to save settings', 'error');
+        }
+      } catch (e) {
+        showToast('Error saving settings', 'error');
+      }
+    }
+
+    // Init on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadCategories();
+      updateGitStatus();
+      setInterval(updateGitStatus, 15000); // Check git status every 15s
+    });
+  </script>
+</body>
+</html>
