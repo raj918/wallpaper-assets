@@ -1,18 +1,18 @@
 {
-  "version": 20,
+  "version": 24,
   "categories": [
     {
       "name": "Anime",
       "index": 1,
       "count": 54,
-      "coverFilename": "anime_2.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_2.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime/anime_2.jpg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_2.jpg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_2.jpg",
+      "coverFilename": "anime_1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime/anime_1.jpg",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
       "previews": [
-        "/storage/images/Anime_thumb/anime_2.jpg",
         "/storage/images/Anime_thumb/anime_1.jpg",
+        "/storage/images/Anime_thumb/anime_2.jpg",
         "/storage/images/Anime_thumb/anime_3.jpg",
         "/storage/images/Anime_thumb/anime_4.jpg"
       ]
@@ -21,16 +21,16 @@
       "name": "abstract",
       "index": 2,
       "count": 93,
-      "coverFilename": "_uhdabstract13.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg",
-      "localCoverThumbnail": "/storage/images/abstract_thumb/_uhdabstract13.jpg",
-      "localCoverWallpaper": "/storage/images/abstract/_uhdabstract13.jpg",
+      "coverFilename": "1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/1.jpg",
+      "localCoverThumbnail": "/storage/images/abstract_thumb/1.jpg",
+      "localCoverWallpaper": "/storage/images/abstract/1.jpg",
       "previews": [
-        "/storage/images/abstract_thumb/_uhdabstract13.jpg",
-        "/storage/images/abstract_thumb/_uhdabstract38.jpg",
-        "/storage/images/abstract_thumb/_uhdabstract61.jpg",
-        "/storage/images/abstract_thumb/_uhdabstract68.jpg"
+        "/storage/images/abstract_thumb/1.jpg",
+        "/storage/images/abstract_thumb/2.jpg",
+        "/storage/images/abstract_thumb/3.jpg",
+        "/storage/images/abstract_thumb/4.jpg"
       ]
     },
     {
@@ -227,8 +227,8 @@
     }
   ],
   "covers": {
-    "Anime": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_2.jpg",
-    "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
+    "Anime": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg",
+    "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/1.jpg",
     "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
     "animal": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
     "cars": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/cars_thumb/_uhdmotors101.jpg",
