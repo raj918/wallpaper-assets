@@ -1,5 +1,5 @@
 {
-  "version": 28,
+  "version": 30,
   "categories": [
     {
       "name": "abstract",
@@ -21,16 +21,16 @@
       "name": "amoled",
       "index": 2,
       "count": 68,
-      "coverFilename": "am1.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled/am1.jpg",
-      "localCoverThumbnail": "/storage/images/amoled_thumb/am1.jpg",
-      "localCoverWallpaper": "/storage/images/amoled/am1.jpg",
+      "coverFilename": "1.jpeg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/1.jpeg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled/1.jpeg",
+      "localCoverThumbnail": "/storage/images/amoled_thumb/1.jpeg",
+      "localCoverWallpaper": "/storage/images/amoled/1.jpeg",
       "previews": [
-        "/storage/images/amoled_thumb/am1.jpg",
-        "/storage/images/amoled_thumb/am2.jpg",
-        "/storage/images/amoled_thumb/am3.jpg",
-        "/storage/images/amoled_thumb/am4.jpeg"
+        "/storage/images/amoled_thumb/1.jpeg",
+        "/storage/images/amoled_thumb/2.jpg",
+        "/storage/images/amoled_thumb/3.jpg",
+        "/storage/images/amoled_thumb/4.jpg"
       ]
     },
     {
@@ -228,7 +228,7 @@
   ],
   "covers": {
     "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/1.jpg",
-    "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
+    "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/1.jpeg",
     "animal": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
     "Anime": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg",
     "cars": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/cars_thumb/_uhdmotors101.jpg",
