@@ -1,5 +1,5 @@
 {
-  "version": 43,
+  "version": 46,
   "categories": [
     {
       "name": "Anime",
@@ -98,8 +98,24 @@
       ]
     },
     {
-      "name": "iphone",
+      "name": "Minimal",
       "index": 7,
+      "count": 17,
+      "coverFilename": "minimal_1.webp",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_1.webp",
+      "localCoverThumbnail": "/storage/images/Minimal_thumb/minimal_1.webp",
+      "localCoverWallpaper": "/storage/images/Minimal/minimal_1.webp",
+      "previews": [
+        "/storage/images/Minimal_thumb/minimal_1.webp",
+        "/storage/images/Minimal_thumb/minimal_2.webp",
+        "/storage/images/Minimal_thumb/minimal_3.webp",
+        "/storage/images/Minimal_thumb/minimal_4.webp"
+      ]
+    },
+    {
+      "name": "iphone",
+      "index": 8,
       "count": 55,
       "coverFilename": "iphone_1.webp",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
@@ -115,7 +131,7 @@
     },
     {
       "name": "animal",
-      "index": 8,
+      "index": 9,
       "count": 5,
       "coverFilename": "animal_1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
@@ -131,7 +147,7 @@
     },
     {
       "name": "material",
-      "index": 9,
+      "index": 10,
       "count": 100,
       "coverFilename": "_uhdmaterialdesigns2.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/_uhdmaterialdesigns2.jpg",
@@ -147,7 +163,7 @@
     },
     {
       "name": "nature",
-      "index": 10,
+      "index": 11,
       "count": 163,
       "coverFilename": "_uhdnature16.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/_uhdnature16.jpg",
@@ -163,7 +179,7 @@
     },
     {
       "name": "new added",
-      "index": 11,
+      "index": 12,
       "count": 77,
       "coverFilename": "new added_1.jpeg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
@@ -179,7 +195,7 @@
     },
     {
       "name": "Oppo",
-      "index": 12,
+      "index": 13,
       "count": 144,
       "coverFilename": "oppo_1.webp",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Oppo_thumb/oppo_1.webp",
@@ -195,7 +211,7 @@
     },
     {
       "name": "space",
-      "index": 13,
+      "index": 14,
       "count": 28,
       "coverFilename": "space_1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/space_thumb/space_1.jpg",
@@ -211,7 +227,7 @@
     },
     {
       "name": "winter",
-      "index": 14,
+      "index": 15,
       "count": 211,
       "coverFilename": "1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/winter_thumb/1.jpg",
@@ -233,6 +249,7 @@
     "abstract": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/1.jpg",
     "cars": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/_uhdmotors101.jpg",
     "city": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city_thumb/city_1.jpg",
+    "Minimal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
     "iphone": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
     "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
     "material": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/_uhdmaterialdesigns2.jpg",

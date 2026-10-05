@@ -3255,6 +3255,125 @@
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city_thumb/city_16.jpg"
   },
   {
+    "id": "Minimal_minimal_1_ad4647",
+    "category": "Minimal",
+    "isCover": true,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_1.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp?cover=true"
+  },
+  {
+    "id": "Minimal_minimal_2_717663",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_2.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_2.webp"
+  },
+  {
+    "id": "Minimal_minimal_3_31db8f",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_3.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_3.webp"
+  },
+  {
+    "id": "Minimal_minimal_4_d3ab29",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_4.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_4.webp"
+  },
+  {
+    "id": "Minimal_minimal_5_6b2ca0",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_5.jpeg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_5.jpeg"
+  },
+  {
+    "id": "Minimal_minimal_6_c6adff",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_6.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_6.webp"
+  },
+  {
+    "id": "Minimal_minimal_7_87c073",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_7.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_7.webp"
+  },
+  {
+    "id": "Minimal_minimal_8_3f35b7",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_8.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_8.webp"
+  },
+  {
+    "id": "Minimal_minimal_9_8704f1",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_9.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_9.webp"
+  },
+  {
+    "id": "Minimal_minimal_10_359b41",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_10.png",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_10.png"
+  },
+  {
+    "id": "Minimal_minimal_11_809316",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_11.png",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_11.png"
+  },
+  {
+    "id": "Minimal_minimal_12_c9ff56",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_12.png",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_12.png"
+  },
+  {
+    "id": "Minimal_minimal_13_2e19e2",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_13.png",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_13.png"
+  },
+  {
+    "id": "Minimal_minimal_14_c83ffa",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_14.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_14.webp"
+  },
+  {
+    "id": "Minimal_minimal_15_322998",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_15.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_15.webp"
+  },
+  {
+    "id": "Minimal_minimal_16_1e1c77",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_16.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_16.webp"
+  },
+  {
+    "id": "Minimal_minimal_17_08c4e1",
+    "category": "Minimal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_17.webp",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_17.webp"
+  },
+  {
     "id": "iphone_iphone_1_53c813",
     "category": "iphone",
     "isCover": true,
