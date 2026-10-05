@@ -1,5 +1,5 @@
 {
-  "version": 32,
+  "version": 33,
   "categories": [
     {
       "name": "abstract",
@@ -213,16 +213,16 @@
       "name": "winter",
       "index": 14,
       "count": 211,
-      "coverFilename": "_uhdwinter1.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/_uhdwinter1.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter/_uhdwinter1.jpg",
-      "localCoverThumbnail": "/storage/images/winter_thumb/_uhdwinter1.jpg",
-      "localCoverWallpaper": "/storage/images/winter/_uhdwinter1.jpg",
+      "coverFilename": "1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter/1.jpg",
+      "localCoverThumbnail": "/storage/images/winter_thumb/1.jpg",
+      "localCoverWallpaper": "/storage/images/winter/1.jpg",
       "previews": [
-        "/storage/images/winter_thumb/_uhdwinter1.jpg",
-        "/storage/images/winter_thumb/_uhdwinter3.jpg",
-        "/storage/images/winter_thumb/_uhdwinter5.jpg",
-        "/storage/images/winter_thumb/_uhdwinter15.jpg"
+        "/storage/images/winter_thumb/1.jpg",
+        "/storage/images/winter_thumb/2.jpg",
+        "/storage/images/winter_thumb/3.jpg",
+        "/storage/images/winter_thumb/4.jpg"
       ]
     }
   ],
@@ -240,6 +240,6 @@
     "Oppo": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Oppo_thumb/oppo_1.webp",
     "space": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/space_thumb/space_1.jpg",
     "Superheroes": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Superheroes_thumb/superheroes_1.jpeg",
-    "winter": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/_uhdwinter1.jpg"
+    "winter": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/1.jpg"
   }
 }
