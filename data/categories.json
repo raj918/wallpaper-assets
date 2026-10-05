@@ -1,0 +1,245 @@
+{
+  "version": 20,
+  "categories": [
+    {
+      "name": "Anime",
+      "index": 1,
+      "count": 54,
+      "coverFilename": "anime_2.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_2.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime/anime_2.jpg",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_2.jpg",
+      "localCoverWallpaper": "/storage/images/Anime/anime_2.jpg",
+      "previews": [
+        "/storage/images/Anime_thumb/anime_2.jpg",
+        "/storage/images/Anime_thumb/anime_1.jpg",
+        "/storage/images/Anime_thumb/anime_3.jpg",
+        "/storage/images/Anime_thumb/anime_4.jpg"
+      ]
+    },
+    {
+      "name": "abstract",
+      "index": 2,
+      "count": 93,
+      "coverFilename": "_uhdabstract13.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg",
+      "localCoverThumbnail": "/storage/images/abstract_thumb/_uhdabstract13.jpg",
+      "localCoverWallpaper": "/storage/images/abstract/_uhdabstract13.jpg",
+      "previews": [
+        "/storage/images/abstract_thumb/_uhdabstract13.jpg",
+        "/storage/images/abstract_thumb/_uhdabstract38.jpg",
+        "/storage/images/abstract_thumb/_uhdabstract61.jpg",
+        "/storage/images/abstract_thumb/_uhdabstract68.jpg"
+      ]
+    },
+    {
+      "name": "amoled",
+      "index": 3,
+      "count": 68,
+      "coverFilename": "am1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled/am1.jpg",
+      "localCoverThumbnail": "/storage/images/amoled_thumb/am1.jpg",
+      "localCoverWallpaper": "/storage/images/amoled/am1.jpg",
+      "previews": [
+        "/storage/images/amoled_thumb/am1.jpg",
+        "/storage/images/amoled_thumb/am2.jpg",
+        "/storage/images/amoled_thumb/am3.jpg",
+        "/storage/images/amoled_thumb/am4.jpeg"
+      ]
+    },
+    {
+      "name": "animal",
+      "index": 4,
+      "count": 5,
+      "coverFilename": "animal_1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_1.jpg",
+      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.jpg",
+      "localCoverWallpaper": "/storage/images/animal/animal_1.jpg",
+      "previews": [
+        "/storage/images/animal_thumb/animal_1.jpg",
+        "/storage/images/animal_thumb/animal_2.jpg",
+        "/storage/images/animal_thumb/animal_3.jpg",
+        "/storage/images/animal_thumb/animal_4.jpg"
+      ]
+    },
+    {
+      "name": "cars",
+      "index": 5,
+      "count": 98,
+      "coverFilename": "_uhdmotors101.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/cars_thumb/_uhdmotors101.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/cars/_uhdmotors101.jpg",
+      "localCoverThumbnail": "/storage/images/cars_thumb/_uhdmotors101.jpg",
+      "localCoverWallpaper": "/storage/images/cars/_uhdmotors101.jpg",
+      "previews": [
+        "/storage/images/cars_thumb/_uhdmotors101.jpg",
+        "/storage/images/cars_thumb/_uhdmotors126.jpg",
+        "/storage/images/cars_thumb/_uhdmotors168.jpg",
+        "/storage/images/cars_thumb/_uhdmotors185.jpg"
+      ]
+    },
+    {
+      "name": "city",
+      "index": 6,
+      "count": 16,
+      "coverFilename": "city_1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/city_thumb/city_1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/city/city_1.jpg",
+      "localCoverThumbnail": "/storage/images/city_thumb/city_1.jpg",
+      "localCoverWallpaper": "/storage/images/city/city_1.jpg",
+      "previews": [
+        "/storage/images/city_thumb/city_1.jpg",
+        "/storage/images/city_thumb/city_2.jpg",
+        "/storage/images/city_thumb/city_3.jpg",
+        "/storage/images/city_thumb/city_4.jpg"
+      ]
+    },
+    {
+      "name": "iphone",
+      "index": 7,
+      "count": 55,
+      "coverFilename": "iphone_1.webp",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/iphone_thumb/iphone_1.webp",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/iphone/iphone_1.webp",
+      "localCoverThumbnail": "/storage/images/iphone_thumb/iphone_1.webp",
+      "localCoverWallpaper": "/storage/images/iphone/iphone_1.webp",
+      "previews": [
+        "/storage/images/iphone_thumb/iphone_1.webp",
+        "/storage/images/iphone_thumb/iphone_2.jpeg",
+        "/storage/images/iphone_thumb/iphone_3.webp",
+        "/storage/images/iphone_thumb/iphone_4.webp"
+      ]
+    },
+    {
+      "name": "material",
+      "index": 8,
+      "count": 100,
+      "coverFilename": "_uhdmaterialdesigns2.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/material_thumb/_uhdmaterialdesigns2.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/material/_uhdmaterialdesigns2.jpg",
+      "localCoverThumbnail": "/storage/images/material_thumb/_uhdmaterialdesigns2.jpg",
+      "localCoverWallpaper": "/storage/images/material/_uhdmaterialdesigns2.jpg",
+      "previews": [
+        "/storage/images/material_thumb/_uhdmaterialdesigns2.jpg",
+        "/storage/images/material_thumb/_uhdmaterialdesigns3.jpg",
+        "/storage/images/material_thumb/_uhdmaterialdesigns4.jpg",
+        "/storage/images/material_thumb/_uhdmaterialdesigns5.jpg"
+      ]
+    },
+    {
+      "name": "nature",
+      "index": 9,
+      "count": 163,
+      "coverFilename": "_uhdnature16.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/nature_thumb/_uhdnature16.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/nature/_uhdnature16.jpg",
+      "localCoverThumbnail": "/storage/images/nature_thumb/_uhdnature16.jpg",
+      "localCoverWallpaper": "/storage/images/nature/_uhdnature16.jpg",
+      "previews": [
+        "/storage/images/nature_thumb/_uhdnature16.jpg",
+        "/storage/images/nature_thumb/_uhdnature147.jpg",
+        "/storage/images/nature_thumb/_uhdnature208.jpg",
+        "/storage/images/nature_thumb/_uhdnature473.jpg"
+      ]
+    },
+    {
+      "name": "new added",
+      "index": 10,
+      "count": 77,
+      "coverFilename": "new added_1.jpeg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/new%20added_thumb/new%20added_1.jpeg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/new%20added/new%20added_1.jpeg",
+      "localCoverThumbnail": "/storage/images/new%20added_thumb/new%20added_1.jpeg",
+      "localCoverWallpaper": "/storage/images/new%20added/new%20added_1.jpeg",
+      "previews": [
+        "/storage/images/new%20added_thumb/new%20added_1.jpeg",
+        "/storage/images/new%20added_thumb/new%20added_2.jpeg",
+        "/storage/images/new%20added_thumb/new%20added_3.png",
+        "/storage/images/new%20added_thumb/new%20added_4.jpeg"
+      ]
+    },
+    {
+      "name": "Oppo",
+      "index": 11,
+      "count": 144,
+      "coverFilename": "oppo_1.webp",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Oppo_thumb/oppo_1.webp",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Oppo/oppo_1.webp",
+      "localCoverThumbnail": "/storage/images/Oppo_thumb/oppo_1.webp",
+      "localCoverWallpaper": "/storage/images/Oppo/oppo_1.webp",
+      "previews": [
+        "/storage/images/Oppo_thumb/oppo_1.webp",
+        "/storage/images/Oppo_thumb/oppo_2.jpg",
+        "/storage/images/Oppo_thumb/oppo_3.jpg",
+        "/storage/images/Oppo_thumb/oppo_4.jpg"
+      ]
+    },
+    {
+      "name": "space",
+      "index": 12,
+      "count": 28,
+      "coverFilename": "space_1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/space_thumb/space_1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/space/space_1.jpg",
+      "localCoverThumbnail": "/storage/images/space_thumb/space_1.jpg",
+      "localCoverWallpaper": "/storage/images/space/space_1.jpg",
+      "previews": [
+        "/storage/images/space_thumb/space_1.jpg",
+        "/storage/images/space_thumb/space_2.jpg",
+        "/storage/images/space_thumb/space_3.jpg",
+        "/storage/images/space_thumb/space_4.jpg"
+      ]
+    },
+    {
+      "name": "Superheroes",
+      "index": 13,
+      "count": 31,
+      "coverFilename": "superheroes_1.jpeg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Superheroes_thumb/superheroes_1.jpeg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Superheroes/superheroes_1.jpeg",
+      "localCoverThumbnail": "/storage/images/Superheroes_thumb/superheroes_1.jpeg",
+      "localCoverWallpaper": "/storage/images/Superheroes/superheroes_1.jpeg",
+      "previews": [
+        "/storage/images/Superheroes_thumb/superheroes_1.jpeg",
+        "/storage/images/Superheroes_thumb/superheroes_2.webp",
+        "/storage/images/Superheroes_thumb/superheroes_3.webp",
+        "/storage/images/Superheroes_thumb/superheroes_4.jpeg"
+      ]
+    },
+    {
+      "name": "winter",
+      "index": 14,
+      "count": 211,
+      "coverFilename": "_uhdwinter1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/_uhdwinter1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter/_uhdwinter1.jpg",
+      "localCoverThumbnail": "/storage/images/winter_thumb/_uhdwinter1.jpg",
+      "localCoverWallpaper": "/storage/images/winter/_uhdwinter1.jpg",
+      "previews": [
+        "/storage/images/winter_thumb/_uhdwinter1.jpg",
+        "/storage/images/winter_thumb/_uhdwinter3.jpg",
+        "/storage/images/winter_thumb/_uhdwinter5.jpg",
+        "/storage/images/winter_thumb/_uhdwinter15.jpg"
+      ]
+    }
+  ],
+  "covers": {
+    "Anime": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_2.jpg",
+    "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
+    "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
+    "animal": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
+    "cars": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/cars_thumb/_uhdmotors101.jpg",
+    "city": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/city_thumb/city_1.jpg",
+    "iphone": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/iphone_thumb/iphone_1.webp",
+    "material": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/material_thumb/_uhdmaterialdesigns2.jpg",
+    "nature": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/nature_thumb/_uhdnature16.jpg",
+    "new added": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/new%20added_thumb/new%20added_1.jpeg",
+    "Oppo": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Oppo_thumb/oppo_1.webp",
+    "space": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/space_thumb/space_1.jpg",
+    "Superheroes": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Superheroes_thumb/superheroes_1.jpeg",
+    "winter": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/_uhdwinter1.jpg"
+  }
+}
