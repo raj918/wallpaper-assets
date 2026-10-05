@@ -1,5 +1,5 @@
 {
-  "version": 57,
+  "version": 58,
   "categories": [
     {
       "name": "Anime",
@@ -125,8 +125,8 @@
       "previews": [
         "/storage/images/iphone_thumb/iphone_1.webp",
         "/storage/images/iphone_thumb/iphone_2.webp",
-        "/storage/images/iphone_thumb/iphone_3.jpeg",
-        "/storage/images/iphone_thumb/iphone_4.webp"
+        "/storage/images/iphone_thumb/iphone_3.webp",
+        "/storage/images/iphone_thumb/iphone_4.jpeg"
       ]
     },
     {
