@@ -2457,41 +2457,6 @@
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/93.jpg"
   },
   {
-    "id": "animal_animal_1_128d4c",
-    "category": "animal",
-    "isCover": true,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg?cover=true"
-  },
-  {
-    "id": "animal_animal_2_c24d2b",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_2.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_2.jpg"
-  },
-  {
-    "id": "animal_animal_3_7f63d4",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_3.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_3.jpg"
-  },
-  {
-    "id": "animal_animal_4_640653",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_4.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_4.jpg"
-  },
-  {
-    "id": "animal_animal_5_eb22fa",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_5.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_5.jpg"
-  },
-  {
     "id": "cars__uhdmotors101_bdadcd",
     "category": "cars",
     "isCover": true,
@@ -3288,6 +3253,41 @@
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city/city_16.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city_thumb/city_16.jpg"
+  },
+  {
+    "id": "animal_animal_1_128d4c",
+    "category": "animal",
+    "isCover": true,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.jpg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg?cover=true"
+  },
+  {
+    "id": "animal_animal_2_c24d2b",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_2.jpg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_2.jpg"
+  },
+  {
+    "id": "animal_animal_3_7f63d4",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_3.jpg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_3.jpg"
+  },
+  {
+    "id": "animal_animal_4_640653",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_4.jpg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_4.jpg"
+  },
+  {
+    "id": "animal_animal_5_eb22fa",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_5.jpg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_5.jpg"
   },
   {
     "id": "iphone_iphone_1_53c813",
