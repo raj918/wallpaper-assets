@@ -1,5 +1,5 @@
 {
-  "version": 61,
+  "version": 62,
   "categories": [
     {
       "name": "Anime",
@@ -69,16 +69,16 @@
       "name": "cars",
       "index": 5,
       "count": 98,
-      "coverFilename": "_uhdmotors101.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/_uhdmotors101.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars/_uhdmotors101.jpg",
-      "localCoverThumbnail": "/storage/images/cars_thumb/_uhdmotors101.jpg",
-      "localCoverWallpaper": "/storage/images/cars/_uhdmotors101.jpg",
+      "coverFilename": "1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars/1.jpg",
+      "localCoverThumbnail": "/storage/images/cars_thumb/1.jpg",
+      "localCoverWallpaper": "/storage/images/cars/1.jpg",
       "previews": [
-        "/storage/images/cars_thumb/_uhdmotors101.jpg",
-        "/storage/images/cars_thumb/_uhdmotors126.jpg",
-        "/storage/images/cars_thumb/_uhdmotors168.jpg",
-        "/storage/images/cars_thumb/_uhdmotors185.jpg"
+        "/storage/images/cars_thumb/1.jpg",
+        "/storage/images/cars_thumb/2.jpg",
+        "/storage/images/cars_thumb/3.jpg",
+        "/storage/images/cars_thumb/4.jpg"
       ]
     },
     {
@@ -247,7 +247,7 @@
     "Superheroes": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Superheroes_thumb/superheroes_1.jpeg",
     "amoled": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled_thumb/1.jpeg",
     "abstract": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/1.jpg",
-    "cars": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/_uhdmotors101.jpg",
+    "cars": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/1.jpg",
     "city": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city_thumb/city_1.jpg",
     "Minimal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
     "iphone": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
