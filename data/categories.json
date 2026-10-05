@@ -1,5 +1,5 @@
 {
-  "version": 41,
+  "version": 42,
   "categories": [
     {
       "name": "Anime",
@@ -98,24 +98,8 @@
       ]
     },
     {
-      "name": "animal",
-      "index": 7,
-      "count": 5,
-      "coverFilename": "animal_1.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.jpg",
-      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.jpg",
-      "localCoverWallpaper": "/storage/images/animal/animal_1.jpg",
-      "previews": [
-        "/storage/images/animal_thumb/animal_1.jpg",
-        "/storage/images/animal_thumb/animal_2.jpg",
-        "/storage/images/animal_thumb/animal_3.jpg",
-        "/storage/images/animal_thumb/animal_4.jpg"
-      ]
-    },
-    {
       "name": "iphone",
-      "index": 8,
+      "index": 7,
       "count": 55,
       "coverFilename": "iphone_1.webp",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
@@ -127,6 +111,22 @@
         "/storage/images/iphone_thumb/iphone_2.jpeg",
         "/storage/images/iphone_thumb/iphone_3.webp",
         "/storage/images/iphone_thumb/iphone_4.webp"
+      ]
+    },
+    {
+      "name": "animal",
+      "index": 8,
+      "count": 5,
+      "coverFilename": "animal_1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.jpg",
+      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.jpg",
+      "localCoverWallpaper": "/storage/images/animal/animal_1.jpg",
+      "previews": [
+        "/storage/images/animal_thumb/animal_1.jpg",
+        "/storage/images/animal_thumb/animal_2.jpg",
+        "/storage/images/animal_thumb/animal_3.jpg",
+        "/storage/images/animal_thumb/animal_4.jpg"
       ]
     },
     {
@@ -233,8 +233,8 @@
     "abstract": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/1.jpg",
     "cars": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/_uhdmotors101.jpg",
     "city": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city_thumb/city_1.jpg",
-    "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
     "iphone": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
+    "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
     "material": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/_uhdmaterialdesigns2.jpg",
     "nature": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/_uhdnature16.jpg",
     "new added": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
