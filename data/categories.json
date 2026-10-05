@@ -1,5 +1,5 @@
 {
-  "version": 56,
+  "version": 57,
   "categories": [
     {
       "name": "Anime",
@@ -124,8 +124,8 @@
       "localCoverWallpaper": "/storage/images/iphone/iphone_1.webp",
       "previews": [
         "/storage/images/iphone_thumb/iphone_1.webp",
-        "/storage/images/iphone_thumb/iphone_2.jpeg",
-        "/storage/images/iphone_thumb/iphone_3.webp",
+        "/storage/images/iphone_thumb/iphone_2.webp",
+        "/storage/images/iphone_thumb/iphone_3.jpeg",
         "/storage/images/iphone_thumb/iphone_4.webp"
       ]
     },
