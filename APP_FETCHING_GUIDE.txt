@@ -1,0 +1,155 @@
+======================================================================
+         WALLPAPER ASSETS - APP FETCHING & JSON INTEGRATION GUIDE
+======================================================================
+
+Live jsDelivr Base URL:
+https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets
+
+----------------------------------------------------------------------
+1. THE 3 JSON ENDPOINTS (jsDelivr Global CDN / Backend)
+----------------------------------------------------------------------
+
+ENDPOINT 1: VERSION CHECK
+URL:
+https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/data/version.json
+(Or local backend: http://localhost:3000/version.json)
+
+Method: GET
+Response Format:
+{
+  "version": 14,
+  "totalWallpapers": 1143,
+  "categoriesCount": 14,
+  "lastUpdated": "2026-10-05T03:53:04.145Z"
+}
+
+What it does:
+Check this number when your mobile app opens. If the version is newer
+than the stored local version in your app, fetch new data. Otherwise,
+use cached data from local storage (instant loading, 0 data waste!).
+
+
+----------------------------------------------------------------------
+ENDPOINT 2: CATEGORIES LIST WITH SEQUENTIAL ORDER & COVERS
+URL:
+https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/data/categories.json
+(Or local backend: http://localhost:3000/categories.json or /api/categories)
+
+Method: GET
+Response Format:
+{
+  "version": 14,
+  "categories": [
+    {
+      "name": "abstract",
+      "index": 1,
+      "count": 93,
+      "coverFilename": "_uhdabstract13.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg"
+    },
+    {
+      "name": "amoled",
+      "index": 2,
+      "count": 68,
+      "coverFilename": "am1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled/am1.jpg"
+    }
+  ],
+  "covers": {
+    "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
+    "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg"
+  }
+}
+
+What it does:
+Returns categories in the exact custom order configured via drag-and-drop
+in the admin panel. Includes the designated cover thumbnail for each
+category, ready to show in your category grids!
+
+
+----------------------------------------------------------------------
+ENDPOINT 3: FULL WALLPAPERS MASTER LIST
+URL:
+https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/data/wallpapers.json
+(Or local backend: http://localhost:3000/wallpapers.json)
+
+Method: GET
+Response Format:
+[
+  {
+    "id": "abstract__uhdabstract13_f29910",
+    "category": "abstract",
+    "isCover": true,
+    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg",
+    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg?cover=true"
+  },
+  ...
+]
+
+
+----------------------------------------------------------------------
+2. HOW TO GET THUMBNAILS VS FULL 4K WALLPAPERS IN YOUR APP
+----------------------------------------------------------------------
+
+A. Fast Grid Scrolling (Retina 520px Thumbnail):
+   Use item.thumb
+   Example:
+   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg
+
+B. Fullscreen High-Resolution Preview / Apply Screen:
+   Use item.url
+   Example:
+   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg
+
+
+----------------------------------------------------------------------
+3. READY-TO-USE CODE SNIPPET (REACT NATIVE / FLUTTER / JS)
+----------------------------------------------------------------------
+
+const CDN_BASE = "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets";
+
+// 1. Fetch Version
+export async function checkVersion() {
+  try {
+    const res = await fetch(`${CDN_BASE}/data/version.json?t=${Date.now()}`);
+    const data = await res.json();
+    return data.version;
+  } catch (error) {
+    console.error("Failed to fetch version:", error);
+    return null;
+  }
+}
+
+// 2. Fetch Categories (with designated covers & sequence order)
+export async function fetchCategories() {
+  try {
+    const res = await fetch(`${CDN_BASE}/data/categories.json?t=${Date.now()}`);
+    const data = await res.json();
+    return data.categories; // Ordered array with name, index, count, coverThumbnail
+  } catch (error) {
+    console.error("Failed to fetch categories:", error);
+    return [];
+  }
+}
+
+// 3. Fetch Wallpapers
+export async function fetchWallpapers() {
+  try {
+    const res = await fetch(`${CDN_BASE}/data/wallpapers.json?t=${Date.now()}`);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch wallpapers:", error);
+    return [];
+  }
+}
+
+// 4. Helper: Get Designated Category Cover from Wallpapers list
+export function getCategoryCoverUrl(categoryName, wallpapers) {
+  const catItems = wallpapers.filter(w => w.category.toLowerCase() === categoryName.toLowerCase());
+  const coverItem = catItems.find(w => w.isCover || (w.thumb && w.thumb.includes('cover=true')));
+  return coverItem ? coverItem.thumb : (catItems[0] ? catItems[0].thumb : null);
+}
+======================================================================

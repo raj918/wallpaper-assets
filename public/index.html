@@ -26,6 +26,7 @@
       --danger: #ef4444;
       --danger-hover: #dc2626;
       --warning: #f59e0b;
+      --gold: #fbbf24;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
       --radius: 8px;
@@ -102,7 +103,7 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
     .pill-badge {
@@ -179,25 +180,32 @@
     }
 
     .btn-git {
-      background: #238636;
-      border-color: #2ea043;
-      color: #fff;
+      background: #181f2a;
+      border-color: #2b3648;
+      color: #e2e8f0;
     }
 
     .btn-git:hover {
-      background: #2ea043;
+      background: #232c3d;
+      border-color: #3b82f6;
+      color: #fff;
     }
 
     .btn-danger {
-      background: rgba(239, 68, 68, 0.12);
+      background: rgba(239, 68, 68, 0.1);
       border-color: rgba(239, 68, 68, 0.3);
       color: #f87171;
     }
 
     .btn-danger:hover {
-      background: #ef4444;
-      border-color: #ef4444;
+      background: var(--danger);
+      border-color: var(--danger);
       color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
     }
 
     .btn-xs {
@@ -260,7 +268,7 @@
     /* Category Grid */
     .cat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
       gap: 1.25rem;
     }
 
@@ -270,10 +278,12 @@
       border-radius: var(--radius);
       padding: 1.15rem;
       cursor: pointer;
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, opacity 0.15s ease;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
+      position: relative;
+      user-select: none;
     }
 
     .cat-item-card:hover {
@@ -282,10 +292,45 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
+    .cat-item-card.dragging {
+      opacity: 0.35;
+      border-style: dashed;
+      border-color: var(--primary);
+    }
+
+    .cat-item-card.drag-over {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.45);
+      transform: translateY(-3px);
+    }
+
     .cat-card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
+    }
+
+    .cat-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-width: 0;
+    }
+
+    .cat-seq-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: var(--radius-sm);
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      flex-shrink: 0;
     }
 
     .cat-card-title {
@@ -295,16 +340,66 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .cat-card-badge {
+    .cat-menu-trigger {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-sm);
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+
+    .cat-menu-trigger:hover {
       background: var(--surface-2);
+      color: #fff;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: 2rem;
+      background: #151922;
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0.15rem 0.5rem;
-      font-size: 11px;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      padding: 4px;
+      min-width: 165px;
+      z-index: 50;
+      display: none;
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.65rem;
+      font-size: 12px;
+      color: var(--text);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .dropdown-item:hover {
+      background: var(--surface-3);
+      color: #fff;
+    }
+
+    .dropdown-item.danger {
+      color: #f87171;
+    }
+
+    .dropdown-item.danger:hover {
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
     }
 
     .cat-preview-strip {
@@ -338,6 +433,51 @@
       height: 100%;
     }
 
+    .cat-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.6rem;
+      margin-top: 0.15rem;
+    }
+
+    .cat-order-btn {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 10px;
+      transition: all 0.15s;
+    }
+
+    .cat-order-btn:hover:not(:disabled) {
+      background: var(--surface-3);
+      color: #fff;
+      border-color: #3b82f6;
+    }
+
+    .cat-cover-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: #fbbf24;
+      font-weight: 500;
+      font-size: 11px;
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     /* Category View: Upload Area */
     .dropzone-compact {
       background: var(--surface-1);
@@ -348,9 +488,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
+      gap: 1.5rem;
     }
 
     .dropzone-compact:hover,
@@ -368,19 +508,20 @@
     .dropzone-icon-box {
       width: 44px;
       height: 44px;
-      border-radius: var(--radius);
       background: var(--surface-2);
       border: 1px solid var(--border);
+      border-radius: var(--radius);
       display: grid;
       place-items: center;
       color: var(--primary);
+      flex-shrink: 0;
     }
 
     .dropzone-text h4 {
       font-size: 14px;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .dropzone-text p {
@@ -391,28 +532,33 @@
     .dropzone-options {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
+      flex-shrink: 0;
     }
 
     .toggle-wrap {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       font-size: 12px;
       color: var(--text-muted);
       cursor: pointer;
+      user-select: none;
     }
 
     .toggle-wrap input[type="checkbox"] {
       cursor: pointer;
+      accent-color: var(--primary);
+      width: 15px;
+      height: 15px;
     }
 
-    /* Upload Progress Tray */
+    /* Upload Tray Queue */
     .upload-tray {
       background: var(--surface-1);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1rem 1.25rem;
+      padding: 1rem;
       margin-bottom: 1.5rem;
       display: none;
     }
@@ -429,18 +575,18 @@
     }
 
     .progress-bar-bg {
-      height: 6px;
+      height: 4px;
       background: var(--surface-3);
-      border-radius: 3px;
+      border-radius: 2px;
       overflow: hidden;
       margin-bottom: 0.75rem;
     }
 
     .progress-bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      background: var(--primary);
       width: 0%;
-      transition: width 0.2s ease;
+      transition: width 0.25s ease;
     }
 
     .upload-preview-list {
@@ -491,18 +637,36 @@
       border-radius: var(--radius);
       overflow: hidden;
       position: relative;
-      transition: all 0.18s ease;
-      cursor: pointer;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, opacity 0.15s ease;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .wall-card:active {
+      cursor: grabbing;
     }
 
     .wall-card:hover {
       border-color: #3b82f6;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .wall-card.dragging {
+      opacity: 0.35 !important;
+      transform: scale(0.96);
+      border: 2px dashed #3b82f6 !important;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.45);
     }
 
     .wall-card.selected {
       border-color: #3b82f6;
       box-shadow: 0 0 0 2px #3b82f6;
+    }
+
+    .wall-card.is-cover {
+      border-color: rgba(245, 158, 11, 0.55);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
     }
 
     .wall-card-img-wrap {
@@ -517,21 +681,110 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.25s ease;
+      pointer-events: none;
     }
 
     .wall-card:hover .wall-card-img-wrap img {
       transform: scale(1.04);
     }
 
+    .wall-badge {
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: #fff;
+      background: rgba(9, 10, 15, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      padding: 1px 6px;
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .tile-cover-badge {
+      position: absolute;
+      top: 7px;
+      right: 32px;
+      font-size: 9px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #fef08a;
+      background: rgba(180, 83, 9, 0.9);
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      backdrop-filter: blur(4px);
+      padding: 1px 6px;
+      border-radius: 3px;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      z-index: 4;
+    }
+
+    .tile-drag-handle {
+      position: absolute;
+      bottom: 7px;
+      left: 7px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(9, 10, 15, 0.85);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+      padding: 2px 6px;
+      opacity: 0;
+      transition: opacity 0.15s, background 0.15s;
+      cursor: grab;
+      touch-action: none;
+      z-index: 6;
+      user-select: none;
+    }
+
+    .wall-card:hover .tile-drag-handle,
+    .wall-card .tile-drag-handle.active {
+      opacity: 1;
+    }
+
+    @media (hover: none) {
+      .tile-drag-handle {
+        opacity: 0.85;
+      }
+    }
+
+    .touch-drag-ghost {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 0 2px var(--primary);
+      opacity: 0.92;
+      transform: translate(-50%, -50%) scale(1.05);
+      overflow: hidden;
+      aspect-ratio: 9 / 16;
+    }
+
+    .touch-drag-ghost img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .wall-card-check {
       position: absolute;
-      top: 8px;
-      left: 8px;
+      top: 7px;
+      right: 7px;
       z-index: 5;
       background: rgba(9, 10, 15, 0.7);
       backdrop-filter: blur(4px);
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       border-radius: var(--radius-sm);
       display: grid;
       place-items: center;
@@ -544,8 +797,8 @@
 
     .wall-card-actions {
       position: absolute;
-      top: 8px;
-      right: 8px;
+      bottom: 7px;
+      right: 7px;
       display: flex;
       gap: 0.35rem;
       opacity: 0;
@@ -560,7 +813,7 @@
     .icon-btn-round {
       width: 26px;
       height: 26px;
-      background: rgba(9, 10, 15, 0.8);
+      background: rgba(9, 10, 15, 0.85);
       backdrop-filter: blur(4px);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -576,27 +829,39 @@
       border-color: var(--primary);
     }
 
+    .icon-btn-round.star-btn {
+      color: #94a3b8;
+    }
+
+    .icon-btn-round.star-btn:hover,
+    .icon-btn-round.star-btn.active {
+      color: #fbbf24;
+      background: rgba(245, 158, 11, 0.2);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
     .icon-btn-round.danger:hover {
       background: var(--danger);
       border-color: var(--danger);
     }
 
     .wall-card-foot {
-      padding: 0.5rem 0.7rem;
-      background: var(--surface-1);
+      padding: 0.6rem 0.75rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       border-top: 1px solid var(--border-subtle);
+      background: var(--surface-1);
     }
 
     .wall-card-name {
+      font-weight: 500;
       font-size: 11px;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
+      color: var(--text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      max-width: 110px;
     }
 
     .wall-card-size {
@@ -605,9 +870,9 @@
       font-family: var(--font-mono);
     }
 
-    /* Size toggles */
+    /* Grid Size Controls */
     .size-toggle-wrap {
-      display: flex;
+      display: inline-flex;
       background: var(--surface-2);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -620,10 +885,14 @@
       color: var(--text-muted);
       font-size: 11px;
       font-weight: 600;
-      width: 26px;
-      height: 24px;
+      padding: 2px 7px;
       border-radius: 3px;
       cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .size-btn:hover {
+      color: #fff;
     }
 
     .size-btn.active {
@@ -631,7 +900,7 @@
       color: #fff;
     }
 
-    /* Modal Backdrop */
+    /* Modal Overlay & Dialogs */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -640,7 +909,7 @@
       display: none;
       place-items: center;
       z-index: 100;
-      padding: 1rem;
+      padding: 1.5rem;
     }
 
     .modal-overlay.active {
@@ -653,14 +922,13 @@
       border-radius: var(--radius);
       width: 100%;
       max-width: 480px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      animation: modalIn 0.15s ease-out;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      animation: modalFadeIn 0.18s ease;
     }
 
-    @keyframes modalIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .modal-head {
@@ -686,65 +954,162 @@
 
     .modal-foot {
       padding: 0.85rem 1.25rem;
-      background: var(--surface-2);
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: flex-end;
       gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.15);
     }
 
-    .input-field {
-      width: 100%;
-      height: 34px;
+    /* Sequence Manager Modal */
+    .reorder-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .reorder-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.6rem 0.75rem;
       background: var(--surface-2);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      padding: 0 0.75rem;
-      color: #fff;
-      font-family: var(--font);
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+      user-select: none;
+    }
+
+    .reorder-item:hover {
+      background: var(--surface-3);
+      border-color: #333d4e;
+    }
+
+    .reorder-item.dragging {
+      opacity: 0.4;
+      border-style: dashed;
+      border-color: var(--primary);
+    }
+
+    .reorder-item.drag-over {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.08);
+      transform: scale(1.01);
+    }
+
+    .reorder-item-left {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: 0;
+    }
+
+    .reorder-handle {
+      cursor: grab;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+
+    .reorder-handle:hover {
+      color: var(--text);
+    }
+
+    .reorder-thumb {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: var(--surface-1);
+      flex-shrink: 0;
+    }
+
+    .reorder-info {
+      min-width: 0;
+    }
+
+    .reorder-title {
       font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .reorder-sub {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .reorder-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .reorder-pos-input {
+      width: 44px;
+      height: 26px;
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-align: center;
+      padding: 0 4px;
+    }
+
+    .reorder-pos-input:focus {
       outline: none;
+      border-color: var(--primary);
     }
 
-    .input-field:focus {
-      border-color: var(--border-focus);
-    }
-
-    /* Inspector Lightbox */
+    /* Inspector Lightbox Modal */
     .inspector-box {
       background: var(--surface-1);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      max-width: 860px;
+      max-width: 900px;
       width: 100%;
+      height: 82vh;
       display: flex;
       overflow: hidden;
-      max-height: 85vh;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);
     }
 
     .inspector-media {
-      flex: 1;
+      flex: 1.3;
       background: #000;
       display: grid;
       place-items: center;
-      padding: 1rem;
+      overflow: hidden;
+      position: relative;
     }
 
     .inspector-media img {
-      max-height: 75vh;
       max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
-      border-radius: 4px;
     }
 
     .inspector-sidebar {
-      width: 320px;
+      flex: 1;
       border-left: 1px solid var(--border);
       background: var(--surface-1);
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
-      padding: 1.25rem;
-      gap: 1.25rem;
+      gap: 1rem;
+      overflow-y: auto;
     }
 
     .prop-group {
@@ -755,50 +1120,70 @@
 
     .prop-label {
       font-size: 11px;
-      color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      color: var(--text-dim);
       font-weight: 600;
     }
 
     .prop-val {
-      font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--text);
+      color: #fff;
       word-break: break-all;
       background: var(--surface-2);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
       padding: 0.4rem 0.6rem;
-      border-radius: 4px;
+      font-family: var(--font-mono);
     }
 
-    /* Toast Notification Tray */
+    /* Inputs */
+    .input-field {
+      height: 32px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 12px;
+      padding: 0 0.75rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .input-field:focus {
+      border-color: var(--primary);
+    }
+
+    /* Toast Notifications */
     .toast-tray {
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      z-index: 1000;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      z-index: 1000;
       pointer-events: none;
     }
 
     .toast-msg {
       background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 0.65rem 1rem;
-      font-size: 12px;
       color: #fff;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      pointer-events: auto;
-      transform: translateY(10px);
+      gap: 0.65rem;
+      transform: translateY(12px);
       opacity: 0;
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
     }
 
     .toast-msg.show {
@@ -807,11 +1192,18 @@
     }
 
     .toast-msg.success {
-      border-left: 3px solid var(--success);
+      border-color: rgba(16, 185, 129, 0.4);
+      background: #0d281e;
     }
 
     .toast-msg.error {
-      border-left: 3px solid var(--danger);
+      border-color: rgba(239, 68, 68, 0.4);
+      background: #280d0d;
+    }
+
+    .toast-msg.info {
+      border-color: rgba(59, 130, 246, 0.4);
+      background: #0f1e36;
     }
   </style>
 </head>
@@ -822,41 +1214,55 @@
     <div class="brand-wrap" onclick="showHomeView()">
       <div class="logo-badge">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <polyline points="21 15 16 10 5 21"/>
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <polyline points="21 15 16 10 5 21"></polyline>
         </svg>
       </div>
-      <span class="brand-title">Wallpaper Studio</span>
-      <span class="brand-sep">/</span>
-      <span class="brand-sub">GitHub & jsDelivr Automation</span>
+      <div>
+        <span class="brand-title">Wallpaper Studio</span>
+        <span class="brand-sep">&bull;</span>
+        <span class="brand-sub">GitHub &amp; jsDelivr Automation</span>
+      </div>
     </div>
 
     <div class="header-right">
+      <div class="pill-badge" id="badgeVersionWrap">
+        <span>Catalog</span>
+        <strong style="color: #fff;" id="badgeVersion">v--</strong>
+      </div>
+
+      <div class="pill-badge" id="badgeCountWrap">
+        <span>Wallpapers</span>
+        <strong style="color: #fff;" id="badgeTotalCount">--</strong>
+      </div>
+
       <div class="pill-badge" id="badgeGit">
         <span class="status-dot"></span>
-        <span id="gitStatusText">main: Checking...</span>
+        <span id="gitStatusText">Checking GitHub...</span>
       </div>
-      <div class="pill-badge">
-        <span style="color: var(--text-dim);">VER:</span>
-        <strong id="badgeVersion" style="color: #fff;">v1</strong>
-      </div>
-      <div class="pill-badge">
-        <span style="color: var(--text-dim);">WALLPAPERS:</span>
-        <strong id="badgeTotalCount" style="color: #fff;">0</strong>
-      </div>
-      <button class="btn btn-xs" id="btnRebuildThumbs" onclick="triggerRebuildThumbnails()" title="Batch regenerate high-quality 520px retina thumbnails">
-        <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+
+      <button class="btn btn-xs" id="btnHeaderReorder" onclick="openReorderCategoriesModal()" title="Rearrange category indexes sequence">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        Reorder Categories
+      </button>
+
+      <button class="btn btn-xs" id="btnRebuildThumbs" onclick="triggerRebuildThumbnails()" title="Batch regenerate all retina thumbnails">
+        <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
         Rebuild Thumbs
       </button>
+
       <button class="btn btn-git btn-xs" id="btnPushGit" onclick="triggerGitPush()" title="Commit & push updates to GitHub origin main">
         <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
         Push to GitHub
       </button>
+
       <button class="btn btn-xs" onclick="openConfigModal()">
         Settings
       </button>
@@ -871,11 +1277,17 @@
         <div>
           <h2 style="font-size: 16px; font-weight: 600; color: #fff;">Wallpaper Categories</h2>
           <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
-            1 full image in <code>images/&lt;category&gt;</code> & 1 crisp thumbnail in <code>images/&lt;category&gt;_thumb</code>.
+            Drag cards to rearrange sequence or manage category covers.
           </p>
         </div>
         <div class="toolbar-actions">
           <input type="text" class="input-field" id="catSearchInput" placeholder="Filter categories..." style="width: 200px;" oninput="filterCategories()">
+          <button class="btn btn-outline" onclick="openReorderCategoriesModal()" title="Rearrange category order sequence">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            Rearrange Order
+          </button>
           <button class="btn btn-primary" onclick="openNewCategoryModal()">
             <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
@@ -914,7 +1326,7 @@
           <button class="btn btn-xs" onclick="loadCategoryDetail(activeCategory)">
             Refresh
           </button>
-          <button class="btn btn-danger btn-xs" onclick="confirmDeleteCategory()">
+          <button class="btn btn-danger btn-xs" onclick="startDeleteCategoryFlow(activeCategory)">
             Delete Category
           </button>
         </div>
@@ -972,6 +1384,34 @@
     </section>
   </main>
 
+  <!-- Modal: Rearrange Categories Sequence -->
+  <div class="modal-overlay" id="modalReorderCategories">
+    <div class="modal-dialog" style="max-width: 540px;">
+      <div class="modal-head">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="color: var(--primary);">⠿</span>
+          <h3>Rearrange Category Order Sequence</h3>
+        </div>
+        <button class="btn btn-xs" onclick="closeModal('modalReorderCategories')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 0.25rem;">
+          Drag items or type an index position number directly. Order is saved in <code>categories.json</code> for client apps.
+        </p>
+        <div class="reorder-list" id="reorderCategoriesList">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+      <div class="modal-foot" style="justify-content: space-between;">
+        <button class="btn btn-xs" onclick="resetCategoriesToAlpha()">Reset A-Z</button>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-xs" onclick="closeModal('modalReorderCategories')">Cancel</button>
+          <button class="btn btn-primary btn-xs" id="btnSaveReorderSequence" onclick="saveCategoryReorder()">Save Sequence</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal: Create Category -->
   <div class="modal-overlay" id="modalNewCategory">
     <div class="modal-dialog">
@@ -991,6 +1431,48 @@
       <div class="modal-foot">
         <button class="btn btn-xs" onclick="closeModal('modalNewCategory')">Cancel</button>
         <button class="btn btn-primary btn-xs" onclick="submitCreateCategory()">Create Category</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Delete Category Step 1 (Safety Warning) -->
+  <div class="modal-overlay" id="modalDeleteCategory1">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 style="color: #f87171;">Delete Category Warning</h3>
+        <button class="btn btn-xs" onclick="closeModal('modalDeleteCategory1')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13px; color: #fff;">
+          Are you sure you want to permanently delete category <strong id="delModal1CatName" style="color: #60a5fa;"></strong>?
+        </p>
+        <p style="font-size: 12px; color: var(--text-muted);">
+          This will permanently delete the category folder, all wallpapers, and their retina thumbnails from disk.
+        </p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-xs" onclick="closeModal('modalDeleteCategory1')">Cancel</button>
+        <button class="btn btn-danger btn-xs" onclick="proceedToDeleteStep2()">Yes, Proceed to Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Delete Category Step 2 (Type Exact Name) -->
+  <div class="modal-overlay" id="modalDeleteCategory2">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3 style="color: #ef4444;">Final Confirmation</h3>
+        <button class="btn btn-xs" onclick="closeModal('modalDeleteCategory2')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12px; color: var(--text-muted);">
+          To prevent accidental deletion, type <code id="delModal2CatName" style="color: #fbbf24; font-weight: 600;"></code> below:
+        </p>
+        <input type="text" class="input-field" id="inputConfirmCatName" placeholder="Type category name exactly..." oninput="checkDeleteConfirmationInput()">
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-xs" onclick="closeModal('modalDeleteCategory2')">Cancel</button>
+        <button class="btn btn-danger btn-xs" id="btnFinalDeleteCategory" disabled onclick="executeCategoryDeletion()">Permanently Delete</button>
       </div>
     </div>
   </div>
@@ -1038,7 +1520,10 @@
           </button>
         </div>
 
-        <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
+          <button class="btn btn-primary btn-xs" id="inspBtnCover" style="width: 100%;" onclick="setCoverFromInspector()">
+            ⭐ Set as Category Thumbnail
+          </button>
           <button class="btn btn-danger btn-xs" style="width: 100%;" onclick="deleteInspectingWallpaper()">
             Delete Wallpaper
           </button>
@@ -1051,7 +1536,7 @@
   <div class="modal-overlay" id="modalConfig">
     <div class="modal-dialog">
       <div class="modal-head">
-        <h3>Backend & CDN Settings</h3>
+        <h3>Backend &amp; CDN Settings</h3>
         <button class="btn btn-xs" onclick="closeModal('modalConfig')">&times;</button>
       </div>
       <div class="modal-body">
@@ -1070,9 +1555,9 @@
         <div class="prop-group">
           <label class="toggle-wrap" style="color: #fff; font-weight: 500;">
             <input type="checkbox" id="cfgAutoPush">
-            <span>Auto Git Commit & Push to GitHub on upload/delete</span>
+            <span>Auto Git Commit &amp; Push to GitHub on upload/delete/reorder</span>
           </label>
-          <span style="font-size: 11px; color: var(--text-dim);">When checked, every upload or deletion is pushed to GitHub immediately.</span>
+          <span style="font-size: 11px; color: var(--text-dim);">When checked, every action is automatically committed and pushed to GitHub immediately.</span>
         </div>
       </div>
       <div class="modal-foot">
@@ -1088,11 +1573,13 @@
   <!-- Client JavaScript Logic -->
   <script>
     let activeCategory = null;
-    let allCategoriesData = [];
+    let cachedCategories = [];
+    let reorderDraft = [];
     let selectedFiles = [];
     let selectedWallpapers = new Set();
     let isUploading = false;
     let inspectingItem = null;
+    let isWallpaperReordering = false;
 
     // Toast helper
     function showToast(msg, type = 'success') {
@@ -1130,6 +1617,22 @@
       return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     }
 
+    function closeAllDropdowns() {
+      document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+    }
+
+    document.addEventListener('click', () => closeAllDropdowns());
+
+    function toggleCategoryMenu(event, catName) {
+      event.stopPropagation();
+      const menu = document.getElementById(`menu_${catName}`);
+      const isVisible = menu && menu.style.display === 'block';
+      closeAllDropdowns();
+      if (menu && !isVisible) {
+        menu.style.display = 'block';
+      }
+    }
+
     // Grid size control
     function setGridSize(size) {
       const grid = document.getElementById('wallpaperGrid');
@@ -1162,7 +1665,7 @@
       loadCategoryDetail(name);
     }
 
-    // Fetch and render categories
+    // Fetch and render categories (following custom order)
     async function loadCategories() {
       try {
         const res = await fetch('/api/categories');
@@ -1171,8 +1674,8 @@
         document.getElementById('badgeVersion').textContent = `v${data.version}`;
         document.getElementById('badgeTotalCount').textContent = data.totalWallpapers;
 
-        allCategoriesData = data.categories;
-        renderCategoryCards(allCategoriesData);
+        cachedCategories = data.categories || [];
+        renderCategoryCards(cachedCategories);
       } catch (err) {
         showToast('Failed to load categories', 'error');
       }
@@ -1187,10 +1690,42 @@
         return;
       }
 
-      categories.forEach(cat => {
+      categories.forEach((cat, idx) => {
         const card = document.createElement('div');
         card.className = 'cat-item-card';
+        card.draggable = true;
+        card.dataset.categoryName = cat.name;
+        card.dataset.categoryIndex = cat.index || (idx + 1);
         card.onclick = () => showCategoryDetail(cat.name);
+
+        // Native drag & drop reorder between cards on the overview grid
+        card.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', cat.name);
+          card.classList.add('dragging');
+        });
+
+        card.addEventListener('dragend', () => {
+          card.classList.remove('dragging');
+          document.querySelectorAll('.cat-item-card').forEach(c => c.classList.remove('drag-over'));
+        });
+
+        card.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          card.classList.add('drag-over');
+        });
+
+        card.addEventListener('dragleave', () => {
+          card.classList.remove('drag-over');
+        });
+
+        card.addEventListener('drop', async (e) => {
+          e.preventDefault();
+          card.classList.remove('drag-over');
+          const draggedCat = e.dataTransfer.getData('text/plain');
+          if (draggedCat && draggedCat !== cat.name) {
+            await handleCategoryDrop(draggedCat, cat.name);
+          }
+        });
 
         let previewHtml = '';
         if (cat.previews && cat.previews.length > 0) {
@@ -1199,18 +1734,80 @@
           previewHtml = `<div class="cat-empty-strip">No wallpapers yet</div>`;
         }
 
+        const coverDisplay = cat.coverFilename ? `⭐ Cover: ${cat.coverFilename}` : '⭐ #1';
+
         card.innerHTML = `
           <div class="cat-card-header">
-            <span class="cat-card-title">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            <div class="cat-header-left">
+              <span class="cat-seq-badge" title="Sequence Position #${cat.index || (idx + 1)}">#${cat.index || (idx + 1)}</span>
+              <span class="cat-card-title" title="${cat.name}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                ${cat.name}
+              </span>
+            </div>
+
+            <div class="cat-menu-trigger" onclick="event.stopPropagation(); toggleCategoryMenu(event, '${cat.name}')" title="Category options">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="5" r="2"/>
+                <circle cx="12" cy="12" r="2"/>
+                <circle cx="12" cy="19" r="2"/>
               </svg>
-              ${cat.name}
-            </span>
-            <span class="cat-card-badge">${cat.count}</span>
+            </div>
+
+            <div class="dropdown-menu" id="menu_${cat.name}">
+              <div class="dropdown-item" onclick="event.stopPropagation(); closeAllDropdowns(); showCategoryDetail('${cat.name}')">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Open
+              </div>
+              <div class="dropdown-item" onclick="event.stopPropagation(); closeAllDropdowns(); moveCategoryToFirst('${cat.name}')" style="color: #60a5fa;">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+                </svg>
+                Show First (#1)
+              </div>
+              <div class="dropdown-item" onclick="event.stopPropagation(); closeAllDropdowns(); moveCategoryRelative('${cat.name}', -1)">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                </svg>
+                Move Up
+              </div>
+              <div class="dropdown-item" onclick="event.stopPropagation(); closeAllDropdowns(); moveCategoryRelative('${cat.name}', 1)">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+                Move Down
+              </div>
+              <div class="dropdown-item" onclick="event.stopPropagation(); closeAllDropdowns(); promptSetCategoryPosition('${cat.name}', ${cat.index || (idx + 1)})">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                </svg>
+                Set Position...
+              </div>
+              <div class="dropdown-item danger" onclick="event.stopPropagation(); closeAllDropdowns(); startDeleteCategoryFlow('${cat.name}')">
+                <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+                Delete Category
+              </div>
+            </div>
           </div>
+
           <div class="cat-preview-strip">
             ${previewHtml}
+          </div>
+
+          <div class="cat-card-footer">
+            <span>${cat.count} ${cat.count === 1 ? 'wallpaper' : 'wallpapers'}</span>
+            <div style="display: flex; align-items: center; gap: 3px;" onclick="event.stopPropagation()">
+              <button class="cat-order-btn" title="Move Up" onclick="moveCategoryRelative('${cat.name}', -1)" ${idx === 0 ? 'disabled style="opacity:0.3;cursor:not-allowed"' : ''}>▲</button>
+              <button class="cat-order-btn" title="Move Down" onclick="moveCategoryRelative('${cat.name}', 1)" ${idx === categories.length - 1 ? 'disabled style="opacity:0.3;cursor:not-allowed"' : ''}>▼</button>
+            </div>
+            <span class="cat-cover-chip" title="${coverDisplay}">${coverDisplay}</span>
           </div>
         `;
         grid.appendChild(card);
@@ -1219,11 +1816,265 @@
 
     function filterCategories() {
       const query = document.getElementById('catSearchInput').value.toLowerCase().trim();
-      const filtered = allCategoriesData.filter(c => c.name.toLowerCase().includes(query));
+      const filtered = cachedCategories.filter(c => c.name.toLowerCase().includes(query));
       renderCategoryCards(filtered);
     }
 
-    // Load category detail
+    // Direct drag-and-drop between category cards on grid
+    async function handleCategoryDrop(draggedName, targetName) {
+      if (draggedName === targetName) return;
+
+      const currentNames = cachedCategories.map(c => c.name);
+      const fromIdx = currentNames.indexOf(draggedName);
+      const toIdx = currentNames.indexOf(targetName);
+      if (fromIdx === -1 || toIdx === -1) return;
+
+      currentNames.splice(fromIdx, 1);
+      currentNames.splice(toIdx, 0, draggedName);
+
+      try {
+        showToast('Rearranging categories...', 'info');
+        const res = await fetch('/api/categories/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ order: currentNames })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to rearrange categories');
+        showToast('Updated category sequence!');
+        await loadCategories();
+        updateGitStatus();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    // Quick sequence nudging
+    async function moveCategoryToFirst(catName) {
+      try {
+        showToast(`Setting "${catName}" as first category (#1)...`, 'info');
+        const res = await fetch('/api/categories/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: catName, targetIndex: 1 })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to reorder');
+        showToast(`"${catName}" is now #1!`);
+        await loadCategories();
+        updateGitStatus();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function moveCategoryRelative(catName, delta) {
+      try {
+        const currentIdx = cachedCategories.findIndex(c => c.name === catName);
+        if (currentIdx === -1) return;
+        const targetIdx1Based = currentIdx + 1 + delta;
+        if (targetIdx1Based < 1 || targetIdx1Based > cachedCategories.length) return;
+
+        const res = await fetch('/api/categories/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: catName, targetIndex: targetIdx1Based })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to reorder');
+        showToast(`Moved "${catName}" to #${targetIdx1Based}`);
+        await loadCategories();
+        updateGitStatus();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function promptSetCategoryPosition(catName, currentPos) {
+      const answer = prompt(`Enter new sequence position for "${catName}" (1 to ${cachedCategories.length}):`, currentPos);
+      if (!answer) return;
+      const pos = parseInt(answer, 10);
+      if (isNaN(pos) || pos < 1 || pos > cachedCategories.length) {
+        showToast(`Invalid position number. Must be between 1 and ${cachedCategories.length}.`, 'error');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/categories/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: catName, targetIndex: pos })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to reorder');
+        showToast(`Moved "${catName}" to #${pos}!`);
+        await loadCategories();
+        updateGitStatus();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    // Reorder Categories Modal
+    function openReorderCategoriesModal() {
+      reorderDraft = JSON.parse(JSON.stringify(cachedCategories));
+      renderReorderModalList();
+      openModal('modalReorderCategories');
+    }
+
+    function renderReorderModalList() {
+      const container = document.getElementById('reorderCategoriesList');
+      container.innerHTML = '';
+
+      reorderDraft.forEach((cat, idx) => {
+        const item = document.createElement('div');
+        item.className = 'reorder-item';
+        item.draggable = true;
+        item.dataset.index = idx;
+
+        const thumbSrc = cat.coverThumbnail || (cat.previews && cat.previews[0]) || '';
+
+        item.innerHTML = `
+          <div class="reorder-item-left">
+            <span class="reorder-handle" title="Drag to reorder">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="6" r="1.5" fill="currentColor"/>
+                <circle cx="15" cy="6" r="1.5" fill="currentColor"/>
+                <circle cx="9" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="9" cy="18" r="1.5" fill="currentColor"/>
+                <circle cx="15" cy="18" r="1.5" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="cat-seq-badge">#${idx + 1}</span>
+            ${thumbSrc ? `<img src="${thumbSrc}" class="reorder-thumb" alt="${cat.name}">` : `<div class="reorder-thumb" style="display:grid;place-items:center;color:var(--text-dim);font-size:10px;">IMG</div>`}
+            <div class="reorder-info">
+              <div class="reorder-title">${cat.name}</div>
+              <div class="reorder-sub">${cat.count} wallpapers &bull; Cover: ${cat.coverFilename || '#1'}</div>
+            </div>
+          </div>
+          <div class="reorder-actions">
+            <input type="number" class="reorder-pos-input" min="1" max="${reorderDraft.length}" value="${idx + 1}" onchange="changeDraftPosition(${idx}, parseInt(this.value, 10))" title="Type target sequence position">
+            <button class="cat-order-btn" title="Move to Top" onclick="moveDraftToTop(${idx})" ${idx === 0 ? 'disabled style="opacity:0.3"' : ''}>⤒</button>
+            <button class="cat-order-btn" title="Move Up" onclick="moveDraftRelative(${idx}, -1)" ${idx === 0 ? 'disabled style="opacity:0.3"' : ''}>▲</button>
+            <button class="cat-order-btn" title="Move Down" onclick="moveDraftRelative(${idx}, 1)" ${idx === reorderDraft.length - 1 ? 'disabled style="opacity:0.3"' : ''}>▼</button>
+          </div>
+        `;
+
+        item.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', idx.toString());
+          item.classList.add('dragging');
+        });
+
+        item.addEventListener('dragend', () => {
+          item.classList.remove('dragging');
+          container.querySelectorAll('.reorder-item').forEach(el => el.classList.remove('drag-over'));
+        });
+
+        item.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          item.classList.add('drag-over');
+        });
+
+        item.addEventListener('dragleave', () => {
+          item.classList.remove('drag-over');
+        });
+
+        item.addEventListener('drop', (e) => {
+          e.preventDefault();
+          item.classList.remove('drag-over');
+          const fromIdx = parseInt(e.dataTransfer.getData('text/plain'), 10);
+          if (!isNaN(fromIdx) && fromIdx !== idx) {
+            const movedItem = reorderDraft.splice(fromIdx, 1)[0];
+            reorderDraft.splice(idx, 0, movedItem);
+            renderReorderModalList();
+          }
+        });
+
+        container.appendChild(item);
+      });
+    }
+
+    function moveDraftToTop(idx) {
+      if (idx <= 0) return;
+      const item = reorderDraft.splice(idx, 1)[0];
+      reorderDraft.unshift(item);
+      renderReorderModalList();
+    }
+
+    function moveDraftRelative(idx, delta) {
+      const target = idx + delta;
+      if (target < 0 || target >= reorderDraft.length) return;
+      const item = reorderDraft.splice(idx, 1)[0];
+      reorderDraft.splice(target, 0, item);
+      renderReorderModalList();
+    }
+
+    function changeDraftPosition(idx, newPos1Based) {
+      if (isNaN(newPos1Based)) return renderReorderModalList();
+      const targetPos = Math.max(0, Math.min(newPos1Based - 1, reorderDraft.length - 1));
+      const item = reorderDraft.splice(idx, 1)[0];
+      reorderDraft.splice(targetPos, 0, item);
+      renderReorderModalList();
+    }
+
+    function resetCategoriesToAlpha() {
+      reorderDraft.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+      renderReorderModalList();
+    }
+
+    async function saveCategoryReorder() {
+      const btn = document.getElementById('btnSaveReorderSequence');
+      btn.disabled = true;
+      btn.textContent = 'Saving...';
+
+      try {
+        const orderNames = reorderDraft.map(c => c.name);
+        const res = await fetch('/api/categories/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ order: orderNames })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to save order');
+
+        closeModal('modalReorderCategories');
+        showToast('Category sequence saved and updated!');
+        await loadCategories();
+        updateGitStatus();
+      } catch (err) {
+        showToast(err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Save Sequence';
+      }
+    }
+
+    // Set Category Cover Thumbnail
+    async function setCategoryCover(category, filename) {
+      try {
+        const res = await fetch('/api/category/cover', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category, filename })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Cover thumbnail updated for ${category}! ⭐`);
+          if (data.newVersion) {
+            document.getElementById('badgeVersion').textContent = `v${data.newVersion}`;
+          }
+          await loadCategoryDetail(category);
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to set cover', 'error');
+        }
+      } catch (err) {
+        showToast('Network error setting cover', 'error');
+      }
+    }
+
+    // Load Category Detail
     async function loadCategoryDetail(catName) {
       try {
         const res = await fetch(`/api/category/${encodeURIComponent(catName)}`);
@@ -1238,24 +2089,33 @@
           return;
         }
 
-        data.wallpapers.forEach(w => {
+        data.wallpapers.forEach((w, idx) => {
           const card = document.createElement('div');
-          card.className = 'wall-card';
+          card.className = 'wall-card' + (w.isCover ? ' is-cover' : '');
           card.id = `wall_${w.filename.replace(/[^a-zA-Z0-9]/g, '_')}`;
+          card.draggable = true;
+          card.dataset.filename = w.filename;
+          if (selectedWallpapers.has(w.filename)) card.classList.add('selected');
 
           card.innerHTML = `
             <div class="wall-card-img-wrap" onclick="openInspector(${JSON.stringify(w).replace(/"/g, '&quot;')})">
               <img src="${w.localThumbnailUrl}" alt="${w.name}" loading="lazy">
+              <span class="wall-badge">#${idx + 1}</span>
+              ${w.isCover ? '<span class="tile-cover-badge">⭐ COVER</span>' : ''}
+              <div class="tile-drag-handle" title="Drag to reorder index">⠿ Drag</div>
               <div class="wall-card-check" onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
                 <input type="checkbox" ${selectedWallpapers.has(w.filename) ? 'checked' : ''} onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
               </div>
               <div class="wall-card-actions" onclick="event.stopPropagation()">
-                <button class="icon-btn-round" title="Copy jsDelivr CDN link" onclick="copyToClipboard('${w.cdnUrl}')">
+                <button class="icon-btn-round star-btn ${w.isCover ? 'active' : ''}" title="${w.isCover ? 'Current Category Cover' : 'Set as Category Cover'}" onclick="event.stopPropagation(); setCategoryCover('${catName}', '${w.filename}')">
+                  ⭐
+                </button>
+                <button class="icon-btn-round" title="Copy jsDelivr CDN link" onclick="event.stopPropagation(); copyToClipboard('${w.cdnUrl}')">
                   <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                 </button>
-                <button class="icon-btn-round danger" title="Delete wallpaper" onclick="deleteSingleWallpaper('${w.filename}')">
+                <button class="icon-btn-round danger" title="Delete wallpaper" onclick="event.stopPropagation(); deleteSingleWallpaper('${w.filename}')">
                   <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
@@ -1269,8 +2129,295 @@
           `;
           grid.appendChild(card);
         });
+
+        setupWallpaperGridDragAndDrop(grid, catName);
       } catch (err) {
         showToast('Failed to load category wallpapers', 'error');
+      }
+    }
+
+    // Wallpaper Drag & Drop + Auto-Scrolling + Touch Gestures
+    let draggedWallCard = null;
+    let currentCategoryFilenames = [];
+    let autoScrollTimer = null;
+    let autoScrollSpeed = 0;
+
+    function startAutoScroll(speed) {
+      autoScrollSpeed = speed;
+      if (!autoScrollTimer) {
+        function step() {
+          if (autoScrollSpeed !== 0) {
+            window.scrollBy(0, autoScrollSpeed);
+            autoScrollTimer = requestAnimationFrame(step);
+          } else {
+            autoScrollTimer = null;
+          }
+        }
+        autoScrollTimer = requestAnimationFrame(step);
+      }
+    }
+
+    function stopAutoScroll() {
+      autoScrollSpeed = 0;
+      if (autoScrollTimer) {
+        cancelAnimationFrame(autoScrollTimer);
+        autoScrollTimer = null;
+      }
+    }
+
+    function checkAutoScroll(clientY) {
+      const edgeZone = 120;
+      const maxSpeed = 24;
+
+      if (clientY < edgeZone) {
+        const ratio = (edgeZone - clientY) / edgeZone;
+        const speed = -Math.max(4, Math.round(ratio * maxSpeed));
+        startAutoScroll(speed);
+      } else if (clientY > window.innerHeight - edgeZone) {
+        const ratio = (clientY - (window.innerHeight - edgeZone)) / edgeZone;
+        const speed = Math.max(4, Math.round(ratio * maxSpeed));
+        startAutoScroll(speed);
+      } else {
+        stopAutoScroll();
+      }
+    }
+
+    window.addEventListener('dragover', (e) => {
+      if (draggedWallCard) {
+        checkAutoScroll(e.clientY);
+      }
+    });
+
+    ['dragend', 'drop'].forEach(name => {
+      window.addEventListener(name, () => {
+        stopAutoScroll();
+      });
+    });
+
+    function setupWallpaperGridDragAndDrop(grid, category) {
+      currentCategoryFilenames = Array.from(grid.querySelectorAll('.wall-card')).map(c => c.dataset.filename);
+
+      const cards = grid.querySelectorAll('.wall-card');
+      cards.forEach(card => {
+        // Desktop Drag Events
+        card.addEventListener('dragstart', (e) => {
+          draggedWallCard = card;
+          card.classList.add('dragging');
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/plain', card.dataset.filename);
+        });
+
+        card.addEventListener('dragend', () => {
+          stopAutoScroll();
+          if (draggedWallCard) {
+            draggedWallCard.classList.remove('dragging');
+          }
+          draggedWallCard = null;
+          updateTileIndices();
+
+          const newFilenames = Array.from(grid.querySelectorAll('.wall-card')).map(c => c.dataset.filename);
+          const hasChanged = newFilenames.some((fn, idx) => fn !== currentCategoryFilenames[idx]);
+
+          if (hasChanged) {
+            currentCategoryFilenames = newFilenames;
+            saveWallpaperReorder(category, newFilenames);
+          }
+        });
+
+        // Touch Support
+        let touchStartTimer = null;
+        let isTouchDragging = false;
+        let ghostEl = null;
+
+        function cleanupTouch() {
+          if (touchStartTimer) {
+            clearTimeout(touchStartTimer);
+            touchStartTimer = null;
+          }
+          if (ghostEl) {
+            ghostEl.remove();
+            ghostEl = null;
+          }
+          stopAutoScroll();
+          if (draggedWallCard) {
+            draggedWallCard.classList.remove('dragging');
+            draggedWallCard = null;
+          }
+          isTouchDragging = false;
+        }
+
+        card.addEventListener('touchstart', (e) => {
+          const touch = e.touches[0];
+          const isHandle = e.target.closest('.tile-drag-handle');
+          const isButton = e.target.closest('.wall-card-check') || e.target.closest('.wall-card-actions');
+          if (isButton) return;
+
+          const delay = isHandle ? 0 : 200;
+
+          touchStartTimer = setTimeout(() => {
+            isTouchDragging = true;
+            draggedWallCard = card;
+            card.classList.add('dragging');
+            if (navigator.vibrate) navigator.vibrate(30);
+
+            ghostEl = document.createElement('div');
+            ghostEl.className = 'touch-drag-ghost';
+            const rect = card.getBoundingClientRect();
+            ghostEl.style.width = `${rect.width}px`;
+            ghostEl.style.height = `${rect.height}px`;
+            ghostEl.style.left = `${touch.clientX}px`;
+            ghostEl.style.top = `${touch.clientY}px`;
+            const img = card.querySelector('img');
+            if (img) {
+              const ghostImg = document.createElement('img');
+              ghostImg.src = img.src;
+              ghostEl.appendChild(ghostImg);
+            }
+            document.body.appendChild(ghostEl);
+          }, delay);
+        }, { passive: true });
+
+        card.addEventListener('touchmove', (e) => {
+          if (!isTouchDragging) {
+            if (touchStartTimer) {
+              clearTimeout(touchStartTimer);
+              touchStartTimer = null;
+            }
+            return;
+          }
+
+          e.preventDefault();
+          const touch = e.touches[0];
+
+          if (ghostEl) {
+            ghostEl.style.left = `${touch.clientX}px`;
+            ghostEl.style.top = `${touch.clientY}px`;
+          }
+
+          checkAutoScroll(touch.clientY);
+
+          const targetEl = document.elementFromPoint(touch.clientX, touch.clientY);
+          const targetCard = targetEl?.closest('.wall-card');
+          if (targetCard && targetCard !== card && grid.contains(targetCard)) {
+            const rect = targetCard.getBoundingClientRect();
+            const isAfter = (touch.clientX - rect.left) > (rect.width / 2);
+            if (isAfter) {
+              grid.insertBefore(card, targetCard.nextSibling);
+            } else {
+              grid.insertBefore(card, targetCard);
+            }
+            updateTileIndices();
+          }
+        }, { passive: false });
+
+        card.addEventListener('touchend', () => {
+          if (isTouchDragging) {
+            const newFilenames = Array.from(grid.querySelectorAll('.wall-card')).map(c => c.dataset.filename);
+            const hasChanged = newFilenames.some((fn, idx) => fn !== currentCategoryFilenames[idx]);
+            cleanupTouch();
+            updateTileIndices();
+
+            if (hasChanged) {
+              currentCategoryFilenames = newFilenames;
+              saveWallpaperReorder(category, newFilenames);
+            }
+          } else {
+            cleanupTouch();
+          }
+        });
+
+        card.addEventListener('touchcancel', () => {
+          cleanupTouch();
+        });
+      });
+
+      grid.ondragover = (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        if (!draggedWallCard) return;
+
+        checkAutoScroll(e.clientY);
+
+        const targetCard = e.target.closest('.wall-card');
+        if (!targetCard || targetCard === draggedWallCard) return;
+
+        const rect = targetCard.getBoundingClientRect();
+        const isAfter = (e.clientX - rect.left) > (rect.width / 2);
+        if (isAfter) {
+          grid.insertBefore(draggedWallCard, targetCard.nextSibling);
+        } else {
+          grid.insertBefore(draggedWallCard, targetCard);
+        }
+        updateTileIndices();
+      };
+    }
+
+    function updateTileIndices() {
+      const grid = document.getElementById('wallpaperGrid');
+      if (!grid) return;
+      const cards = grid.querySelectorAll('.wall-card');
+      cards.forEach((card, index) => {
+        const badge = card.querySelector('.wall-badge');
+        if (badge) {
+          badge.textContent = `#${index + 1}`;
+        }
+
+        // Live cover indicator: Position 1 (#1) is designated as the category cover
+        const imgWrap = card.querySelector('.wall-card-img-wrap');
+        let coverBadge = card.querySelector('.tile-cover-badge');
+        const starBtn = card.querySelector('.star-btn');
+
+        if (index === 0) {
+          card.classList.add('is-cover');
+          if (!coverBadge && imgWrap) {
+            coverBadge = document.createElement('span');
+            coverBadge.className = 'tile-cover-badge';
+            coverBadge.textContent = '⭐ COVER';
+            imgWrap.appendChild(coverBadge);
+          }
+          if (starBtn) {
+            starBtn.classList.add('active');
+            starBtn.title = 'Current Category Cover';
+          }
+        } else {
+          card.classList.remove('is-cover');
+          if (coverBadge) coverBadge.remove();
+          if (starBtn) {
+            starBtn.classList.remove('active');
+            starBtn.title = 'Set as Category Cover';
+          }
+        }
+      });
+    }
+
+    async function saveWallpaperReorder(category, filenames) {
+      if (isWallpaperReordering) return;
+      isWallpaperReordering = true;
+      showToast('Updating wallpaper index sequence...', 'info');
+
+      try {
+        const res = await fetch('/api/wallpapers/reorder', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category, filenames })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('Wallpaper order saved & indexed! 🚀');
+          if (data.newVersion) {
+            document.getElementById('badgeVersion').textContent = `v${data.newVersion}`;
+          }
+          await loadCategoryDetail(category);
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to save order', 'error');
+          loadCategoryDetail(category);
+        }
+      } catch (err) {
+        showToast('Network error saving order', 'error');
+        loadCategoryDetail(category);
+      } finally {
+        isWallpaperReordering = false;
       }
     }
 
@@ -1283,7 +2430,27 @@
       document.getElementById('inspSize').textContent = formatBytes(item.sizeBytes);
       document.getElementById('inspCdnUrl').textContent = item.cdnUrl;
       document.getElementById('inspThumbUrl').textContent = item.cdnThumbnailUrl;
+
+      const coverBtn = document.getElementById('inspBtnCover');
+      if (coverBtn) {
+        if (item.isCover) {
+          coverBtn.textContent = '⭐ Current Category Cover';
+          coverBtn.style.opacity = '0.75';
+          coverBtn.disabled = true;
+        } else {
+          coverBtn.textContent = '⭐ Set as Category Thumbnail';
+          coverBtn.style.opacity = '1';
+          coverBtn.disabled = false;
+        }
+      }
+
       openModal('modalInspector');
+    }
+
+    async function setCoverFromInspector() {
+      if (!inspectingItem) return;
+      closeModal('modalInspector');
+      await setCategoryCover(inspectingItem.category || activeCategory, inspectingItem.filename);
     }
 
     async function deleteInspectingWallpaper() {
@@ -1371,7 +2538,7 @@
       }
     }
 
-    // File Drag & Drop Handling
+    // File Drag & Drop Handling for Upload Dropzone
     const dropzone = document.getElementById('dropzoneCompact');
 
     ['dragenter', 'dragover'].forEach(name => {
@@ -1525,26 +2692,54 @@
       }
     }
 
-    // Category Deletion
-    async function confirmDeleteCategory() {
-      if (!activeCategory) return;
-      if (!confirm(`Are you SURE you want to delete the entire category "${activeCategory}" and all its wallpapers? This cannot be undone.`)) {
-        return;
-      }
+    // Category 2-Step Safe Deletion Flow
+    let categoryPendingDelete = null;
+
+    function startDeleteCategoryFlow(catName) {
+      categoryPendingDelete = catName;
+      document.getElementById('delModal1CatName').textContent = `"${catName}"`;
+      openModal('modalDeleteCategory1');
+    }
+
+    function proceedToDeleteStep2() {
+      closeModal('modalDeleteCategory1');
+      document.getElementById('delModal2CatName').textContent = categoryPendingDelete;
+      const input = document.getElementById('inputConfirmCatName');
+      input.value = '';
+      document.getElementById('btnFinalDeleteCategory').disabled = true;
+      openModal('modalDeleteCategory2');
+      setTimeout(() => input.focus(), 80);
+    }
+
+    function checkDeleteConfirmationInput() {
+      const input = document.getElementById('inputConfirmCatName').value.trim();
+      const btn = document.getElementById('btnFinalDeleteCategory');
+      btn.disabled = (input.toLowerCase() !== (categoryPendingDelete || '').toLowerCase());
+    }
+
+    async function executeCategoryDeletion() {
+      if (!categoryPendingDelete) return;
+      const catToDelete = categoryPendingDelete;
+      closeModal('modalDeleteCategory2');
 
       try {
-        const res = await fetch(`/api/category/${encodeURIComponent(activeCategory)}`, {
+        const res = await fetch(`/api/category/${encodeURIComponent(catToDelete)}`, {
           method: 'DELETE'
         });
         const data = await res.json();
         if (data.success) {
-          showToast(`Deleted category "${activeCategory}"`);
-          showHomeView();
+          showToast(`Category "${catToDelete}" permanently deleted`);
+          if (activeCategory === catToDelete) {
+            showHomeView();
+          } else {
+            loadCategories();
+          }
+          updateGitStatus();
         } else {
           showToast(data.error || 'Failed to delete category', 'error');
         }
-      } catch (e) {
-        showToast('Delete category error', 'error');
+      } catch (err) {
+        showToast('Server error deleting category', 'error');
       }
     }
 
@@ -1679,7 +2874,7 @@
     window.addEventListener('DOMContentLoaded', () => {
       loadCategories();
       updateGitStatus();
-      setInterval(updateGitStatus, 15000); // Check git status every 15s
+      setInterval(updateGitStatus, 15000);
     });
   </script>
 </body>

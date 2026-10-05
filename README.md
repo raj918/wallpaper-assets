@@ -29,9 +29,11 @@ wallpaper-assets/
 ├── config.json                    # CDN URL & Git push configuration
 │
 ├── public/
-│   └── index.html                 # Dark Studio Admin Panel UI
+│   └── index.html                 # Dark Studio Admin Panel UI (Drag-and-Drop & Covers)
 │
 ├── data/
+│   ├── categories.json            # Ordered category list, counts, & cover thumbnails
+│   ├── category_covers.json       # Persisted category cover mapping
 │   ├── wallpapers.json            # Master JSON array for apps & CDN
 │   └── version.json               # Auto-incrementing version metadata
 │
@@ -56,20 +58,25 @@ wallpaper-assets/
 
 ## 🚀 Key Features & Automation
 
+- **Drag-and-Drop Category Reordering (Custom Index Sequences)**:
+  - Drag and drop category cards directly on the overview grid, or use the **"Rearrange Order"** modal.
+  - Set direct index numbers (`#1`, `#2`...) or nudge with Move Up / Move Down buttons.
+  - Generates `data/categories.json` for client apps to consume categories in the exact desired sequence!
+- **Category Cover Thumbnail Selection**:
+  - Assign any wallpaper inside a category as its designated cover thumbnail (click the ⭐ star icon).
+  - Selected covers are highlighted with a `⭐ COVER` badge and saved to `data/category_covers.json` and `data/categories.json`.
+- **Drag-and-Drop Wallpaper Indexing**:
+  - Reorder wallpapers inside a category by dragging tiles with mouse or mobile touch gestures.
+  - Built-in viewport auto-scroll engine when dragging near screen edges.
+  - Automatically re-sequences wallpaper filenames (`prefix_1.ext`, `prefix_2.ext`...) and preserves cover tracking.
 - **1 Full + 1 Thumbnail Automation**:
   - Uploading any image saves the **100% untouched original full resolution image** into `images/<category>/`.
   - Automatically generates a **crisp 520px retina thumbnail** with Sharp (quality 88, 4:4:4 color preservation) into `images/<category>_thumb/`.
 - **Automatic Master Catalog Updates**:
-  - Automatically regenerates `data/wallpapers.json` with the exact schema:
-    ```json
-    {
-      "id": "abstract_abstract_1_97eaf2",
-      "category": "abstract",
-      "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/abstract_1.jpg",
-      "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/abstract_1.jpg"
-    }
-    ```
-  - Automatically bumps `data/version.json`.
+  - Automatically regenerates `data/wallpapers.json`, `data/categories.json`, and bumps `data/version.json`.
+- **Dedicated App Integration Endpoints**:
+  - Direct root access: `/categories.json`, `/wallpapers.json`, `/version.json`.
+  - See [APP_FETCHING_GUIDE.txt](file:///c:/Users/raj/Desktop/backnedvexawall/APP_FETCHING_GUIDE.txt) for ready-to-use React Native, Flutter, and JS snippets!
 - **No Cloudflare Required (100% GitHub & jsDelivr)**:
   - Zero external cloud services or S3 buckets needed.
   - Changes are pushed directly to GitHub (`origin main`).
