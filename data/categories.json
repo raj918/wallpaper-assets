@@ -1,5 +1,5 @@
 {
-  "version": 64,
+  "version": 65,
   "categories": [
     {
       "name": "Anime",
@@ -165,16 +165,16 @@
       "name": "nature",
       "index": 11,
       "count": 163,
-      "coverFilename": "_uhdnature16.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/_uhdnature16.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature/_uhdnature16.jpg",
-      "localCoverThumbnail": "/storage/images/nature_thumb/_uhdnature16.jpg",
-      "localCoverWallpaper": "/storage/images/nature/_uhdnature16.jpg",
+      "coverFilename": "1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature/1.jpg",
+      "localCoverThumbnail": "/storage/images/nature_thumb/1.jpg",
+      "localCoverWallpaper": "/storage/images/nature/1.jpg",
       "previews": [
-        "/storage/images/nature_thumb/_uhdnature16.jpg",
-        "/storage/images/nature_thumb/_uhdnature147.jpg",
-        "/storage/images/nature_thumb/_uhdnature208.jpg",
-        "/storage/images/nature_thumb/_uhdnature473.jpg"
+        "/storage/images/nature_thumb/1.jpg",
+        "/storage/images/nature_thumb/2.jpg",
+        "/storage/images/nature_thumb/3.jpg",
+        "/storage/images/nature_thumb/4.jpg"
       ]
     },
     {
@@ -253,7 +253,7 @@
     "iphone": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
     "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
     "material": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/1.jpg",
-    "nature": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/_uhdnature16.jpg",
+    "nature": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/1.jpg",
     "new added": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
     "Oppo": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Oppo_thumb/oppo_1.webp",
     "space": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/space_thumb/space_1.jpg",
