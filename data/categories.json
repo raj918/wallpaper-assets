@@ -1,5 +1,5 @@
 {
-  "version": 58,
+  "version": 60,
   "categories": [
     {
       "name": "Anime",
@@ -149,16 +149,16 @@
       "name": "material",
       "index": 10,
       "count": 100,
-      "coverFilename": "_uhdmaterialdesigns2.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/_uhdmaterialdesigns2.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material/_uhdmaterialdesigns2.jpg",
-      "localCoverThumbnail": "/storage/images/material_thumb/_uhdmaterialdesigns2.jpg",
-      "localCoverWallpaper": "/storage/images/material/_uhdmaterialdesigns2.jpg",
+      "coverFilename": "1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material/1.jpg",
+      "localCoverThumbnail": "/storage/images/material_thumb/1.jpg",
+      "localCoverWallpaper": "/storage/images/material/1.jpg",
       "previews": [
-        "/storage/images/material_thumb/_uhdmaterialdesigns2.jpg",
-        "/storage/images/material_thumb/_uhdmaterialdesigns3.jpg",
-        "/storage/images/material_thumb/_uhdmaterialdesigns4.jpg",
-        "/storage/images/material_thumb/_uhdmaterialdesigns5.jpg"
+        "/storage/images/material_thumb/1.jpg",
+        "/storage/images/material_thumb/2.jpg",
+        "/storage/images/material_thumb/3.jpg",
+        "/storage/images/material_thumb/4.jpg"
       ]
     },
     {
@@ -252,7 +252,7 @@
     "Minimal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
     "iphone": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
     "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
-    "material": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/_uhdmaterialdesigns2.jpg",
+    "material": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/1.jpg",
     "nature": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/_uhdnature16.jpg",
     "new added": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
     "Oppo": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Oppo_thumb/oppo_1.webp",
