@@ -1,5 +1,5 @@
 {
-  "version": 34,
+  "version": 36,
   "categories": [
     {
       "name": "abstract",
@@ -208,6 +208,22 @@
         "/storage/images/winter_thumb/3.jpg",
         "/storage/images/winter_thumb/4.jpg"
       ]
+    },
+    {
+      "name": "Anime",
+      "index": 14,
+      "count": 159,
+      "coverFilename": "anime_1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime/anime_1.jpg",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
+      "previews": [
+        "/storage/images/Anime_thumb/anime_1.jpg",
+        "/storage/images/Anime_thumb/anime_2.jpg",
+        "/storage/images/Anime_thumb/anime_3.jpg",
+        "/storage/images/Anime_thumb/anime_4.jpg"
+      ]
     }
   ],
   "covers": {
@@ -223,6 +239,7 @@
     "Oppo": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Oppo_thumb/oppo_1.webp",
     "space": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/space_thumb/space_1.jpg",
     "Superheroes": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Superheroes_thumb/superheroes_1.jpeg",
-    "winter": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/1.jpg"
+    "winter": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/winter_thumb/1.jpg",
+    "Anime": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg"
   }
 }
