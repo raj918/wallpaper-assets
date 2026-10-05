@@ -1,5 +1,5 @@
 {
-  "version": 47,
+  "version": 55,
   "categories": [
     {
       "name": "Anime",
@@ -45,8 +45,8 @@
       "previews": [
         "/storage/images/amoled_thumb/1.jpeg",
         "/storage/images/amoled_thumb/2.jpg",
-        "/storage/images/amoled_thumb/3.jpg",
-        "/storage/images/amoled_thumb/4.jpg"
+        "/storage/images/amoled_thumb/3.jpeg",
+        "/storage/images/amoled_thumb/4.jpeg"
       ]
     },
     {
