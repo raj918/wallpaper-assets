@@ -1127,41 +1127,6 @@
     "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/68.jpg"
   },
   {
-    "id": "animal_animal_1_128d4c",
-    "category": "animal",
-    "isCover": true,
-    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_1.jpg",
-    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg?cover=true"
-  },
-  {
-    "id": "animal_animal_2_c24d2b",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_2.jpg",
-    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_2.jpg"
-  },
-  {
-    "id": "animal_animal_3_7f63d4",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_3.jpg",
-    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_3.jpg"
-  },
-  {
-    "id": "animal_animal_4_640653",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_4.jpg",
-    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_4.jpg"
-  },
-  {
-    "id": "animal_animal_5_eb22fa",
-    "category": "animal",
-    "isCover": false,
-    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_5.jpg",
-    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_5.jpg"
-  },
-  {
     "id": "Anime_anime_1_413357",
     "category": "Anime",
     "isCover": true,
@@ -1538,6 +1503,41 @@
     "isCover": false,
     "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime/anime_54.jpg",
     "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_54.jpg"
+  },
+  {
+    "id": "animal_animal_1_128d4c",
+    "category": "animal",
+    "isCover": true,
+    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_1.jpg",
+    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg?cover=true"
+  },
+  {
+    "id": "animal_animal_2_c24d2b",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_2.jpg",
+    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_2.jpg"
+  },
+  {
+    "id": "animal_animal_3_7f63d4",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_3.jpg",
+    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_3.jpg"
+  },
+  {
+    "id": "animal_animal_4_640653",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_4.jpg",
+    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_4.jpg"
+  },
+  {
+    "id": "animal_animal_5_eb22fa",
+    "category": "animal",
+    "isCover": false,
+    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_5.jpg",
+    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_5.jpg"
   },
   {
     "id": "cars__uhdmotors101_bdadcd",

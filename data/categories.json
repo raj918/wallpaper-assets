@@ -1,5 +1,5 @@
 {
-  "version": 31,
+  "version": 32,
   "categories": [
     {
       "name": "abstract",
@@ -34,24 +34,8 @@
       ]
     },
     {
-      "name": "animal",
-      "index": 3,
-      "count": 5,
-      "coverFilename": "animal_1.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_1.jpg",
-      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.jpg",
-      "localCoverWallpaper": "/storage/images/animal/animal_1.jpg",
-      "previews": [
-        "/storage/images/animal_thumb/animal_1.jpg",
-        "/storage/images/animal_thumb/animal_2.jpg",
-        "/storage/images/animal_thumb/animal_3.jpg",
-        "/storage/images/animal_thumb/animal_4.jpg"
-      ]
-    },
-    {
       "name": "Anime",
-      "index": 4,
+      "index": 3,
       "count": 54,
       "coverFilename": "anime_1.jpg",
       "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg",
@@ -63,6 +47,22 @@
         "/storage/images/Anime_thumb/anime_2.jpg",
         "/storage/images/Anime_thumb/anime_3.jpg",
         "/storage/images/Anime_thumb/anime_4.jpg"
+      ]
+    },
+    {
+      "name": "animal",
+      "index": 4,
+      "count": 5,
+      "coverFilename": "animal_1.jpg",
+      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
+      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal/animal_1.jpg",
+      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.jpg",
+      "localCoverWallpaper": "/storage/images/animal/animal_1.jpg",
+      "previews": [
+        "/storage/images/animal_thumb/animal_1.jpg",
+        "/storage/images/animal_thumb/animal_2.jpg",
+        "/storage/images/animal_thumb/animal_3.jpg",
+        "/storage/images/animal_thumb/animal_4.jpg"
       ]
     },
     {
@@ -229,8 +229,8 @@
   "covers": {
     "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/1.jpg",
     "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/1.jpeg",
-    "animal": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
     "Anime": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/Anime_thumb/anime_1.jpg",
+    "animal": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/animal_thumb/animal_1.jpg",
     "cars": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/cars_thumb/_uhdmotors101.jpg",
     "city": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/city_thumb/city_1.jpg",
     "iphone": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/iphone_thumb/iphone_1.webp",
