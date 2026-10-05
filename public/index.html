@@ -1222,7 +1222,7 @@
       <div>
         <span class="brand-title">Wallpaper Studio</span>
         <span class="brand-sep">&bull;</span>
-        <span class="brand-sub">GitHub &amp; jsDelivr Automation</span>
+        <span class="brand-sub">GitHub Raw Asset Automation</span>
       </div>
     </div>
 
@@ -1505,7 +1505,7 @@
         </div>
 
         <div class="prop-group">
-          <label class="prop-label">Full Wallpaper jsDelivr CDN URL</label>
+          <label class="prop-label">Full Wallpaper Direct GitHub URL</label>
           <div class="prop-val" id="inspCdnUrl" style="max-height: 48px; overflow-y: auto;">-</div>
           <button class="btn btn-xs" style="margin-top: 4px;" onclick="copyToClipboard(document.getElementById('inspCdnUrl').textContent)">
             Copy Full CDN Link
@@ -1513,7 +1513,7 @@
         </div>
 
         <div class="prop-group">
-          <label class="prop-label">Thumbnail jsDelivr CDN URL</label>
+          <label class="prop-label">Thumbnail Direct GitHub URL</label>
           <div class="prop-val" id="inspThumbUrl" style="max-height: 48px; overflow-y: auto;">-</div>
           <button class="btn btn-xs" style="margin-top: 4px;" onclick="copyToClipboard(document.getElementById('inspThumbUrl').textContent)">
             Copy Thumbnail Link
@@ -1542,8 +1542,8 @@
       <div class="modal-body">
         <div class="prop-group">
           <label class="prop-label">CDN Base URL</label>
-          <input type="text" class="input-field" id="cfgCdnUrl" placeholder="https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images">
-          <span style="font-size: 11px; color: var(--text-dim);">Default jsDelivr repository CDN URL</span>
+          <input type="text" class="input-field" id="cfgCdnUrl" placeholder="https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images">
+          <span style="font-size: 11px; color: var(--text-dim);">Default GitHub repository raw URL</span>
         </div>
 
         <div class="prop-group">
@@ -2110,7 +2110,7 @@
                 <button class="icon-btn-round star-btn ${w.isCover ? 'active' : ''}" title="${w.isCover ? 'Current Category Cover' : 'Set as Category Cover'}" onclick="event.stopPropagation(); setCategoryCover('${catName}', '${w.filename}')">
                   ⭐
                 </button>
-                <button class="icon-btn-round" title="Copy jsDelivr CDN link" onclick="event.stopPropagation(); copyToClipboard('${w.cdnUrl}')">
+                <button class="icon-btn-round" title="Copy Direct GitHub link" onclick="event.stopPropagation(); copyToClipboard('${w.cdnUrl}')">
                   <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>

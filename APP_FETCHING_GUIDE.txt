@@ -3,7 +3,7 @@
 ======================================================================
 
 Live jsDelivr Base URL:
-https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets
+https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images
 
 ----------------------------------------------------------------------
 1. THE 3 JSON ENDPOINTS (jsDelivr Global CDN / Backend)
@@ -11,7 +11,7 @@ https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets
 
 ENDPOINT 1: VERSION CHECK
 URL:
-https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/data/version.json
+https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/data/version.json
 (Or local backend: http://localhost:3000/version.json)
 
 Method: GET
@@ -32,7 +32,7 @@ use cached data from local storage (instant loading, 0 data waste!).
 ----------------------------------------------------------------------
 ENDPOINT 2: CATEGORIES LIST WITH SEQUENTIAL ORDER & COVERS
 URL:
-https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/data/categories.json
+https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/data/categories.json
 (Or local backend: http://localhost:3000/categories.json or /api/categories)
 
 Method: GET
@@ -45,21 +45,21 @@ Response Format:
       "index": 1,
       "count": 93,
       "coverFilename": "_uhdabstract13.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg"
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/_uhdabstract13.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract/_uhdabstract13.jpg"
     },
     {
       "name": "amoled",
       "index": 2,
       "count": 68,
       "coverFilename": "am1.jpg",
-      "coverThumbnail": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg",
-      "coverWallpaper": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled/am1.jpg"
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled_thumb/am1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled/am1.jpg"
     }
   ],
   "covers": {
-    "abstract": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg",
-    "amoled": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/amoled_thumb/am1.jpg"
+    "abstract": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/_uhdabstract13.jpg",
+    "amoled": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled_thumb/am1.jpg"
   }
 }
 
@@ -72,7 +72,7 @@ category, ready to show in your category grids!
 ----------------------------------------------------------------------
 ENDPOINT 3: FULL WALLPAPERS MASTER LIST
 URL:
-https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/data/wallpapers.json
+https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/data/wallpapers.json
 (Or local backend: http://localhost:3000/wallpapers.json)
 
 Method: GET
@@ -82,8 +82,8 @@ Response Format:
     "id": "abstract__uhdabstract13_f29910",
     "category": "abstract",
     "isCover": true,
-    "url": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg",
-    "thumb": "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg?cover=true"
+    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract/_uhdabstract13.jpg",
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/_uhdabstract13.jpg?cover=true"
   },
   ...
 ]
@@ -96,19 +96,19 @@ Response Format:
 A. Fast Grid Scrolling (Retina 520px Thumbnail):
    Use item.thumb
    Example:
-   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract_thumb/_uhdabstract13.jpg
+   https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/_uhdabstract13.jpg
 
 B. Fullscreen High-Resolution Preview / Apply Screen:
    Use item.url
    Example:
-   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images/abstract/_uhdabstract13.jpg
+   https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract/_uhdabstract13.jpg
 
 
 ----------------------------------------------------------------------
 3. READY-TO-USE CODE SNIPPET (REACT NATIVE / FLUTTER / JS)
 ----------------------------------------------------------------------
 
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets";
+const CDN_BASE = "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images";
 
 // 1. Fetch Version
 export async function checkVersion() {

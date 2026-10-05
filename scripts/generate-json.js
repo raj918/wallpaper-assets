@@ -23,7 +23,7 @@ const naturalSort = (a, b) => a.localeCompare(b, undefined, { numeric: true, sen
 
 function getConfig() {
   const defaults = {
-    cdnUrl: 'https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images',
+    cdnUrl: 'https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images',
     thumbnailWidth: 520
   };
   if (fs.existsSync(CONFIG_FILE)) {

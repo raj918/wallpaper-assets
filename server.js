@@ -66,7 +66,7 @@ app.get('/version.json', (req, res) => {
 // Helper: Config Management
 function getConfig() {
   const defaults = {
-    cdnUrl: 'https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets/images',
+    cdnUrl: 'https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images',
     thumbnailWidth: 520,
     port: 3000,
     git: {
