@@ -1,5 +1,5 @@
 {
-  "version": 70,
+  "version": 81,
   "categories": [
     {
       "name": "Anime",
@@ -12,7 +12,7 @@
       "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
       "previews": [
         "/storage/images/Anime_thumb/anime_1.jpg",
-        "/storage/images/Anime_thumb/anime_2.jpg",
+        "/storage/images/Anime_thumb/anime_2.jpeg",
         "/storage/images/Anime_thumb/anime_3.jpg",
         "/storage/images/Anime_thumb/anime_4.jpg"
       ]
@@ -20,7 +20,7 @@
     {
       "name": "Superheroes",
       "index": 2,
-      "count": 31,
+      "count": 46,
       "coverFilename": "superheroes_1.jpeg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Superheroes_thumb/superheroes_1.jpeg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Superheroes/superheroes_1.jpeg",
@@ -28,9 +28,9 @@
       "localCoverWallpaper": "/storage/images/Superheroes/superheroes_1.jpeg",
       "previews": [
         "/storage/images/Superheroes_thumb/superheroes_1.jpeg",
-        "/storage/images/Superheroes_thumb/superheroes_2.webp",
+        "/storage/images/Superheroes_thumb/superheroes_2.jpeg",
         "/storage/images/Superheroes_thumb/superheroes_3.webp",
-        "/storage/images/Superheroes_thumb/superheroes_4.jpeg"
+        "/storage/images/Superheroes_thumb/superheroes_4.webp"
       ]
     },
     {
