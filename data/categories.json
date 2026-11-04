@@ -1,5 +1,5 @@
 {
-  "version": 83,
+  "version": 84,
   "categories": [
     {
       "name": "Anime",
@@ -100,7 +100,7 @@
     {
       "name": "Minimal",
       "index": 7,
-      "count": 17,
+      "count": 140,
       "coverFilename": "minimal_1.webp",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_1.webp",
