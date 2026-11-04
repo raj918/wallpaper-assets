@@ -1,5 +1,5 @@
 {
-  "version": 82,
+  "version": 83,
   "categories": [
     {
       "name": "Anime",
@@ -68,7 +68,7 @@
     {
       "name": "cars",
       "index": 5,
-      "count": 98,
+      "count": 265,
       "coverFilename": "1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars/1.jpg",
