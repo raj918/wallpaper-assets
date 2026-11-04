@@ -660,8 +660,115 @@
     }
 
     .wall-card.selected {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px #3b82f6;
+      border-color: #3b82f6 !important;
+      box-shadow: 0 0 0 2px #3b82f6, 0 8px 24px rgba(59, 130, 246, 0.25) !important;
+    }
+
+    .wall-card.selected .wall-card-check {
+      background: #3b82f6;
+      border: 1px solid #60a5fa;
+    }
+
+    .wall-card.selected .tile-drag-handle {
+      opacity: 1;
+      color: #93c5fd;
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(59, 130, 246, 0.6);
+      font-weight: 600;
+    }
+
+    .custom-drag-ghost {
+      position: fixed;
+      top: -9999px;
+      left: -9999px;
+      width: 130px;
+      aspect-ratio: 9 / 16;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(59, 130, 246, 0.5);
+      z-index: 999999;
+      pointer-events: none;
+      background: #0f172a;
+    }
+
+    .custom-drag-ghost img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .custom-drag-ghost-badge {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    .custom-drag-ghost-badge span {
+      background: #3b82f6;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      text-transform: uppercase;
+    }
+
+    .selection-cluster {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .selection-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(30, 58, 138, 0.25);
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      color: #fff;
+    }
+
+    .selection-pill .selection-count {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    .selection-pill .selection-hint {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 10px;
+      padding: 0 6px;
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .selection-pill .selection-clear-btn {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 11px;
+      padding: 0 3px;
+    }
+
+    .selection-pill .selection-clear-btn:hover {
+      color: #fff;
     }
 
     .wall-card.is-cover {
@@ -1313,6 +1420,8 @@
         </div>
 
         <div class="toolbar-actions">
+          <div class="selection-cluster" id="selectionCluster"></div>
+
           <div class="size-toggle-wrap">
             <button class="size-btn" id="sizeSm" onclick="setGridSize('sm')">S</button>
             <button class="size-btn active" id="sizeMd" onclick="setGridSize('md')">M</button>
@@ -2074,8 +2183,19 @@
       }
     }
 
+    function onCardMediaClick(e, item) {
+      if (isDragActive) return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey) {
+        e.stopPropagation();
+        e.preventDefault();
+        toggleSelectWallpaper(item.filename);
+        return;
+      }
+      openInspector(item);
+    }
+
     // Load Category Detail
-    async function loadCategoryDetail(catName) {
+    async function loadCategoryDetail(catName, preserveSelectedIndices = null) {
       try {
         const res = await fetch(`/api/category/${encodeURIComponent(catName)}`);
         const data = await res.json();
@@ -2086,7 +2206,18 @@
 
         if (!data.wallpapers || data.wallpapers.length === 0) {
           grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 4rem;">No wallpapers in this category yet. Drop some above!</div>`;
+          selectedWallpapers.clear();
+          updateSelectedUI();
           return;
+        }
+
+        if (preserveSelectedIndices && preserveSelectedIndices.size > 0) {
+          selectedWallpapers.clear();
+          preserveSelectedIndices.forEach(idx => {
+            if (data.wallpapers[idx]) {
+              selectedWallpapers.add(data.wallpapers[idx].filename);
+            }
+          });
         }
 
         data.wallpapers.forEach((w, idx) => {
@@ -2095,16 +2226,17 @@
           card.id = `wall_${w.filename.replace(/[^a-zA-Z0-9]/g, '_')}`;
           card.draggable = true;
           card.dataset.filename = w.filename;
-          if (selectedWallpapers.has(w.filename)) card.classList.add('selected');
+          const isSelected = selectedWallpapers.has(w.filename);
+          if (isSelected) card.classList.add('selected');
 
           card.innerHTML = `
-            <div class="wall-card-img-wrap" onclick="openInspector(${JSON.stringify(w).replace(/"/g, '&quot;')})">
+            <div class="wall-card-img-wrap" onclick="onCardMediaClick(event, ${JSON.stringify(w).replace(/"/g, '&quot;')})">
               <img src="${w.localThumbnailUrl}" alt="${w.name}" loading="lazy">
               <span class="wall-badge">#${idx + 1}</span>
               ${w.isCover ? '<span class="tile-cover-badge">⭐ COVER</span>' : ''}
               <div class="tile-drag-handle" title="Drag to reorder index">⠿ Drag</div>
               <div class="wall-card-check" onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
-                <input type="checkbox" ${selectedWallpapers.has(w.filename) ? 'checked' : ''} onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
+                <input type="checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); toggleSelectWallpaper('${w.filename}')">
               </div>
               <div class="wall-card-actions" onclick="event.stopPropagation()">
                 <button class="icon-btn-round star-btn ${w.isCover ? 'active' : ''}" title="${w.isCover ? 'Current Category Cover' : 'Set as Category Cover'}" onclick="event.stopPropagation(); setCategoryCover('${catName}', '${w.filename}')">
@@ -2122,7 +2254,7 @@
                 </button>
               </div>
             </div>
-            <div class="wall-card-foot" onclick="openInspector(${JSON.stringify(w).replace(/"/g, '&quot;')})">
+            <div class="wall-card-foot" onclick="onCardMediaClick(event, ${JSON.stringify(w).replace(/"/g, '&quot;')})">
               <span class="wall-card-name" title="${w.filename}">${w.filename}</span>
               <span class="wall-card-size">${formatBytes(w.sizeBytes)}</span>
             </div>
@@ -2131,13 +2263,16 @@
         });
 
         setupWallpaperGridDragAndDrop(grid, catName);
+        updateSelectedUI();
       } catch (err) {
         showToast('Failed to load category wallpapers', 'error');
       }
     }
 
-    // Wallpaper Drag & Drop + Auto-Scrolling + Touch Gestures
+    // Wallpaper Drag & Drop + Auto-Scrolling + Multi-Select Drag + Touch Gestures
     let draggedWallCard = null;
+    let draggedCards = [];
+    let isDragActive = false;
     let currentCategoryFilenames = [];
     let autoScrollTimer = null;
     let autoScrollSpeed = 0;
@@ -2183,7 +2318,7 @@
     }
 
     window.addEventListener('dragover', (e) => {
-      if (draggedWallCard) {
+      if (draggedCards && draggedCards.length > 0) {
         checkAutoScroll(e.clientY);
       }
     });
@@ -2201,18 +2336,57 @@
       cards.forEach(card => {
         // Desktop Drag Events
         card.addEventListener('dragstart', (e) => {
+          if (isWallpaperReordering) {
+            e.preventDefault();
+            return;
+          }
+          const isButton = e.target.closest('.wall-card-check') || e.target.closest('.wall-card-actions');
+          if (isButton) {
+            e.preventDefault();
+            return;
+          }
+
           draggedWallCard = card;
-          card.classList.add('dragging');
+          isDragActive = true;
+
+          const filename = card.dataset.filename;
+          const isMulti = selectedWallpapers.has(filename) && selectedWallpapers.size > 1;
+          const allCards = Array.from(grid.querySelectorAll('.wall-card'));
+
+          draggedCards = isMulti
+            ? allCards.filter(c => selectedWallpapers.has(c.dataset.filename))
+            : [card];
+
+          draggedCards.forEach(c => c.classList.add('dragging'));
           e.dataTransfer.effectAllowed = 'move';
-          e.dataTransfer.setData('text/plain', card.dataset.filename);
+          e.dataTransfer.setData('text/plain', filename);
+
+          // Multi-drag floating ghost preview (stack with count badge)
+          if (draggedCards.length > 1 && e.dataTransfer.setDragImage) {
+            const ghost = document.createElement('div');
+            ghost.className = 'custom-drag-ghost';
+            const img = card.querySelector('img');
+            if (img) {
+              const cloneImg = document.createElement('img');
+              cloneImg.src = img.src;
+              ghost.appendChild(cloneImg);
+            }
+            const badgeWrap = document.createElement('div');
+            badgeWrap.className = 'custom-drag-ghost-badge';
+            badgeWrap.innerHTML = `<span>Moving ${draggedCards.length} items</span>`;
+            ghost.appendChild(badgeWrap);
+            document.body.appendChild(ghost);
+            e.dataTransfer.setDragImage(ghost, 65, 110);
+            setTimeout(() => ghost.remove(), 0);
+          }
         });
 
         card.addEventListener('dragend', () => {
           stopAutoScroll();
-          if (draggedWallCard) {
-            draggedWallCard.classList.remove('dragging');
-          }
+          document.querySelectorAll('.wall-card.dragging').forEach(c => c.classList.remove('dragging'));
+          draggedCards = [];
           draggedWallCard = null;
+          setTimeout(() => { isDragActive = false; }, 60);
           updateTileIndices();
 
           const newFilenames = Array.from(grid.querySelectorAll('.wall-card')).map(c => c.dataset.filename);
@@ -2239,14 +2413,15 @@
             ghostEl = null;
           }
           stopAutoScroll();
-          if (draggedWallCard) {
-            draggedWallCard.classList.remove('dragging');
-            draggedWallCard = null;
-          }
+          document.querySelectorAll('.wall-card.dragging').forEach(c => c.classList.remove('dragging'));
+          draggedCards = [];
+          draggedWallCard = null;
+          setTimeout(() => { isDragActive = false; }, 60);
           isTouchDragging = false;
         }
 
         card.addEventListener('touchstart', (e) => {
+          if (isWallpaperReordering) return;
           const touch = e.touches[0];
           const isHandle = e.target.closest('.tile-drag-handle');
           const isButton = e.target.closest('.wall-card-check') || e.target.closest('.wall-card-actions');
@@ -2256,8 +2431,18 @@
 
           touchStartTimer = setTimeout(() => {
             isTouchDragging = true;
+            isDragActive = true;
             draggedWallCard = card;
-            card.classList.add('dragging');
+
+            const filename = card.dataset.filename;
+            const isMulti = selectedWallpapers.has(filename) && selectedWallpapers.size > 1;
+            const allCards = Array.from(grid.querySelectorAll('.wall-card'));
+
+            draggedCards = isMulti
+              ? allCards.filter(c => selectedWallpapers.has(c.dataset.filename))
+              : [card];
+
+            draggedCards.forEach(c => c.classList.add('dragging'));
             if (navigator.vibrate) navigator.vibrate(30);
 
             ghostEl = document.createElement('div');
@@ -2272,6 +2457,12 @@
               const ghostImg = document.createElement('img');
               ghostImg.src = img.src;
               ghostEl.appendChild(ghostImg);
+            }
+            if (draggedCards.length > 1) {
+              const badgeWrap = document.createElement('div');
+              badgeWrap.className = 'custom-drag-ghost-badge';
+              badgeWrap.innerHTML = `<span>Moving ${draggedCards.length} items</span>`;
+              ghostEl.appendChild(badgeWrap);
             }
             document.body.appendChild(ghostEl);
           }, delay);
@@ -2298,16 +2489,50 @@
 
           const targetEl = document.elementFromPoint(touch.clientX, touch.clientY);
           const targetCard = targetEl?.closest('.wall-card');
-          if (targetCard && targetCard !== card && grid.contains(targetCard)) {
-            const rect = targetCard.getBoundingClientRect();
-            const isAfter = (touch.clientX - rect.left) > (rect.width / 2);
-            if (isAfter) {
-              grid.insertBefore(card, targetCard.nextSibling);
-            } else {
-              grid.insertBefore(card, targetCard);
-            }
-            updateTileIndices();
+          if (!targetCard || draggedCards.includes(targetCard) || !grid.contains(targetCard)) {
+            return;
           }
+
+          const rect = targetCard.getBoundingClientRect();
+          const relY = (touch.clientY - rect.top) / rect.height;
+          let isAfter;
+          if (relY > 0.7) {
+            isAfter = true;
+          } else if (relY < 0.3) {
+            isAfter = false;
+          } else {
+            isAfter = (touch.clientX - rect.left) > (rect.width / 2);
+          }
+
+          let isContiguous = true;
+          for (let i = 0; i < draggedCards.length - 1; i++) {
+            if (draggedCards[i].nextSibling !== draggedCards[i + 1]) {
+              isContiguous = false;
+              break;
+            }
+          }
+
+          if (isAfter) {
+            if (isContiguous && targetCard.nextSibling === draggedCards[0]) return;
+          } else {
+            if (isContiguous && targetCard.previousSibling === draggedCards[draggedCards.length - 1]) return;
+          }
+
+          let refNode;
+          if (!isAfter) {
+            refNode = targetCard;
+          } else {
+            let next = targetCard.nextSibling;
+            while (next && draggedCards.includes(next)) {
+              next = next.nextSibling;
+            }
+            refNode = next;
+          }
+
+          draggedCards.forEach(c => {
+            grid.insertBefore(c, refNode);
+          });
+          updateTileIndices();
         }, { passive: false });
 
         card.addEventListener('touchend', () => {
@@ -2334,20 +2559,64 @@
       grid.ondragover = (e) => {
         e.preventDefault();
         e.dataTransfer.dropEffect = 'move';
-        if (!draggedWallCard) return;
+        if (!draggedCards || draggedCards.length === 0) return;
 
         checkAutoScroll(e.clientY);
 
         const targetCard = e.target.closest('.wall-card');
-        if (!targetCard || targetCard === draggedWallCard) return;
+        if (!targetCard) {
+          const lastCard = grid.lastElementChild;
+          if (lastCard && !draggedCards.includes(lastCard)) {
+            const lastRect = lastCard.getBoundingClientRect();
+            if (e.clientY > lastRect.bottom) {
+              draggedCards.forEach(c => grid.appendChild(c));
+              updateTileIndices();
+            }
+          }
+          return;
+        }
+
+        if (draggedCards.includes(targetCard)) return;
 
         const rect = targetCard.getBoundingClientRect();
-        const isAfter = (e.clientX - rect.left) > (rect.width / 2);
-        if (isAfter) {
-          grid.insertBefore(draggedWallCard, targetCard.nextSibling);
+        const relY = (e.clientY - rect.top) / rect.height;
+        let isAfter;
+        if (relY > 0.7) {
+          isAfter = true;
+        } else if (relY < 0.3) {
+          isAfter = false;
         } else {
-          grid.insertBefore(draggedWallCard, targetCard);
+          isAfter = (e.clientX - rect.left) > (rect.width / 2);
         }
+
+        let isContiguous = true;
+        for (let i = 0; i < draggedCards.length - 1; i++) {
+          if (draggedCards[i].nextSibling !== draggedCards[i + 1]) {
+            isContiguous = false;
+            break;
+          }
+        }
+
+        if (isAfter) {
+          if (isContiguous && targetCard.nextSibling === draggedCards[0]) return;
+        } else {
+          if (isContiguous && targetCard.previousSibling === draggedCards[draggedCards.length - 1]) return;
+        }
+
+        let refNode;
+        if (!isAfter) {
+          refNode = targetCard;
+        } else {
+          let next = targetCard.nextSibling;
+          while (next && draggedCards.includes(next)) {
+            next = next.nextSibling;
+          }
+          refNode = next;
+        }
+
+        draggedCards.forEach(c => {
+          grid.insertBefore(c, refNode);
+        });
         updateTileIndices();
       };
     }
@@ -2395,6 +2664,14 @@
       isWallpaperReordering = true;
       showToast('Updating wallpaper index sequence...', 'info');
 
+      // Preserve which items were selected across server rename
+      const selectedIndices = new Set();
+      filenames.forEach((fn, idx) => {
+        if (selectedWallpapers.has(fn)) {
+          selectedIndices.add(idx);
+        }
+      });
+
       try {
         const res = await fetch('/api/wallpapers/reorder', {
           method: 'POST',
@@ -2407,7 +2684,7 @@
           if (data.newVersion) {
             document.getElementById('badgeVersion').textContent = `v${data.newVersion}`;
           }
-          await loadCategoryDetail(category);
+          await loadCategoryDetail(category, selectedIndices);
           updateGitStatus();
         } else {
           showToast(data.error || 'Failed to save order', 'error');
@@ -2470,23 +2747,81 @@
       updateSelectedUI();
     }
 
-    function updateSelectedUI() {
-      const count = selectedWallpapers.size;
-      const btn = document.getElementById('btnDeleteSelected');
-      const countSpan = document.getElementById('selectedCount');
-      if (count > 0) {
-        btn.style.display = 'inline-flex';
-        countSpan.textContent = count;
-      } else {
-        btn.style.display = 'none';
-      }
-
-      document.querySelectorAll('.wall-card').forEach(card => {
-        const check = card.querySelector('input[type="checkbox"]');
-        if (check) {
-          card.classList.toggle('selected', check.checked);
+    function selectAllWallpapers() {
+      const cards = document.querySelectorAll('#wallpaperGrid .wall-card');
+      cards.forEach(c => {
+        if (c.dataset.filename) {
+          selectedWallpapers.add(c.dataset.filename);
         }
       });
+      updateSelectedUI();
+    }
+
+    function clearSelectedWallpapers() {
+      selectedWallpapers.clear();
+      updateSelectedUI();
+    }
+
+    function updateSelectedUI() {
+      const count = selectedWallpapers.size;
+      const cards = document.querySelectorAll('#wallpaperGrid .wall-card');
+      const total = cards.length;
+
+      cards.forEach(card => {
+        const isSel = selectedWallpapers.has(card.dataset.filename);
+        card.classList.toggle('selected', isSel);
+        const check = card.querySelector('.wall-card-check input[type="checkbox"]');
+        if (check) check.checked = isSel;
+
+        const handle = card.querySelector('.tile-drag-handle');
+        if (handle) {
+          if (isSel && count > 1) {
+            handle.textContent = `⠿ Drag all (${count})`;
+            handle.title = `Drag to move all ${count} selected wallpapers`;
+          } else {
+            handle.textContent = '⠿ Drag';
+            handle.title = 'Drag to reorder index';
+          }
+        }
+      });
+
+      const cluster = document.getElementById('selectionCluster');
+      if (cluster) {
+        if (count === 0) {
+          cluster.innerHTML = total > 0 ? `
+            <button class="btn btn-xs" onclick="selectAllWallpapers()" title="Select all wallpapers in this category">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              </svg>
+              Select All
+            </button>
+          ` : '';
+        } else {
+          cluster.innerHTML = `
+            <div class="selection-pill">
+              <span class="selection-count">✓ ${count} selected</span>
+              <span class="selection-hint">⠿ Drag any to move all</span>
+              <button class="selection-clear-btn" onclick="clearSelectedWallpapers()">Clear</button>
+              <button class="btn btn-danger btn-xs" onclick="deleteSelectedWallpapers()" style="padding: 2px 8px;">
+                <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+                Delete (${count})
+              </button>
+              ${count < total ? `
+                <button class="btn btn-xs" onclick="selectAllWallpapers()" style="padding: 2px 7px;">
+                  Select All (${total})
+                </button>
+              ` : ''}
+            </div>
+          `;
+        }
+      }
+
+      const legacyBtn = document.getElementById('btnDeleteSelected');
+      const legacyCount = document.getElementById('selectedCount');
+      if (legacyBtn) legacyBtn.style.display = 'none';
+      if (legacyCount) legacyCount.textContent = count;
     }
 
     // Delete single wallpaper
