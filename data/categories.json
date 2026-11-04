@@ -1,5 +1,5 @@
 {
-  "version": 81,
+  "version": 82,
   "categories": [
     {
       "name": "Anime",
@@ -52,7 +52,7 @@
     {
       "name": "abstract",
       "index": 4,
-      "count": 93,
+      "count": 416,
       "coverFilename": "1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract/1.jpg",
