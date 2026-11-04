@@ -1,5 +1,5 @@
 {
-  "version": 96,
+  "version": 99,
   "categories": [
     {
       "name": "Anime",
@@ -133,13 +133,13 @@
       "name": "animal",
       "index": 9,
       "count": 151,
-      "coverFilename": "animal_1.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.jpg",
-      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.jpg",
-      "localCoverWallpaper": "/storage/images/animal/animal_1.jpg",
+      "coverFilename": "animal_1.webp",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.webp",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.webp",
+      "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.webp",
+      "localCoverWallpaper": "/storage/images/animal/animal_1.webp",
       "previews": [
-        "/storage/images/animal_thumb/animal_1.jpg",
+        "/storage/images/animal_thumb/animal_1.webp",
         "/storage/images/animal_thumb/animal_2.jpg",
         "/storage/images/animal_thumb/animal_3.jpeg",
         "/storage/images/animal_thumb/animal_4.jpeg"
@@ -267,7 +267,7 @@
     "cars": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/1.jpg",
     "Minimal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
     "iphone": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
-    "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
+    "animal": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.webp",
     "material": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/1.jpg",
     "nature": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/1.jpg",
     "new added": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
