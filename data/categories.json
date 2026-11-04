@@ -1,5 +1,5 @@
 {
-  "version": 86,
+  "version": 88,
   "categories": [
     {
       "name": "Anime",
@@ -240,6 +240,22 @@
         "/storage/images/winter_thumb/3.jpg",
         "/storage/images/winter_thumb/4.jpg"
       ]
+    },
+    {
+      "name": "Landscape",
+      "index": 16,
+      "count": 137,
+      "coverFilename": "landscape_1.jpeg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Landscape_thumb/landscape_1.jpeg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Landscape/landscape_1.jpeg",
+      "localCoverThumbnail": "/storage/images/Landscape_thumb/landscape_1.jpeg",
+      "localCoverWallpaper": "/storage/images/Landscape/landscape_1.jpeg",
+      "previews": [
+        "/storage/images/Landscape_thumb/landscape_1.jpeg",
+        "/storage/images/Landscape_thumb/landscape_2.webp",
+        "/storage/images/Landscape_thumb/landscape_3.webp",
+        "/storage/images/Landscape_thumb/landscape_4.webp"
+      ]
     }
   ],
   "covers": {
@@ -257,6 +273,7 @@
     "new added": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
     "Oppo": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Oppo_thumb/oppo_1.webp",
     "space": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/space_thumb/space_1.jpg",
-    "winter": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/winter_thumb/1.jpg"
+    "winter": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/winter_thumb/1.jpg",
+    "Landscape": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Landscape_thumb/landscape_1.jpeg"
   }
 }
