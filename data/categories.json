@@ -1,5 +1,5 @@
 {
-  "version": 92,
+  "version": 93,
   "categories": [
     {
       "name": "Anime",
@@ -141,8 +141,8 @@
       "previews": [
         "/storage/images/animal_thumb/animal_1.jpg",
         "/storage/images/animal_thumb/animal_2.jpg",
-        "/storage/images/animal_thumb/animal_3.jpg",
-        "/storage/images/animal_thumb/animal_4.jpg"
+        "/storage/images/animal_thumb/animal_3.jpeg",
+        "/storage/images/animal_thumb/animal_4.jpeg"
       ]
     },
     {
