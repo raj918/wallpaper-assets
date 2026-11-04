@@ -1,5 +1,5 @@
 {
-  "version": 84,
+  "version": 85,
   "categories": [
     {
       "name": "Anime",
@@ -132,7 +132,7 @@
     {
       "name": "animal",
       "index": 9,
-      "count": 5,
+      "count": 151,
       "coverFilename": "animal_1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.jpg",
