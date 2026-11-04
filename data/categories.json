@@ -1,5 +1,5 @@
 {
-  "version": 99,
+  "version": 106,
   "categories": [
     {
       "name": "Anime",
@@ -14,7 +14,7 @@
         "/storage/images/Anime_thumb/anime_1.jpg",
         "/storage/images/Anime_thumb/anime_2.jpeg",
         "/storage/images/Anime_thumb/anime_3.jpg",
-        "/storage/images/Anime_thumb/anime_4.jpg"
+        "/storage/images/Anime_thumb/anime_4.webp"
       ]
     },
     {
@@ -189,7 +189,7 @@
       "previews": [
         "/storage/images/new%20added_thumb/new%20added_1.jpeg",
         "/storage/images/new%20added_thumb/new%20added_2.jpeg",
-        "/storage/images/new%20added_thumb/new%20added_3.png",
+        "/storage/images/new%20added_thumb/new%20added_3.jpeg",
         "/storage/images/new%20added_thumb/new%20added_4.jpeg"
       ]
     },
