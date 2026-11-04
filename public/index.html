@@ -1420,6 +1420,43 @@
         </div>
 
         <div class="toolbar-actions">
+          <div style="position: relative; display: inline-flex;">
+            <button class="btn btn-xs" id="btnShuffle" onclick="toggleShuffleMenu(event)" title="Shuffle wallpapers (#16 onwards, keeping first 15 protected)">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h4l3.5 4.5M4 20h4l8-10h4m0 0l-3-3m3 3l-3 3M4 20l3.5-4.5m4.5-5.5l3.5-4.5h4m0 0l-3-3m3 3l-3 3"/>
+              </svg>
+              <span>Shuffle (16+)</span>
+              <span style="font-size: 8px; opacity: 0.7; margin-left: 2px;">▾</span>
+            </button>
+
+            <div class="dropdown-menu" id="shuffleDropdown" style="left: 0; right: auto; min-width: 260px; padding: 4px;">
+              <div style="padding: 6px 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 11px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-weight: 700; color: #fff;">Shuffle Wallpapers</span>
+                <span style="font-size: 9px; font-weight: 700; background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.35); padding: 1px 6px; border-radius: 4px;">Top 15 Protected</span>
+              </div>
+
+              <div class="dropdown-item" onclick="executeShuffle('mixed', event)" style="padding: 8px 10px;">
+                <span style="font-size: 15px;">🔀</span>
+                <div>
+                  <div style="font-weight: 600; color: #fff;">Mixed Shuffle</div>
+                  <div style="font-size: 10px; color: var(--text-muted);">Randomize all wallpapers from #16 to end</div>
+                </div>
+              </div>
+
+              <div class="dropdown-item" onclick="executeShuffle('bottom-to-top', event)" style="padding: 8px 10px;">
+                <span style="font-size: 15px;">🔼</span>
+                <div>
+                  <div style="font-weight: 600; color: #fff;">Bottom to Top</div>
+                  <div style="font-size: 10px; color: var(--text-muted);">Invert order of #16+ (move bottom items up)</div>
+                </div>
+              </div>
+
+              <div style="padding: 6px 10px; font-size: 10px; color: var(--text-dim); border-top: 1px solid rgba(255, 255, 255, 0.06); line-height: 1.3;">
+                🛡️ First 15 wallpapers (#1–#15) stay in place for manual drag &amp; drop only.
+              </div>
+            </div>
+          </div>
+
           <div class="selection-cluster" id="selectionCluster"></div>
 
           <div class="size-toggle-wrap">
@@ -2206,9 +2243,24 @@
 
         if (!data.wallpapers || data.wallpapers.length === 0) {
           grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 4rem;">No wallpapers in this category yet. Drop some above!</div>`;
+          const shuffleBtn = document.getElementById('btnShuffle');
+          if (shuffleBtn) {
+            shuffleBtn.disabled = true;
+            shuffleBtn.style.opacity = '0.5';
+          }
           selectedWallpapers.clear();
           updateSelectedUI();
           return;
+        }
+
+        const shuffleBtn = document.getElementById('btnShuffle');
+        if (shuffleBtn) {
+          const countAfter15 = Math.max(0, data.wallpapers.length - 15);
+          shuffleBtn.disabled = false;
+          shuffleBtn.style.opacity = data.wallpapers.length <= 15 ? '0.6' : '1';
+          shuffleBtn.title = data.wallpapers.length > 15
+            ? `Shuffle ${countAfter15} wallpapers (#16 onwards, keeping first 15 protected)`
+            : `Category has ${data.wallpapers.length} wallpapers. First 15 are protected for manual drag & drop.`;
         }
 
         if (preserveSelectedIndices && preserveSelectedIndices.size > 0) {
@@ -2696,6 +2748,77 @@
       } finally {
         isWallpaperReordering = false;
       }
+    }
+
+    // Shuffle Wallpapers (#16 onwards, protecting first 15)
+    function toggleShuffleMenu(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('shuffleDropdown');
+      const isVisible = menu && menu.style.display === 'block';
+      closeAllDropdowns();
+      if (menu && !isVisible) {
+        menu.style.display = 'block';
+      }
+    }
+
+    async function executeShuffle(mode, event) {
+      if (event) event.stopPropagation();
+      closeAllDropdowns();
+
+      if (!activeCategory) {
+        showToast('No active category selected', 'error');
+        return;
+      }
+
+      if (isWallpaperReordering) {
+        showToast('Reorder operation in progress, please wait...', 'info');
+        return;
+      }
+
+      const grid = document.getElementById('wallpaperGrid');
+      if (!grid) return;
+
+      const currentCards = Array.from(grid.querySelectorAll('.wall-card'));
+      const currentFilenames = currentCards.map(c => c.dataset.filename).filter(Boolean);
+      const total = currentFilenames.length;
+
+      if (total <= 15) {
+        showToast(`Category has ${total} wallpapers. First 15 are strictly reserved for manual drag & drop.`, 'info');
+        return;
+      }
+
+      if (total <= 16) {
+        showToast(`Category only has 1 wallpaper after #15. Need more wallpapers to shuffle.`, 'info');
+        return;
+      }
+
+      const shuffleCount = total - 15;
+      const modeLabel = mode === 'bottom-to-top' ? 'Bottom-to-Top (Invert)' : 'Mixed Random Shuffle';
+
+      if (!confirm(`Apply ${modeLabel} to ${shuffleCount} wallpapers (from #16 to #${total})?\n\n• Wallpapers #1 through #15 will remain strictly untouched in their exact positions.\n• Order is saved and indexed sequentially.`)) {
+        return;
+      }
+
+      // First 15 wallpapers (#1 through #15, index 0 to 14) are strictly protected
+      const protectedTop15 = currentFilenames.slice(0, 15);
+      const pool = currentFilenames.slice(15);
+
+      let newTail = [];
+      if (mode === 'bottom-to-top') {
+        newTail = [...pool].reverse();
+      } else {
+        // Fisher-Yates shuffle
+        newTail = [...pool];
+        for (let i = newTail.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [newTail[i], newTail[j]] = [newTail[j], newTail[i]];
+        }
+      }
+
+      const newFilenames = [...protectedTop15, ...newTail];
+
+      showToast(`Shuffling ${shuffleCount} wallpapers (#16 onwards)...`, 'info');
+      await saveWallpaperReorder(activeCategory, newFilenames);
     }
 
     // Inspector Lightbox
