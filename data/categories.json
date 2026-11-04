@@ -1,5 +1,5 @@
 {
-  "version": 85,
+  "version": 86,
   "categories": [
     {
       "name": "Anime",
@@ -164,7 +164,7 @@
     {
       "name": "nature",
       "index": 11,
-      "count": 163,
+      "count": 461,
       "coverFilename": "1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature/1.jpg",
