@@ -1,5 +1,5 @@
 {
-  "version": 112,
+  "version": 113,
   "categories": [
     {
       "name": "All",
@@ -8,8 +8,6 @@
       "coverFilename": "anime_1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
       "previews": [
         "/storage/images/Anime_thumb/anime_1.jpg",
         "/storage/images/Anime_thumb/anime_2.jpeg",
@@ -24,8 +22,6 @@
       "coverFilename": "anime_1.jpg",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
       "previews": [
         "/storage/images/Anime_thumb/anime_1.jpg",
         "/storage/images/Anime_thumb/anime_2.jpeg",
