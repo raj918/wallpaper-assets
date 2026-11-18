@@ -244,7 +244,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface AnimeApiService {
-    // Base URL: https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/
+    // Base URL: https://raw.githubusercontent.com/raj918/wallpaper-assets/main/data/
     
     @GET("anime_categories.json")
     suspend fun getCategories(

@@ -1946,7 +1946,7 @@ const initialPort = parseInt(process.env.PORT, 10) || getConfig().port || 3000;
 function startServer(port) {
   const server = app.listen(port, () => {
     console.log(`\n======================================================`);
-    console.log(`🚀 Wallpaper Assets Studio (GitHub & jsDelivr CDN)`);
+    console.log(`🚀 Wallpaper Assets Studio (GitHub Raw)`);
     console.log(`👉 Running at: http://localhost:${port}`);
     console.log(`======================================================\n`);
   });

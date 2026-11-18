@@ -2,11 +2,11 @@
          WALLPAPER ASSETS - APP FETCHING & JSON INTEGRATION GUIDE
 ======================================================================
 
-Live jsDelivr Base URL:
+Live GitHub Raw Base URL:
 https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images
 
 ----------------------------------------------------------------------
-1. THE 3 JSON ENDPOINTS (jsDelivr Global CDN / Backend)
+1. THE 3 JSON ENDPOINTS (GitHub Raw / Backend)
 ----------------------------------------------------------------------
 
 ENDPOINT 1: VERSION CHECK
