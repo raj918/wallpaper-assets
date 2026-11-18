@@ -19,6 +19,8 @@ const CATEGORY_COVERS_JSON = path.join(DATA_DIR, 'category_covers.json');
 const ANIME_WALLPAPERS_JSON = path.join(DATA_DIR, 'anime_wallpapers.json');
 const ANIME_JSON = path.join(DATA_DIR, 'anime.json');
 const ANIME_VERSION_JSON = path.join(DATA_DIR, 'anime_version.json');
+const ANIME_CATEGORIES_JSON = path.join(DATA_DIR, 'anime_categories.json');
+const ANIME_CATEGORY_MAPPING_JSON = path.join(DATA_DIR, 'anime_category_mapping.json');
 const CONFIG_FILE = path.join(ROOT_DIR, 'config.json');
 
 const isImage = (file) => /\.(jpg|jpeg|png|webp)$/i.test(file);
@@ -206,36 +208,88 @@ async function run() {
 
   // Generate dedicated Anime JSON catalogs for standalone Anime app
   const animeCategory = categories.find(c => c.toLowerCase() === 'anime') || 'Anime';
-  const animeWallpapers = wallpapers
-    .filter(w => w.category && w.category.toLowerCase() === 'anime')
-    .map((w, idx) => ({
+  let animeMapping = { categories: ['All'], covers: {}, assignments: {} };
+  if (fs.existsSync(ANIME_CATEGORY_MAPPING_JSON)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(ANIME_CATEGORY_MAPPING_JSON, 'utf8'));
+      const cats = Array.isArray(data.categories) && data.categories.length > 0 ? data.categories : ['All'];
+      if (!cats.includes('All')) cats.unshift('All');
+      animeMapping = { categories: cats, covers: data.covers || {}, assignments: data.assignments || {} };
+    } catch (e) {}
+  }
+
+  const rawAnimeWallpapers = wallpapers.filter(w => w.category && w.category.toLowerCase() === 'anime');
+  const animeWallpapers = rawAnimeWallpapers.map((w, idx) => {
+    const filename = w.url.split('/').pop();
+    const assignedCat = animeMapping.assignments[filename] || 'All';
+    const isCatCover = animeMapping.covers[assignedCat] === filename || (assignedCat === 'All' && animeMapping.covers['All'] === filename);
+    return {
       id: w.id,
+      filename,
       category: w.category,
-      name: w.url.split('/').pop().replace(/\.[^/.]+$/, ''),
-      title: w.url.split('/').pop().replace(/\.[^/.]+$/, ''),
+      animeCategory: assignedCat,
+      name: path.parse(filename).name,
+      title: path.parse(filename).name,
       index: idx + 1,
-      isCover: w.isCover,
+      isCover: w.isCover || isCatCover,
       url: w.url,
       thumb: w.thumb
-    }));
+    };
+  });
 
   fs.writeFileSync(ANIME_WALLPAPERS_JSON, JSON.stringify(animeWallpapers, null, 2) + '\n', 'utf8');
   fs.writeFileSync(ANIME_JSON, JSON.stringify(animeWallpapers, null, 2) + '\n', 'utf8');
 
-  const animeCoverFilename = covers[animeCategory] || (animeWallpapers.length > 0 ? animeWallpapers[0].url.split('/').pop() : null);
-  const animeCoverThumb = animeCoverFilename
-    ? `${cdnBase}/${encodeURIComponent(animeCategory)}_thumb/${encodeURIComponent(animeCoverFilename)}`
-    : null;
-  const animeCoverFull = animeCoverFilename
-    ? `${cdnBase}/${encodeURIComponent(animeCategory)}/${encodeURIComponent(animeCoverFilename)}`
-    : null;
+  // Build anime categories list
+  const animeCategoriesList = [];
+  animeMapping.categories.forEach((cat, idx) => {
+    const catWallpapers = cat === 'All' ? animeWallpapers : animeWallpapers.filter(w => w.animeCategory === cat);
+    let catCoverFile = animeMapping.covers[cat];
+    if (!catCoverFile || !catWallpapers.some(w => w.filename === catCoverFile)) {
+      catCoverFile = catWallpapers.length > 0 ? catWallpapers[0].filename : null;
+      if (catCoverFile) animeMapping.covers[cat] = catCoverFile;
+    }
 
+    const coverThumbUrl = catCoverFile
+      ? `${cdnBase}/${encodeURIComponent(animeCategory)}_thumb/${encodeURIComponent(catCoverFile)}`
+      : null;
+    const coverFullUrl = catCoverFile
+      ? `${cdnBase}/${encodeURIComponent(animeCategory)}/${encodeURIComponent(catCoverFile)}`
+      : null;
+
+    const previewFiles = catCoverFile && catWallpapers.some(w => w.filename === catCoverFile)
+      ? [catCoverFile, ...catWallpapers.map(w => w.filename).filter(f => f !== catCoverFile)].slice(0, 4)
+      : catWallpapers.map(w => w.filename).slice(0, 4);
+
+    const previews = previewFiles.map(f => `/storage/images/${encodeURIComponent(animeCategory)}_thumb/${encodeURIComponent(f)}`);
+
+    animeCategoriesList.push({
+      name: cat,
+      index: idx + 1,
+      count: catWallpapers.length,
+      coverFilename: catCoverFile || null,
+      coverThumbnail: coverThumbUrl,
+      coverWallpaper: coverFullUrl,
+      previews
+    });
+  });
+
+  fs.writeFileSync(ANIME_CATEGORY_MAPPING_JSON, JSON.stringify(animeMapping, null, 2) + '\n', 'utf8');
+
+  const animeCategoriesJsonData = {
+    version: nextVer,
+    categories: animeCategoriesList
+  };
+  fs.writeFileSync(ANIME_CATEGORIES_JSON, JSON.stringify(animeCategoriesJsonData, null, 2) + '\n', 'utf8');
+
+  const allCover = animeMapping.covers['All'] || (animeWallpapers.length > 0 ? animeWallpapers[0].filename : null);
   const animeVersionData = {
     version: nextVer,
     totalWallpapers: animeWallpapers.length,
+    categoriesCount: animeCategoriesList.length,
     category: animeCategory,
-    coverThumbnail: animeCoverThumb,
-    coverWallpaper: animeCoverFull,
+    coverThumbnail: allCover ? `${cdnBase}/${encodeURIComponent(animeCategory)}_thumb/${encodeURIComponent(allCover)}` : null,
+    coverWallpaper: allCover ? `${cdnBase}/${encodeURIComponent(animeCategory)}/${encodeURIComponent(allCover)}` : null,
     lastUpdated: new Date().toISOString()
   };
   fs.writeFileSync(ANIME_VERSION_JSON, JSON.stringify(animeVersionData, null, 2) + '\n', 'utf8');
@@ -243,13 +297,14 @@ async function run() {
   console.log('\n=============================================');
   console.log(`✅ Catalog rebuilt successfully! (v${nextVer})`);
   console.log(`📊 Master Wallpapers: ${wallpapers.length} across ${categories.length} categories`);
-  console.log(`🌸 Dedicated Anime Wallpapers: ${animeWallpapers.length} items`);
+  console.log(`🌸 Dedicated Anime Wallpapers: ${animeWallpapers.length} items (${animeCategoriesList.length} sub-categories)`);
   if (generatedThumbs > 0) {
     console.log(`🖼️ Created ${generatedThumbs} missing thumbnails`);
   }
   console.log(`📄 Saved files:`);
   console.log(`   - data/wallpapers.json (Main)`);
   console.log(`   - data/anime_wallpapers.json & data/anime.json (Anime Only)`);
+  console.log(`   - data/anime_categories.json (Anime Sub-Categories)`);
   console.log(`   - data/categories.json`);
   console.log(`   - data/version.json & data/anime_version.json`);
   console.log('=============================================\n');

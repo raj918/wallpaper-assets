@@ -3,21 +3,88 @@
 ======================================================================
 
 This guide explains how to fetch and consume ONLY Anime wallpapers in your
-standalone Anime Wallpaper application (e.g., AnimeWall 4K).
+standalone Anime Wallpaper application (e.g., AnimeWall 4K), including the
+dedicated Anime Sub-Categories system (All, Gojo, Naruto, etc.).
 
-Both the main app catalog (wallpapers.json) and this anime catalog 
-(anime_wallpapers.json / anime.json) are automatically regenerated and 
-synchronized together whenever you upload, reorder, delete, or push from 
-the Wallpaper Assets backend.
+Both the main app catalog (wallpapers.json for Vexawall) and this anime catalog 
+(anime_wallpapers.json & anime_categories.json for AnimeWall) are automatically
+regenerated and synchronized together whenever you upload, transfer, delete, or
+push from the Wallpaper Assets backend.
 
 
 ----------------------------------------------------------------------
-1. LIVE ENDPOINTS (GLOBAL CDN & LOCAL BACKEND)
+1. WORKSPACE SELECTOR & DUAL ADMIN STUDIO
 ----------------------------------------------------------------------
 
-A. ANIME WALLPAPERS LIST (PURE JSON ARRAY - IDEAL FOR RETROFIT / APP)
+When you launch the server (`npm start` at http://localhost:3000), you will see
+a prominent 2-button Workspace Selector:
+
+  ┌────────────────────────────────────────────────────────┐
+  │         🚀 SELECT WALLPAPER STUDIO WORKSPACE           │
+  │                                                        │
+  │  [🌸 AnimeWall Studio]        [🖼️ Vexawall Studio]     │
+  │   (Anime-Only App Backend)     (Master 16-Category)    │
+  └────────────────────────────────────────────────────────┘
+
+1. 🌸 AnimeWall Studio (Dedicated Anime Backend):
+   • Manage anime-specific sub-categories (All, Gojo, Naruto, Solo Leveling...).
+   • "All Wallpapers" contains ALL 159+ anime wallpapers.
+   • Multi-tick checkboxes on every card: select multiple wallpapers and click
+     "Transfer to Category" to organize them into sub-categories!
+   • Upload new wallpapers directly into any anime category.
+   • When you push to GitHub, both AnimeWall and Vexawall catalogs push together!
+
+2. 🖼️ Vexawall Studio (Main Master App):
+   • Full 16-category master catalog (Abstract, AMOLED, Cars, Anime, Nature...).
+   • For Vexawall, ALL anime wallpapers belong directly to the single `Anime`
+     category without sub-categories (zero breaking changes for Vexawall).
+   • Top header switcher pill allows toggling between studios at any time!
+
+
+----------------------------------------------------------------------
+2. LIVE ENDPOINTS (GLOBAL CDN & LOCAL BACKEND)
+----------------------------------------------------------------------
+
+A. ANIME SUB-CATEGORIES LIST (CATEGORIES GRID WITH COVERS)
 ----------------------------------------------------------------------
 • jsDelivr Multi-CDN (Fastest worldwide, cached, zero rate limits):
+  https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime_categories.json
+
+• GitHub Raw URL:
+  https://raw.githubusercontent.com/raj918/wallpaper-assets/main/data/anime_categories.json
+
+• Local Backend (when server is running at http://localhost:3000):
+  http://localhost:3000/anime_categories.json
+  http://localhost:3000/api/anime/categories
+
+Method: GET
+Sample Response:
+{
+  "version": 110,
+  "categories": [
+    {
+      "name": "All",
+      "index": 1,
+      "count": 159,
+      "coverFilename": "anime_1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg"
+    },
+    {
+      "name": "Gojo",
+      "index": 2,
+      "count": 12,
+      "coverFilename": "anime_10.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_10.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_10.jpg"
+    }
+  ]
+}
+
+
+B. ANIME WALLPAPERS LIST (MASTER ARRAY - WITH SUB-CATEGORY TAGS)
+----------------------------------------------------------------------
+• jsDelivr Multi-CDN:
   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime_wallpapers.json
   (Alternative alias: https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime.json)
 
@@ -25,19 +92,22 @@ A. ANIME WALLPAPERS LIST (PURE JSON ARRAY - IDEAL FOR RETROFIT / APP)
   https://raw.githubusercontent.com/raj918/wallpaper-assets/main/data/anime_wallpapers.json
   (Alternative alias: https://raw.githubusercontent.com/raj918/wallpaper-assets/main/data/anime.json)
 
-• Local Backend (when server is running at http://localhost:3000):
+• Local Backend:
   http://localhost:3000/anime_wallpapers.json
   http://localhost:3000/anime.json
   http://localhost:3000/api/anime-wallpapers?raw=true
+  http://localhost:3000/api/anime/category/Gojo  (filtered by category)
 
 Method: GET
-Returns: JSON Array of only Anime wallpapers, ordered in exact sequence.
+Returns: JSON Array of anime wallpapers, including their `animeCategory` tag.
 
 Sample Response:
 [
   {
     "id": "Anime_anime_1_413357",
+    "filename": "anime_1.jpg",
     "category": "Anime",
+    "animeCategory": "Gojo",
     "name": "anime_1",
     "title": "anime_1",
     "index": 1,
@@ -46,8 +116,10 @@ Sample Response:
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg?cover=true"
   },
   {
-    "id": "Anime_anime_2_076993",
+    "id": "Anime_anime_2_15d4ff",
+    "filename": "anime_2.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_2",
     "title": "anime_2",
     "index": 2,
@@ -58,7 +130,7 @@ Sample Response:
 ]
 
 
-B. ANIME VERSION CHECK (FOR INSTANT CACHING & 0 DATA WASTE)
+C. ANIME VERSION CHECK (FOR INSTANT CACHING & 0 DATA WASTE)
 ----------------------------------------------------------------------
 • jsDelivr Multi-CDN:
   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime_version.json
@@ -73,42 +145,18 @@ B. ANIME VERSION CHECK (FOR INSTANT CACHING & 0 DATA WASTE)
 Method: GET
 Sample Response:
 {
-  "version": 107,
+  "version": 110,
   "totalWallpapers": 159,
+  "categoriesCount": 2,
   "category": "Anime",
   "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
   "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
-  "lastUpdated": "2026-11-18T08:54:22.429Z"
-}
-
-How to use in your Anime App:
-When the app opens, fetch anime_version.json first. If "version" is equal to
-the stored version on the user's phone, load from local Room/SQLite/Cache
-instantly (0ms loading time, 0 bandwidth waste). If "version" is higher, fetch
-anime_wallpapers.json and update the local database.
-
-
-C. REST API WITH METADATA (BACKEND ONLY)
-----------------------------------------------------------------------
-• URL: http://localhost:3000/api/anime
-  (Or http://localhost:3000/api/anime-wallpapers)
-
-Method: GET
-Sample Response:
-{
-  "success": true,
-  "version": 107,
-  "totalWallpapers": 159,
-  "category": "Anime",
-  "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
-  "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
-  "lastUpdated": "2026-11-18T08:54:22.429Z",
-  "wallpapers": [ ... ]
+  "lastUpdated": "2026-11-18T09:18:22.429Z"
 }
 
 
 ----------------------------------------------------------------------
-2. THUMBNAILS (520px) VS FULL 4K RESOLUTION
+3. THUMBNAILS (520px) VS FULL 4K RESOLUTION
 ----------------------------------------------------------------------
 
 1. FAST GRID / STAGGERED FEED / CAROUSEL:
@@ -127,45 +175,52 @@ Sample Response:
 
 
 ----------------------------------------------------------------------
-3. AUTOMATIC DUAL PUSH: HOW BOTH MAIN AND ANIME ARE PUSHED
+4. MULTI-TICK TRANSFER & DUAL PUSH AUTOMATION
 ----------------------------------------------------------------------
 
-You do NOT need to do anything manually! Whenever you:
-  • Upload new wallpapers via Admin Panel or API
-  • Delete or bulk-delete wallpapers
-  • Reorder wallpapers with drag-and-drop
-  • Set a category cover
-  • Rebuild thumbnails
-  • Click "Push to GitHub"
+1. TRANSFERRING WALLPAPERS INTO SUB-CATEGORIES:
+   • In AnimeWall Studio, click the checkboxes on any wallpapers (or click "Select All").
+   • Click "Transfer to Category (X)".
+   • Select or create your category (e.g. "Gojo").
+   • Click "Confirm Transfer".
+   • Wallpapers are instantly organized into "Gojo", while still remaining inside
+     the "All Wallpapers" master view.
 
-The backend executes:
-  1. `regenerateJsonFiles()`
-     → Updates `data/wallpapers.json` (Main catalog with all categories)
-     → Updates `data/categories.json` (Main categories order & covers)
-     → Updates `data/version.json` (Main catalog version)
-     → Updates `data/anime_wallpapers.json` (Dedicated anime catalog)
-     → Updates `data/anime.json` (Alternative anime alias)
-     → Updates `data/anime_version.json` (Dedicated anime version)
-  2. `git add -A data/ images/`
-  3. `git commit -m "..."`
-  4. `git push origin main`
+2. ADDING NEW WALLPAPERS:
+   • Uploading wallpapers from AnimeWall Studio saves them to `images/Anime/` and
+     assigns them to your chosen anime category.
+   • In Vexawall, they automatically appear in Vexawall's main `Anime` category!
 
-Both your Main App and your Anime App catalogs are committed and pushed
-to GitHub together in a single atomic push!
+3. 1-CLICK PUSH TO GITHUB:
+   Whenever you click "Push to GitHub" from EITHER studio:
+   • Both Vexawall catalogs (`wallpapers.json`, `categories.json`, `version.json`)
+   • Both AnimeWall catalogs (`anime_wallpapers.json`, `anime_categories.json`, `anime_version.json`)
+   are committed and pushed to GitHub together in a single atomic commit!
 
 
 ----------------------------------------------------------------------
-4. READY-TO-USE CODE SNIPPETS
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
-A. ANDROID / KOTLIN (JETPACK COMPOSE + RETROFIT + COIL)
+5. READY-TO-USE CODE SNIPPETS (ANDROID / KOTLIN + RETROFIT)
 ----------------------------------------------------------------------
 
 // 1. Data Models
+data class AnimeCategoryItem(
+    val name: String,
+    val index: Int,
+    val count: Int,
+    val coverThumbnail: String?,
+    val coverWallpaper: String?
+)
+
+data class AnimeCategoriesResponse(
+    val version: Int,
+    val categories: List<AnimeCategoryItem>
+)
+
 data class AnimeWallpaperItem(
     val id: String,
+    val filename: String,
     val category: String,
+    val animeCategory: String? = "All", // "All", "Gojo", "Naruto"...
     val name: String?,
     val title: String?,
     val index: Int,
@@ -177,6 +232,7 @@ data class AnimeWallpaperItem(
 data class AnimeVersionResponse(
     val version: Int,
     val totalWallpapers: Int,
+    val categoriesCount: Int,
     val category: String,
     val coverThumbnail: String?,
     val coverWallpaper: String?,
@@ -188,112 +244,29 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface AnimeApiService {
-    // CDN Base: https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/
-    // or https://raw.githubusercontent.com/raj918/wallpaper-assets/main/data/
+    // Base URL: https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/
     
+    @GET("anime_categories.json")
+    suspend fun getCategories(
+        @Query("t") timestamp: Long = System.currentTimeMillis()
+    ): AnimeCategoriesResponse
+
     @GET("anime_wallpapers.json")
-    suspend fun getAnimeWallpapers(
+    suspend fun getWallpapers(
         @Query("t") timestamp: Long = System.currentTimeMillis()
     ): List<AnimeWallpaperItem>
 
     @GET("anime_version.json")
-    suspend fun getAnimeVersion(
+    suspend fun getVersion(
         @Query("t") timestamp: Long = System.currentTimeMillis()
     ): AnimeVersionResponse
 }
 
-// 3. Repository with Smart Cache Check
-class AnimeWallpaperRepository(private val api: AnimeApiService) {
-    suspend fun fetchAnimeWallpapers(cachedVersion: Int): List<AnimeWallpaperItem>? {
-        return try {
-            val versionInfo = api.getAnimeVersion()
-            if (versionInfo.version > cachedVersion) {
-                // New wallpapers available! Fetch fresh list
-                api.getAnimeWallpapers()
-            } else {
-                // Version unchanged, use local database/cache
-                null
-            }
-        } catch (e: Exception) {
-            null // Handle fallback
-        }
+// 3. Helper: Filter Wallpapers by Anime Category
+fun List<AnimeWallpaperItem>.filterByCategory(categoryName: String): List<AnimeWallpaperItem> {
+    if (categoryName.equals("All", ignoreCase = true)) {
+        return this // "All" returns all anime wallpapers
     }
-}
-
-
-----------------------------------------------------------------------
-B. JAVASCRIPT / TYPESCRIPT / REACT NATIVE
-----------------------------------------------------------------------
-
-const CDN_BASE = "https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data";
-
-// 1. Fetch Anime Version
-export async function checkAnimeVersion() {
-  try {
-    const res = await fetch(`${CDN_BASE}/anime_version.json?t=${Date.now()}`);
-    const data = await res.json();
-    return data; // { version, totalWallpapers, lastUpdated, coverThumbnail }
-  } catch (error) {
-    console.error("Failed to check anime version:", error);
-    return null;
-  }
-}
-
-// 2. Fetch All Anime Wallpapers
-export async function fetchAnimeWallpapers() {
-  try {
-    const res = await fetch(`${CDN_BASE}/anime_wallpapers.json?t=${Date.now()}`);
-    const data = await res.json();
-    return data; // Array of anime wallpaper objects
-  } catch (error) {
-    console.error("Failed to fetch anime wallpapers:", error);
-    return [];
-  }
-}
-
-
-----------------------------------------------------------------------
-C. FLUTTER / DART
-----------------------------------------------------------------------
-
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
-class AnimeWallpaper {
-  final String id;
-  final String title;
-  final String url;
-  final String thumb;
-  final bool isCover;
-
-  AnimeWallpaper({
-    required this.id,
-    required this.title,
-    required this.url,
-    required this.thumb,
-    required this.isCover,
-  });
-
-  factory AnimeWallpaper.fromJson(Map<String, dynamic> json) {
-    return AnimeWallpaper(
-      id: json['id'] ?? '',
-      title: json['title'] ?? json['name'] ?? '',
-      url: json['url'] ?? '',
-      thumb: json['thumb'] ?? '',
-      isCover: json['isCover'] ?? false,
-    );
-  }
-}
-
-Future<List<AnimeWallpaper>> fetchAnimeWallpapers() async {
-  const url = 'https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime_wallpapers.json';
-  final response = await http.get(Uri.parse(url));
-
-  if (response.statusCode == 200) {
-    final List<dynamic> data = json.decode(response.body);
-    return data.map((json) => AnimeWallpaper.fromJson(json)).toList();
-  } else {
-    throw Exception('Failed to load anime wallpapers');
-  }
+    return this.filter { it.animeCategory.equals(categoryName, ignoreCase = true) }
 }
 ======================================================================

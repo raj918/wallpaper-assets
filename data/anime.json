@@ -1,7 +1,9 @@
 [
   {
     "id": "Anime_anime_1_413357",
+    "filename": "anime_1.jpg",
     "category": "Anime",
+    "animeCategory": "Gojo",
     "name": "anime_1",
     "title": "anime_1",
     "index": 1,
@@ -11,7 +13,9 @@
   },
   {
     "id": "Anime_anime_2_15d4ff",
+    "filename": "anime_2.jpeg",
     "category": "Anime",
+    "animeCategory": "Gojo",
     "name": "anime_2",
     "title": "anime_2",
     "index": 2,
@@ -21,7 +25,9 @@
   },
   {
     "id": "Anime_anime_3_bab3b6",
+    "filename": "anime_3.jpg",
     "category": "Anime",
+    "animeCategory": "Gojo",
     "name": "anime_3",
     "title": "anime_3",
     "index": 3,
@@ -31,7 +37,9 @@
   },
   {
     "id": "Anime_anime_4_d41499",
+    "filename": "anime_4.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_4",
     "title": "anime_4",
     "index": 4,
@@ -41,7 +49,9 @@
   },
   {
     "id": "Anime_anime_5_f34983",
+    "filename": "anime_5.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_5",
     "title": "anime_5",
     "index": 5,
@@ -51,7 +61,9 @@
   },
   {
     "id": "Anime_anime_6_813b46",
+    "filename": "anime_6.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_6",
     "title": "anime_6",
     "index": 6,
@@ -61,7 +73,9 @@
   },
   {
     "id": "Anime_anime_7_aab2cd",
+    "filename": "anime_7.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_7",
     "title": "anime_7",
     "index": 7,
@@ -71,7 +85,9 @@
   },
   {
     "id": "Anime_anime_8_c0124d",
+    "filename": "anime_8.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_8",
     "title": "anime_8",
     "index": 8,
@@ -81,7 +97,9 @@
   },
   {
     "id": "Anime_anime_9_51f77b",
+    "filename": "anime_9.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_9",
     "title": "anime_9",
     "index": 9,
@@ -91,7 +109,9 @@
   },
   {
     "id": "Anime_anime_10_7a116d",
+    "filename": "anime_10.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_10",
     "title": "anime_10",
     "index": 10,
@@ -101,7 +121,9 @@
   },
   {
     "id": "Anime_anime_11_360cc0",
+    "filename": "anime_11.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_11",
     "title": "anime_11",
     "index": 11,
@@ -111,7 +133,9 @@
   },
   {
     "id": "Anime_anime_12_760da0",
+    "filename": "anime_12.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_12",
     "title": "anime_12",
     "index": 12,
@@ -121,7 +145,9 @@
   },
   {
     "id": "Anime_anime_13_c5faaa",
+    "filename": "anime_13.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_13",
     "title": "anime_13",
     "index": 13,
@@ -131,7 +157,9 @@
   },
   {
     "id": "Anime_anime_14_2eafde",
+    "filename": "anime_14.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_14",
     "title": "anime_14",
     "index": 14,
@@ -141,7 +169,9 @@
   },
   {
     "id": "Anime_anime_15_084e85",
+    "filename": "anime_15.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_15",
     "title": "anime_15",
     "index": 15,
@@ -151,7 +181,9 @@
   },
   {
     "id": "Anime_anime_16_0457a0",
+    "filename": "anime_16.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_16",
     "title": "anime_16",
     "index": 16,
@@ -161,7 +193,9 @@
   },
   {
     "id": "Anime_anime_17_457c76",
+    "filename": "anime_17.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_17",
     "title": "anime_17",
     "index": 17,
@@ -171,7 +205,9 @@
   },
   {
     "id": "Anime_anime_18_4eeecc",
+    "filename": "anime_18.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_18",
     "title": "anime_18",
     "index": 18,
@@ -181,7 +217,9 @@
   },
   {
     "id": "Anime_anime_19_9ffeb7",
+    "filename": "anime_19.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_19",
     "title": "anime_19",
     "index": 19,
@@ -191,7 +229,9 @@
   },
   {
     "id": "Anime_anime_20_8fe53d",
+    "filename": "anime_20.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_20",
     "title": "anime_20",
     "index": 20,
@@ -201,7 +241,9 @@
   },
   {
     "id": "Anime_anime_21_0210ce",
+    "filename": "anime_21.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_21",
     "title": "anime_21",
     "index": 21,
@@ -211,7 +253,9 @@
   },
   {
     "id": "Anime_anime_22_e49e8f",
+    "filename": "anime_22.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_22",
     "title": "anime_22",
     "index": 22,
@@ -221,7 +265,9 @@
   },
   {
     "id": "Anime_anime_23_37afd0",
+    "filename": "anime_23.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_23",
     "title": "anime_23",
     "index": 23,
@@ -231,7 +277,9 @@
   },
   {
     "id": "Anime_anime_24_13294b",
+    "filename": "anime_24.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_24",
     "title": "anime_24",
     "index": 24,
@@ -241,7 +289,9 @@
   },
   {
     "id": "Anime_anime_25_046750",
+    "filename": "anime_25.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_25",
     "title": "anime_25",
     "index": 25,
@@ -251,7 +301,9 @@
   },
   {
     "id": "Anime_anime_26_e432eb",
+    "filename": "anime_26.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_26",
     "title": "anime_26",
     "index": 26,
@@ -261,7 +313,9 @@
   },
   {
     "id": "Anime_anime_27_4a9ae8",
+    "filename": "anime_27.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_27",
     "title": "anime_27",
     "index": 27,
@@ -271,7 +325,9 @@
   },
   {
     "id": "Anime_anime_28_f7306f",
+    "filename": "anime_28.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_28",
     "title": "anime_28",
     "index": 28,
@@ -281,7 +337,9 @@
   },
   {
     "id": "Anime_anime_29_aef548",
+    "filename": "anime_29.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_29",
     "title": "anime_29",
     "index": 29,
@@ -291,7 +349,9 @@
   },
   {
     "id": "Anime_anime_30_43da35",
+    "filename": "anime_30.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_30",
     "title": "anime_30",
     "index": 30,
@@ -301,7 +361,9 @@
   },
   {
     "id": "Anime_anime_31_8efe3e",
+    "filename": "anime_31.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_31",
     "title": "anime_31",
     "index": 31,
@@ -311,7 +373,9 @@
   },
   {
     "id": "Anime_anime_32_1ca328",
+    "filename": "anime_32.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_32",
     "title": "anime_32",
     "index": 32,
@@ -321,7 +385,9 @@
   },
   {
     "id": "Anime_anime_33_cea32a",
+    "filename": "anime_33.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_33",
     "title": "anime_33",
     "index": 33,
@@ -331,7 +397,9 @@
   },
   {
     "id": "Anime_anime_34_2ef8b1",
+    "filename": "anime_34.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_34",
     "title": "anime_34",
     "index": 34,
@@ -341,7 +409,9 @@
   },
   {
     "id": "Anime_anime_35_fe7416",
+    "filename": "anime_35.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_35",
     "title": "anime_35",
     "index": 35,
@@ -351,7 +421,9 @@
   },
   {
     "id": "Anime_anime_36_5f9864",
+    "filename": "anime_36.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_36",
     "title": "anime_36",
     "index": 36,
@@ -361,7 +433,9 @@
   },
   {
     "id": "Anime_anime_37_c99237",
+    "filename": "anime_37.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_37",
     "title": "anime_37",
     "index": 37,
@@ -371,7 +445,9 @@
   },
   {
     "id": "Anime_anime_38_70694a",
+    "filename": "anime_38.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_38",
     "title": "anime_38",
     "index": 38,
@@ -381,7 +457,9 @@
   },
   {
     "id": "Anime_anime_39_8007df",
+    "filename": "anime_39.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_39",
     "title": "anime_39",
     "index": 39,
@@ -391,7 +469,9 @@
   },
   {
     "id": "Anime_anime_40_cf437c",
+    "filename": "anime_40.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_40",
     "title": "anime_40",
     "index": 40,
@@ -401,7 +481,9 @@
   },
   {
     "id": "Anime_anime_41_d85f75",
+    "filename": "anime_41.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_41",
     "title": "anime_41",
     "index": 41,
@@ -411,7 +493,9 @@
   },
   {
     "id": "Anime_anime_42_876900",
+    "filename": "anime_42.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_42",
     "title": "anime_42",
     "index": 42,
@@ -421,7 +505,9 @@
   },
   {
     "id": "Anime_anime_43_fc323d",
+    "filename": "anime_43.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_43",
     "title": "anime_43",
     "index": 43,
@@ -431,7 +517,9 @@
   },
   {
     "id": "Anime_anime_44_915e35",
+    "filename": "anime_44.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_44",
     "title": "anime_44",
     "index": 44,
@@ -441,7 +529,9 @@
   },
   {
     "id": "Anime_anime_45_2a4723",
+    "filename": "anime_45.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_45",
     "title": "anime_45",
     "index": 45,
@@ -451,7 +541,9 @@
   },
   {
     "id": "Anime_anime_46_983b02",
+    "filename": "anime_46.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_46",
     "title": "anime_46",
     "index": 46,
@@ -461,7 +553,9 @@
   },
   {
     "id": "Anime_anime_47_05b9d8",
+    "filename": "anime_47.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_47",
     "title": "anime_47",
     "index": 47,
@@ -471,7 +565,9 @@
   },
   {
     "id": "Anime_anime_48_c33cfb",
+    "filename": "anime_48.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_48",
     "title": "anime_48",
     "index": 48,
@@ -481,7 +577,9 @@
   },
   {
     "id": "Anime_anime_49_479798",
+    "filename": "anime_49.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_49",
     "title": "anime_49",
     "index": 49,
@@ -491,7 +589,9 @@
   },
   {
     "id": "Anime_anime_50_2fab28",
+    "filename": "anime_50.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_50",
     "title": "anime_50",
     "index": 50,
@@ -501,7 +601,9 @@
   },
   {
     "id": "Anime_anime_51_99574e",
+    "filename": "anime_51.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_51",
     "title": "anime_51",
     "index": 51,
@@ -511,7 +613,9 @@
   },
   {
     "id": "Anime_anime_52_c77fef",
+    "filename": "anime_52.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_52",
     "title": "anime_52",
     "index": 52,
@@ -521,7 +625,9 @@
   },
   {
     "id": "Anime_anime_53_a4006a",
+    "filename": "anime_53.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_53",
     "title": "anime_53",
     "index": 53,
@@ -531,7 +637,9 @@
   },
   {
     "id": "Anime_anime_54_09a78e",
+    "filename": "anime_54.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_54",
     "title": "anime_54",
     "index": 54,
@@ -541,7 +649,9 @@
   },
   {
     "id": "Anime_anime_55_b5a425",
+    "filename": "anime_55.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_55",
     "title": "anime_55",
     "index": 55,
@@ -551,7 +661,9 @@
   },
   {
     "id": "Anime_anime_56_886130",
+    "filename": "anime_56.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_56",
     "title": "anime_56",
     "index": 56,
@@ -561,7 +673,9 @@
   },
   {
     "id": "Anime_anime_57_487a39",
+    "filename": "anime_57.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_57",
     "title": "anime_57",
     "index": 57,
@@ -571,7 +685,9 @@
   },
   {
     "id": "Anime_anime_58_df80ad",
+    "filename": "anime_58.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_58",
     "title": "anime_58",
     "index": 58,
@@ -581,7 +697,9 @@
   },
   {
     "id": "Anime_anime_59_230e81",
+    "filename": "anime_59.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_59",
     "title": "anime_59",
     "index": 59,
@@ -591,7 +709,9 @@
   },
   {
     "id": "Anime_anime_60_2bdeec",
+    "filename": "anime_60.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_60",
     "title": "anime_60",
     "index": 60,
@@ -601,7 +721,9 @@
   },
   {
     "id": "Anime_anime_61_6287c2",
+    "filename": "anime_61.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_61",
     "title": "anime_61",
     "index": 61,
@@ -611,7 +733,9 @@
   },
   {
     "id": "Anime_anime_62_23e5ba",
+    "filename": "anime_62.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_62",
     "title": "anime_62",
     "index": 62,
@@ -621,7 +745,9 @@
   },
   {
     "id": "Anime_anime_63_382855",
+    "filename": "anime_63.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_63",
     "title": "anime_63",
     "index": 63,
@@ -631,7 +757,9 @@
   },
   {
     "id": "Anime_anime_64_eb12ae",
+    "filename": "anime_64.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_64",
     "title": "anime_64",
     "index": 64,
@@ -641,7 +769,9 @@
   },
   {
     "id": "Anime_anime_65_43470d",
+    "filename": "anime_65.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_65",
     "title": "anime_65",
     "index": 65,
@@ -651,7 +781,9 @@
   },
   {
     "id": "Anime_anime_66_97c770",
+    "filename": "anime_66.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_66",
     "title": "anime_66",
     "index": 66,
@@ -661,7 +793,9 @@
   },
   {
     "id": "Anime_anime_67_ed2bfa",
+    "filename": "anime_67.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_67",
     "title": "anime_67",
     "index": 67,
@@ -671,7 +805,9 @@
   },
   {
     "id": "Anime_anime_68_b2586f",
+    "filename": "anime_68.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_68",
     "title": "anime_68",
     "index": 68,
@@ -681,7 +817,9 @@
   },
   {
     "id": "Anime_anime_69_ed12e3",
+    "filename": "anime_69.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_69",
     "title": "anime_69",
     "index": 69,
@@ -691,7 +829,9 @@
   },
   {
     "id": "Anime_anime_70_d4a692",
+    "filename": "anime_70.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_70",
     "title": "anime_70",
     "index": 70,
@@ -701,7 +841,9 @@
   },
   {
     "id": "Anime_anime_71_6b579c",
+    "filename": "anime_71.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_71",
     "title": "anime_71",
     "index": 71,
@@ -711,7 +853,9 @@
   },
   {
     "id": "Anime_anime_72_536e98",
+    "filename": "anime_72.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_72",
     "title": "anime_72",
     "index": 72,
@@ -721,7 +865,9 @@
   },
   {
     "id": "Anime_anime_73_c79578",
+    "filename": "anime_73.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_73",
     "title": "anime_73",
     "index": 73,
@@ -731,7 +877,9 @@
   },
   {
     "id": "Anime_anime_74_7cdeba",
+    "filename": "anime_74.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_74",
     "title": "anime_74",
     "index": 74,
@@ -741,7 +889,9 @@
   },
   {
     "id": "Anime_anime_75_021542",
+    "filename": "anime_75.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_75",
     "title": "anime_75",
     "index": 75,
@@ -751,7 +901,9 @@
   },
   {
     "id": "Anime_anime_76_3621be",
+    "filename": "anime_76.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_76",
     "title": "anime_76",
     "index": 76,
@@ -761,7 +913,9 @@
   },
   {
     "id": "Anime_anime_77_f22912",
+    "filename": "anime_77.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_77",
     "title": "anime_77",
     "index": 77,
@@ -771,7 +925,9 @@
   },
   {
     "id": "Anime_anime_78_3416de",
+    "filename": "anime_78.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_78",
     "title": "anime_78",
     "index": 78,
@@ -781,7 +937,9 @@
   },
   {
     "id": "Anime_anime_79_430b30",
+    "filename": "anime_79.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_79",
     "title": "anime_79",
     "index": 79,
@@ -791,7 +949,9 @@
   },
   {
     "id": "Anime_anime_80_e00698",
+    "filename": "anime_80.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_80",
     "title": "anime_80",
     "index": 80,
@@ -801,7 +961,9 @@
   },
   {
     "id": "Anime_anime_81_d552c5",
+    "filename": "anime_81.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_81",
     "title": "anime_81",
     "index": 81,
@@ -811,7 +973,9 @@
   },
   {
     "id": "Anime_anime_82_9f8268",
+    "filename": "anime_82.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_82",
     "title": "anime_82",
     "index": 82,
@@ -821,7 +985,9 @@
   },
   {
     "id": "Anime_anime_83_c0b8b1",
+    "filename": "anime_83.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_83",
     "title": "anime_83",
     "index": 83,
@@ -831,7 +997,9 @@
   },
   {
     "id": "Anime_anime_84_435b2c",
+    "filename": "anime_84.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_84",
     "title": "anime_84",
     "index": 84,
@@ -841,7 +1009,9 @@
   },
   {
     "id": "Anime_anime_85_f5e216",
+    "filename": "anime_85.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_85",
     "title": "anime_85",
     "index": 85,
@@ -851,7 +1021,9 @@
   },
   {
     "id": "Anime_anime_86_4158e0",
+    "filename": "anime_86.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_86",
     "title": "anime_86",
     "index": 86,
@@ -861,7 +1033,9 @@
   },
   {
     "id": "Anime_anime_87_4de29a",
+    "filename": "anime_87.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_87",
     "title": "anime_87",
     "index": 87,
@@ -871,7 +1045,9 @@
   },
   {
     "id": "Anime_anime_88_291591",
+    "filename": "anime_88.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_88",
     "title": "anime_88",
     "index": 88,
@@ -881,7 +1057,9 @@
   },
   {
     "id": "Anime_anime_89_1ce228",
+    "filename": "anime_89.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_89",
     "title": "anime_89",
     "index": 89,
@@ -891,7 +1069,9 @@
   },
   {
     "id": "Anime_anime_90_021a7b",
+    "filename": "anime_90.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_90",
     "title": "anime_90",
     "index": 90,
@@ -901,7 +1081,9 @@
   },
   {
     "id": "Anime_anime_91_ff461c",
+    "filename": "anime_91.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_91",
     "title": "anime_91",
     "index": 91,
@@ -911,7 +1093,9 @@
   },
   {
     "id": "Anime_anime_92_eb5fbf",
+    "filename": "anime_92.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_92",
     "title": "anime_92",
     "index": 92,
@@ -921,7 +1105,9 @@
   },
   {
     "id": "Anime_anime_93_5a2664",
+    "filename": "anime_93.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_93",
     "title": "anime_93",
     "index": 93,
@@ -931,7 +1117,9 @@
   },
   {
     "id": "Anime_anime_94_26daf1",
+    "filename": "anime_94.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_94",
     "title": "anime_94",
     "index": 94,
@@ -941,7 +1129,9 @@
   },
   {
     "id": "Anime_anime_95_0222c8",
+    "filename": "anime_95.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_95",
     "title": "anime_95",
     "index": 95,
@@ -951,7 +1141,9 @@
   },
   {
     "id": "Anime_anime_96_ae515c",
+    "filename": "anime_96.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_96",
     "title": "anime_96",
     "index": 96,
@@ -961,7 +1153,9 @@
   },
   {
     "id": "Anime_anime_97_c87c88",
+    "filename": "anime_97.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_97",
     "title": "anime_97",
     "index": 97,
@@ -971,7 +1165,9 @@
   },
   {
     "id": "Anime_anime_98_ab98ee",
+    "filename": "anime_98.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_98",
     "title": "anime_98",
     "index": 98,
@@ -981,7 +1177,9 @@
   },
   {
     "id": "Anime_anime_99_eb4cd8",
+    "filename": "anime_99.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_99",
     "title": "anime_99",
     "index": 99,
@@ -991,7 +1189,9 @@
   },
   {
     "id": "Anime_anime_100_118f5e",
+    "filename": "anime_100.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_100",
     "title": "anime_100",
     "index": 100,
@@ -1001,7 +1201,9 @@
   },
   {
     "id": "Anime_anime_101_ca5bf4",
+    "filename": "anime_101.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_101",
     "title": "anime_101",
     "index": 101,
@@ -1011,7 +1213,9 @@
   },
   {
     "id": "Anime_anime_102_174698",
+    "filename": "anime_102.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_102",
     "title": "anime_102",
     "index": 102,
@@ -1021,7 +1225,9 @@
   },
   {
     "id": "Anime_anime_103_ce4d7e",
+    "filename": "anime_103.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_103",
     "title": "anime_103",
     "index": 103,
@@ -1031,7 +1237,9 @@
   },
   {
     "id": "Anime_anime_104_28564a",
+    "filename": "anime_104.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_104",
     "title": "anime_104",
     "index": 104,
@@ -1041,7 +1249,9 @@
   },
   {
     "id": "Anime_anime_105_aa346e",
+    "filename": "anime_105.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_105",
     "title": "anime_105",
     "index": 105,
@@ -1051,7 +1261,9 @@
   },
   {
     "id": "Anime_anime_106_8b2c9f",
+    "filename": "anime_106.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_106",
     "title": "anime_106",
     "index": 106,
@@ -1061,7 +1273,9 @@
   },
   {
     "id": "Anime_anime_107_fe0158",
+    "filename": "anime_107.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_107",
     "title": "anime_107",
     "index": 107,
@@ -1071,7 +1285,9 @@
   },
   {
     "id": "Anime_anime_108_c25bb5",
+    "filename": "anime_108.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_108",
     "title": "anime_108",
     "index": 108,
@@ -1081,7 +1297,9 @@
   },
   {
     "id": "Anime_anime_109_3e6880",
+    "filename": "anime_109.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_109",
     "title": "anime_109",
     "index": 109,
@@ -1091,7 +1309,9 @@
   },
   {
     "id": "Anime_anime_110_2a4198",
+    "filename": "anime_110.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_110",
     "title": "anime_110",
     "index": 110,
@@ -1101,7 +1321,9 @@
   },
   {
     "id": "Anime_anime_111_5faf0e",
+    "filename": "anime_111.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_111",
     "title": "anime_111",
     "index": 111,
@@ -1111,7 +1333,9 @@
   },
   {
     "id": "Anime_anime_112_2e5c8b",
+    "filename": "anime_112.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_112",
     "title": "anime_112",
     "index": 112,
@@ -1121,7 +1345,9 @@
   },
   {
     "id": "Anime_anime_113_63d2de",
+    "filename": "anime_113.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_113",
     "title": "anime_113",
     "index": 113,
@@ -1131,7 +1357,9 @@
   },
   {
     "id": "Anime_anime_114_b9aee4",
+    "filename": "anime_114.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_114",
     "title": "anime_114",
     "index": 114,
@@ -1141,7 +1369,9 @@
   },
   {
     "id": "Anime_anime_115_4411b1",
+    "filename": "anime_115.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_115",
     "title": "anime_115",
     "index": 115,
@@ -1151,7 +1381,9 @@
   },
   {
     "id": "Anime_anime_116_ef5dd7",
+    "filename": "anime_116.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_116",
     "title": "anime_116",
     "index": 116,
@@ -1161,7 +1393,9 @@
   },
   {
     "id": "Anime_anime_117_dd8cbe",
+    "filename": "anime_117.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_117",
     "title": "anime_117",
     "index": 117,
@@ -1171,7 +1405,9 @@
   },
   {
     "id": "Anime_anime_118_503a7e",
+    "filename": "anime_118.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_118",
     "title": "anime_118",
     "index": 118,
@@ -1181,7 +1417,9 @@
   },
   {
     "id": "Anime_anime_119_03664e",
+    "filename": "anime_119.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_119",
     "title": "anime_119",
     "index": 119,
@@ -1191,7 +1429,9 @@
   },
   {
     "id": "Anime_anime_120_411ec1",
+    "filename": "anime_120.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_120",
     "title": "anime_120",
     "index": 120,
@@ -1201,7 +1441,9 @@
   },
   {
     "id": "Anime_anime_121_de145f",
+    "filename": "anime_121.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_121",
     "title": "anime_121",
     "index": 121,
@@ -1211,7 +1453,9 @@
   },
   {
     "id": "Anime_anime_122_16180e",
+    "filename": "anime_122.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_122",
     "title": "anime_122",
     "index": 122,
@@ -1221,7 +1465,9 @@
   },
   {
     "id": "Anime_anime_123_802ae4",
+    "filename": "anime_123.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_123",
     "title": "anime_123",
     "index": 123,
@@ -1231,7 +1477,9 @@
   },
   {
     "id": "Anime_anime_124_108a78",
+    "filename": "anime_124.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_124",
     "title": "anime_124",
     "index": 124,
@@ -1241,7 +1489,9 @@
   },
   {
     "id": "Anime_anime_125_3aea98",
+    "filename": "anime_125.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_125",
     "title": "anime_125",
     "index": 125,
@@ -1251,7 +1501,9 @@
   },
   {
     "id": "Anime_anime_126_24563a",
+    "filename": "anime_126.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_126",
     "title": "anime_126",
     "index": 126,
@@ -1261,7 +1513,9 @@
   },
   {
     "id": "Anime_anime_127_2421a7",
+    "filename": "anime_127.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_127",
     "title": "anime_127",
     "index": 127,
@@ -1271,7 +1525,9 @@
   },
   {
     "id": "Anime_anime_128_abe388",
+    "filename": "anime_128.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_128",
     "title": "anime_128",
     "index": 128,
@@ -1281,7 +1537,9 @@
   },
   {
     "id": "Anime_anime_129_8b413a",
+    "filename": "anime_129.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_129",
     "title": "anime_129",
     "index": 129,
@@ -1291,7 +1549,9 @@
   },
   {
     "id": "Anime_anime_130_1e40ce",
+    "filename": "anime_130.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_130",
     "title": "anime_130",
     "index": 130,
@@ -1301,7 +1561,9 @@
   },
   {
     "id": "Anime_anime_131_63adc3",
+    "filename": "anime_131.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_131",
     "title": "anime_131",
     "index": 131,
@@ -1311,7 +1573,9 @@
   },
   {
     "id": "Anime_anime_132_5d801a",
+    "filename": "anime_132.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_132",
     "title": "anime_132",
     "index": 132,
@@ -1321,7 +1585,9 @@
   },
   {
     "id": "Anime_anime_133_69cf63",
+    "filename": "anime_133.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_133",
     "title": "anime_133",
     "index": 133,
@@ -1331,7 +1597,9 @@
   },
   {
     "id": "Anime_anime_134_fb1b46",
+    "filename": "anime_134.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_134",
     "title": "anime_134",
     "index": 134,
@@ -1341,7 +1609,9 @@
   },
   {
     "id": "Anime_anime_135_e0302d",
+    "filename": "anime_135.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_135",
     "title": "anime_135",
     "index": 135,
@@ -1351,7 +1621,9 @@
   },
   {
     "id": "Anime_anime_136_4bb64f",
+    "filename": "anime_136.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_136",
     "title": "anime_136",
     "index": 136,
@@ -1361,7 +1633,9 @@
   },
   {
     "id": "Anime_anime_137_97ca1e",
+    "filename": "anime_137.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_137",
     "title": "anime_137",
     "index": 137,
@@ -1371,7 +1645,9 @@
   },
   {
     "id": "Anime_anime_138_6a5eb5",
+    "filename": "anime_138.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_138",
     "title": "anime_138",
     "index": 138,
@@ -1381,7 +1657,9 @@
   },
   {
     "id": "Anime_anime_139_358ac1",
+    "filename": "anime_139.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_139",
     "title": "anime_139",
     "index": 139,
@@ -1391,7 +1669,9 @@
   },
   {
     "id": "Anime_anime_140_03055d",
+    "filename": "anime_140.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_140",
     "title": "anime_140",
     "index": 140,
@@ -1401,7 +1681,9 @@
   },
   {
     "id": "Anime_anime_141_084d2e",
+    "filename": "anime_141.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_141",
     "title": "anime_141",
     "index": 141,
@@ -1411,7 +1693,9 @@
   },
   {
     "id": "Anime_anime_142_10ce97",
+    "filename": "anime_142.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_142",
     "title": "anime_142",
     "index": 142,
@@ -1421,7 +1705,9 @@
   },
   {
     "id": "Anime_anime_143_a21d77",
+    "filename": "anime_143.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_143",
     "title": "anime_143",
     "index": 143,
@@ -1431,7 +1717,9 @@
   },
   {
     "id": "Anime_anime_144_137d03",
+    "filename": "anime_144.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_144",
     "title": "anime_144",
     "index": 144,
@@ -1441,7 +1729,9 @@
   },
   {
     "id": "Anime_anime_145_78232c",
+    "filename": "anime_145.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_145",
     "title": "anime_145",
     "index": 145,
@@ -1451,7 +1741,9 @@
   },
   {
     "id": "Anime_anime_146_6e9c9a",
+    "filename": "anime_146.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_146",
     "title": "anime_146",
     "index": 146,
@@ -1461,7 +1753,9 @@
   },
   {
     "id": "Anime_anime_147_9bc7ff",
+    "filename": "anime_147.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_147",
     "title": "anime_147",
     "index": 147,
@@ -1471,7 +1765,9 @@
   },
   {
     "id": "Anime_anime_148_8101a3",
+    "filename": "anime_148.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_148",
     "title": "anime_148",
     "index": 148,
@@ -1481,7 +1777,9 @@
   },
   {
     "id": "Anime_anime_149_308d13",
+    "filename": "anime_149.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_149",
     "title": "anime_149",
     "index": 149,
@@ -1491,7 +1789,9 @@
   },
   {
     "id": "Anime_anime_150_99c425",
+    "filename": "anime_150.jpeg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_150",
     "title": "anime_150",
     "index": 150,
@@ -1501,7 +1801,9 @@
   },
   {
     "id": "Anime_anime_151_4afb7e",
+    "filename": "anime_151.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_151",
     "title": "anime_151",
     "index": 151,
@@ -1511,7 +1813,9 @@
   },
   {
     "id": "Anime_anime_152_110ad6",
+    "filename": "anime_152.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_152",
     "title": "anime_152",
     "index": 152,
@@ -1521,7 +1825,9 @@
   },
   {
     "id": "Anime_anime_153_5b200e",
+    "filename": "anime_153.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_153",
     "title": "anime_153",
     "index": 153,
@@ -1531,7 +1837,9 @@
   },
   {
     "id": "Anime_anime_154_d75996",
+    "filename": "anime_154.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_154",
     "title": "anime_154",
     "index": 154,
@@ -1541,7 +1849,9 @@
   },
   {
     "id": "Anime_anime_155_14e6ff",
+    "filename": "anime_155.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_155",
     "title": "anime_155",
     "index": 155,
@@ -1551,7 +1861,9 @@
   },
   {
     "id": "Anime_anime_156_7f708b",
+    "filename": "anime_156.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_156",
     "title": "anime_156",
     "index": 156,
@@ -1561,7 +1873,9 @@
   },
   {
     "id": "Anime_anime_157_67d6f3",
+    "filename": "anime_157.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_157",
     "title": "anime_157",
     "index": 157,
@@ -1571,7 +1885,9 @@
   },
   {
     "id": "Anime_anime_158_aefde9",
+    "filename": "anime_158.webp",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_158",
     "title": "anime_158",
     "index": 158,
@@ -1581,7 +1897,9 @@
   },
   {
     "id": "Anime_anime_159_603616",
+    "filename": "anime_159.jpg",
     "category": "Anime",
+    "animeCategory": "All",
     "name": "anime_159",
     "title": "anime_159",
     "index": 159,

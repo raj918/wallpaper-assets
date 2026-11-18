@@ -1,0 +1,15 @@
+{
+  "categories": [
+    "All",
+    "Gojo"
+  ],
+  "covers": {
+    "All": "anime_1.jpg",
+    "Gojo": "anime_1.jpg"
+  },
+  "assignments": {
+    "anime_1.jpg": "Gojo",
+    "anime_2.jpeg": "Gojo",
+    "anime_3.jpg": "Gojo"
+  }
+}

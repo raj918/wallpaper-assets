@@ -20,6 +20,8 @@ const CATEGORY_COVERS_JSON = path.join(DATA_DIR, 'category_covers.json');
 const ANIME_WALLPAPERS_JSON = path.join(DATA_DIR, 'anime_wallpapers.json');
 const ANIME_JSON = path.join(DATA_DIR, 'anime.json');
 const ANIME_VERSION_JSON = path.join(DATA_DIR, 'anime_version.json');
+const ANIME_CATEGORIES_JSON = path.join(DATA_DIR, 'anime_categories.json');
+const ANIME_CATEGORY_MAPPING_JSON = path.join(DATA_DIR, 'anime_category_mapping.json');
 const CONFIG_FILE = path.join(ROOT_DIR, 'config.json');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 
@@ -96,6 +98,46 @@ app.get('/anime_version.json', (req, res) => {
     res.status(404).json({ error: 'anime_version.json not found' });
   }
 });
+
+app.get('/anime_categories.json', (req, res) => {
+  if (fs.existsSync(ANIME_CATEGORIES_JSON)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.sendFile(ANIME_CATEGORIES_JSON);
+  } else {
+    res.status(404).json({ error: 'anime_categories.json not found' });
+  }
+});
+
+// Helper: Anime Categories & Mapping Management
+function getAnimeCategoryMapping() {
+  const defaults = {
+    categories: ['All'],
+    covers: {},
+    assignments: {} // filename -> categoryName
+  };
+  if (fs.existsSync(ANIME_CATEGORY_MAPPING_JSON)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(ANIME_CATEGORY_MAPPING_JSON, 'utf8'));
+      const cats = Array.isArray(data.categories) && data.categories.length > 0 ? data.categories : ['All'];
+      if (!cats.includes('All')) cats.unshift('All');
+      return {
+        categories: cats,
+        covers: data.covers || {},
+        assignments: data.assignments || {}
+      };
+    } catch (e) {
+      console.error('Error reading anime category mapping:', e);
+    }
+  }
+  return defaults;
+}
+
+function saveAnimeCategoryMapping(data) {
+  if (!data.categories.includes('All')) {
+    data.categories.unshift('All');
+  }
+  fs.writeFileSync(ANIME_CATEGORY_MAPPING_JSON, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
 
 // Helper: Config Management
 function getConfig() {
@@ -329,41 +371,102 @@ function regenerateJsonFiles(customOrder = null) {
 
   // Dedicated Anime JSON generation for AnimeWall 4K app
   const animeCategoryName = categories.find(c => c.toLowerCase() === 'anime') || 'Anime';
-  const animeWallpapers = wallpapers
-    .filter(w => w.category && w.category.toLowerCase() === 'anime')
-    .map((w, idx) => ({
+  const animeMapping = getAnimeCategoryMapping();
+  const animeAssignments = animeMapping.assignments || {};
+  const animeCovers = animeMapping.covers || {};
+  const animeCategories = animeMapping.categories || ['All'];
+  if (!animeCategories.includes('All')) animeCategories.unshift('All');
+
+  // Filter all anime wallpapers from master list
+  const rawAnimeWallpapers = wallpapers.filter(w => w.category && w.category.toLowerCase() === 'anime');
+
+  const animeWallpapers = rawAnimeWallpapers.map((w, idx) => {
+    const filename = w.url.split('/').pop();
+    const assignedCat = animeAssignments[filename] || 'All';
+    const isCatCover = animeCovers[assignedCat] === filename || (assignedCat === 'All' && animeCovers['All'] === filename);
+    return {
       id: w.id,
+      filename,
       category: w.category,
-      name: w.url.split('/').pop().replace(/\.[^/.]+$/, ''),
-      title: w.url.split('/').pop().replace(/\.[^/.]+$/, ''),
+      animeCategory: assignedCat,
+      name: path.parse(filename).name,
+      title: path.parse(filename).name,
       index: idx + 1,
-      isCover: w.isCover,
+      isCover: w.isCover || isCatCover,
       url: w.url,
       thumb: w.thumb
-    }));
+    };
+  });
 
   fs.writeFileSync(ANIME_WALLPAPERS_JSON, JSON.stringify(animeWallpapers, null, 2) + '\n', 'utf8');
   fs.writeFileSync(ANIME_JSON, JSON.stringify(animeWallpapers, null, 2) + '\n', 'utf8');
 
-  const animeCoverFilename = covers[animeCategoryName] || (animeWallpapers.length > 0 ? animeWallpapers[0].url.split('/').pop() : null);
-  const animeCoverThumb = animeCoverFilename
-    ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}_thumb/${encodeURIComponent(animeCoverFilename)}`
-    : null;
-  const animeCoverFull = animeCoverFilename
-    ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}/${encodeURIComponent(animeCoverFilename)}`
-    : null;
+  // Build anime categories list with covers & counts
+  const animeCategoriesList = [];
+  animeCategories.forEach((cat, idx) => {
+    let catWallpapers;
+    if (cat === 'All') {
+      catWallpapers = animeWallpapers; // "All" contains ALL anime wallpapers!
+    } else {
+      catWallpapers = animeWallpapers.filter(w => w.animeCategory === cat);
+    }
 
+    let catCoverFile = animeCovers[cat];
+    if (!catCoverFile || !catWallpapers.some(w => w.filename === catCoverFile)) {
+      catCoverFile = catWallpapers.length > 0 ? catWallpapers[0].filename : null;
+      if (catCoverFile) {
+        animeCovers[cat] = catCoverFile;
+      }
+    }
+
+    const coverThumbUrl = catCoverFile
+      ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}_thumb/${encodeURIComponent(catCoverFile)}`
+      : null;
+    const coverFullUrl = catCoverFile
+      ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}/${encodeURIComponent(catCoverFile)}`
+      : null;
+
+    const previewFiles = catCoverFile && catWallpapers.some(w => w.filename === catCoverFile)
+      ? [catCoverFile, ...catWallpapers.map(w => w.filename).filter(f => f !== catCoverFile)].slice(0, 4)
+      : catWallpapers.map(w => w.filename).slice(0, 4);
+
+    const previews = previewFiles.map(f => `/storage/images/${encodeURIComponent(animeCategoryName)}_thumb/${encodeURIComponent(f)}`);
+
+    animeCategoriesList.push({
+      name: cat,
+      index: idx + 1,
+      count: catWallpapers.length,
+      coverFilename: catCoverFile || null,
+      coverThumbnail: coverThumbUrl,
+      coverWallpaper: coverFullUrl,
+      localCoverThumbnail: catCoverFile ? `/storage/images/${encodeURIComponent(animeCategoryName)}_thumb/${encodeURIComponent(catCoverFile)}` : null,
+      localCoverWallpaper: catCoverFile ? `/storage/images/${encodeURIComponent(animeCategoryName)}/${encodeURIComponent(catCoverFile)}` : null,
+      previews
+    });
+  });
+
+  animeMapping.covers = animeCovers;
+  saveAnimeCategoryMapping(animeMapping);
+
+  const animeCategoriesJsonData = {
+    version: versionData.version,
+    categories: animeCategoriesList
+  };
+  fs.writeFileSync(ANIME_CATEGORIES_JSON, JSON.stringify(animeCategoriesJsonData, null, 2) + '\n', 'utf8');
+
+  const allAnimeCoverFile = animeCovers['All'] || (animeWallpapers.length > 0 ? animeWallpapers[0].filename : null);
   const animeVersionData = {
     version: versionData.version,
     totalWallpapers: animeWallpapers.length,
+    categoriesCount: animeCategoriesList.length,
     category: animeCategoryName,
-    coverThumbnail: animeCoverThumb,
-    coverWallpaper: animeCoverFull,
+    coverThumbnail: allAnimeCoverFile ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}_thumb/${encodeURIComponent(allAnimeCoverFile)}` : null,
+    coverWallpaper: allAnimeCoverFile ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}/${encodeURIComponent(allAnimeCoverFile)}` : null,
     lastUpdated: versionData.lastUpdated
   };
   fs.writeFileSync(ANIME_VERSION_JSON, JSON.stringify(animeVersionData, null, 2) + '\n', 'utf8');
 
-  return { wallpapers, animeWallpapers, categoriesData: categoriesJsonData, versionData, animeVersionData };
+  return { wallpapers, animeWallpapers, categoriesData: categoriesJsonData, animeCategoriesData: animeCategoriesJsonData, versionData, animeVersionData };
 }
 
 // Helper: Calculate next sequential file name for a category
@@ -609,6 +712,332 @@ app.get(['/api/anime/version', '/api/anime-version'], (req, res) => {
       });
     }
   } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Dedicated Anime Categories API (lists All, Gojo, Naruto, etc.)
+app.get('/api/anime/categories', (req, res) => {
+  try {
+    if (!fs.existsSync(ANIME_CATEGORIES_JSON)) {
+      regenerateJsonFiles();
+    }
+    res.sendFile(ANIME_CATEGORIES_JSON);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Create New Anime Category (e.g. "Gojo")
+app.post('/api/anime/categories', async (req, res) => {
+  try {
+    let { name } = req.body;
+    if (!name || typeof name !== 'string') {
+      return res.status(400).json({ error: 'Category name is required' });
+    }
+    name = name.trim().replace(/[\\/:*?"<>|]/g, '');
+    if (!name) return res.status(400).json({ error: 'Invalid category name' });
+
+    const mapping = getAnimeCategoryMapping();
+    if (mapping.categories.some(c => c.toLowerCase() === name.toLowerCase())) {
+      return res.status(400).json({ error: 'Anime category already exists' });
+    }
+
+    mapping.categories.push(name);
+    saveAnimeCategoryMapping(mapping);
+
+    const { versionData, animeCategoriesData } = regenerateJsonFiles();
+
+    const cfg = getConfig();
+    let pushedToGit = false;
+    if (cfg.git && cfg.git.autoPush) {
+      try {
+        await execGitSync(`Admin: Created Anime category "${name}"`);
+        pushedToGit = true;
+      } catch (gitErr) {
+        console.warn('Auto-Push error:', gitErr.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      category: name,
+      version: versionData.version,
+      categories: animeCategoriesData.categories,
+      pushedToGit
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Delete Anime Category (wallpapers unassigned back to "All")
+app.delete('/api/anime/category/:name', async (req, res) => {
+  try {
+    const catName = req.params.name;
+    if (catName.toLowerCase() === 'all') {
+      return res.status(400).json({ error: 'Cannot delete the "All" category' });
+    }
+
+    const mapping = getAnimeCategoryMapping();
+    const idx = mapping.categories.findIndex(c => c.toLowerCase() === catName.toLowerCase());
+    if (idx === -1) {
+      return res.status(404).json({ error: 'Anime category not found' });
+    }
+
+    mapping.categories.splice(idx, 1);
+    delete mapping.covers[catName];
+
+    // Reset assignments for this category to "All"
+    for (const [file, assigned] of Object.entries(mapping.assignments)) {
+      if (assigned.toLowerCase() === catName.toLowerCase()) {
+        delete mapping.assignments[file];
+      }
+    }
+
+    saveAnimeCategoryMapping(mapping);
+    const { versionData, animeCategoriesData } = regenerateJsonFiles();
+
+    const cfg = getConfig();
+    let pushedToGit = false;
+    if (cfg.git && cfg.git.autoPush) {
+      try {
+        await execGitSync(`Admin: Removed Anime category "${catName}"`);
+        pushedToGit = true;
+      } catch (gitErr) {
+        console.warn('Auto-Push error:', gitErr.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      deletedCategory: catName,
+      version: versionData.version,
+      categories: animeCategoriesData.categories,
+      pushedToGit
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Get Single Anime Category Wallpapers (e.g. "Gojo" or "All")
+app.get('/api/anime/category/:name', (req, res) => {
+  try {
+    const catName = req.params.name;
+    if (!fs.existsSync(ANIME_WALLPAPERS_JSON)) {
+      regenerateJsonFiles();
+    }
+    const allAnime = JSON.parse(fs.readFileSync(ANIME_WALLPAPERS_JSON, 'utf8'));
+    let filtered;
+    if (catName.toLowerCase() === 'all') {
+      filtered = allAnime;
+    } else {
+      filtered = allAnime.filter(w => (w.animeCategory || '').toLowerCase() === catName.toLowerCase());
+    }
+
+    const mapping = getAnimeCategoryMapping();
+    const coverFilename = mapping.covers[catName] || (filtered.length > 0 ? filtered[0].filename : null);
+
+    res.json({
+      name: catName,
+      count: filtered.length,
+      coverFilename,
+      wallpapers: filtered
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Transfer Wallpapers to Category (e.g. transfer 10 wallpapers to "Gojo")
+app.post('/api/anime/wallpapers/transfer', async (req, res) => {
+  try {
+    const { filenames, targetCategory } = req.body;
+    if (!Array.isArray(filenames) || filenames.length === 0) {
+      return res.status(400).json({ error: 'filenames array is required' });
+    }
+    if (!targetCategory || typeof targetCategory !== 'string') {
+      return res.status(400).json({ error: 'targetCategory is required' });
+    }
+
+    const mapping = getAnimeCategoryMapping();
+    const cleanTarget = targetCategory.trim();
+
+    // If target doesn't exist yet and isn't "All", add it
+    if (!mapping.categories.some(c => c.toLowerCase() === cleanTarget.toLowerCase())) {
+      mapping.categories.push(cleanTarget);
+    }
+
+    const isAll = cleanTarget.toLowerCase() === 'all';
+    for (const f of filenames) {
+      if (isAll) {
+        delete mapping.assignments[f];
+      } else {
+        mapping.assignments[f] = cleanTarget;
+      }
+    }
+
+    saveAnimeCategoryMapping(mapping);
+    const { versionData, animeCategoriesData } = regenerateJsonFiles();
+
+    const cfg = getConfig();
+    let pushedToGit = false;
+    if (cfg.git && cfg.git.autoPush) {
+      try {
+        await execGitSync(`Admin: Transferred ${filenames.length} anime wallpapers to "${cleanTarget}"`);
+        pushedToGit = true;
+      } catch (gitErr) {
+        console.warn('Auto-Push error:', gitErr.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      transferredCount: filenames.length,
+      targetCategory: cleanTarget,
+      version: versionData.version,
+      categories: animeCategoriesData.categories,
+      pushedToGit
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Set Cover for Anime Category
+app.post('/api/anime/category/cover', async (req, res) => {
+  try {
+    const { category, filename } = req.body;
+    if (!category || !filename) {
+      return res.status(400).json({ error: 'category and filename are required' });
+    }
+
+    const mapping = getAnimeCategoryMapping();
+    mapping.covers[category] = filename;
+    saveAnimeCategoryMapping(mapping);
+
+    const { versionData } = regenerateJsonFiles();
+
+    const cfg = getConfig();
+    let pushedToGit = false;
+    if (cfg.git && cfg.git.autoPush) {
+      try {
+        await execGitSync(`Admin: Set anime cover for "${category}" to "${filename}"`);
+        pushedToGit = true;
+      } catch (gitErr) {
+        console.warn('Auto-Push error:', gitErr.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      category,
+      coverFilename: filename,
+      newVersion: versionData.version,
+      pushedToGit
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Upload Wallpapers via Anime Studio directly
+app.post('/api/anime/upload', upload.array('files', 500), async (req, res) => {
+  try {
+    const animeCategory = (req.body.animeCategory || 'All').trim();
+    const preserveOriginalNames = req.body.preserveOriginalNames;
+
+    const { catDir, thumbDir } = ensureCategoryDirs('Anime');
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({ error: 'No files provided' });
+    }
+
+    const cfg = getConfig();
+    const thumbWidth = cfg.thumbnailWidth || 520;
+    const processed = [];
+    const mapping = getAnimeCategoryMapping();
+
+    if (animeCategory.toLowerCase() !== 'all' && !mapping.categories.includes(animeCategory)) {
+      mapping.categories.push(animeCategory);
+    }
+
+    for (const file of req.files) {
+      const ext = (path.extname(file.originalname) || '.jpg').toLowerCase();
+      let outputFilename;
+
+      if (preserveOriginalNames === 'true' || preserveOriginalNames === true) {
+        const cleanBase = path.parse(file.originalname).name.replace(/[^a-zA-Z0-9_\-\.]/g, '_');
+        outputFilename = `${cleanBase}${ext}`;
+        if (fs.existsSync(path.join(catDir, outputFilename))) {
+          outputFilename = `${cleanBase}_${Date.now()}${ext}`;
+        }
+      } else {
+        outputFilename = getNextFileName('Anime', file.originalname);
+      }
+
+      const mainPath = path.join(catDir, outputFilename);
+      const thumbPath = path.join(thumbDir, outputFilename);
+
+      // Save untouched original
+      fs.writeFileSync(mainPath, file.buffer);
+
+      // Sharp thumbnail
+      let thumbPipeline = sharp(file.buffer).resize({
+        width: thumbWidth,
+        withoutEnlargement: true
+      });
+
+      if (ext === '.webp') {
+        thumbPipeline = thumbPipeline.webp({ quality: 88 });
+      } else if (ext === '.png') {
+        thumbPipeline = thumbPipeline.png({ compressionLevel: 8 });
+      } else {
+        thumbPipeline = thumbPipeline.jpeg({
+          quality: 88,
+          chromaSubsampling: '4:4:4'
+        });
+      }
+
+      await thumbPipeline.toFile(thumbPath);
+
+      if (animeCategory.toLowerCase() !== 'all') {
+        mapping.assignments[outputFilename] = animeCategory;
+      }
+
+      processed.push({
+        filename: outputFilename,
+        originalName: file.originalname,
+        category: 'Anime',
+        animeCategory
+      });
+    }
+
+    saveAnimeCategoryMapping(mapping);
+    const { versionData, animeCategoriesData } = regenerateJsonFiles();
+
+    // Auto-Push to GitHub if enabled
+    let pushedToGit = false;
+    if (cfg.git && cfg.git.autoPush) {
+      try {
+        await execGitSync(`Admin: Uploaded ${processed.length} anime wallpapers to "${animeCategory}"`);
+        pushedToGit = true;
+      } catch (gitErr) {
+        console.warn('Auto-Push error:', gitErr.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      category: animeCategory,
+      count: processed.length,
+      processed,
+      newVersion: versionData.version,
+      categories: animeCategoriesData.categories,
+      pushedToGit
+    });
+  } catch (err) {
+    console.error('Anime upload error:', err);
     res.status(500).json({ error: err.message });
   }
 });

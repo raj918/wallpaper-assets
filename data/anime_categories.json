@@ -1,0 +1,36 @@
+{
+  "version": 112,
+  "categories": [
+    {
+      "name": "All",
+      "index": 1,
+      "count": 159,
+      "coverFilename": "anime_1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
+      "previews": [
+        "/storage/images/Anime_thumb/anime_1.jpg",
+        "/storage/images/Anime_thumb/anime_2.jpeg",
+        "/storage/images/Anime_thumb/anime_3.jpg",
+        "/storage/images/Anime_thumb/anime_4.webp"
+      ]
+    },
+    {
+      "name": "Gojo",
+      "index": 2,
+      "count": 3,
+      "coverFilename": "anime_1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
+      "previews": [
+        "/storage/images/Anime_thumb/anime_1.jpg",
+        "/storage/images/Anime_thumb/anime_2.jpeg",
+        "/storage/images/Anime_thumb/anime_3.jpg"
+      ]
+    }
+  ]
+}

@@ -1312,6 +1312,337 @@
       border-color: rgba(59, 130, 246, 0.4);
       background: #0f1e36;
     }
+
+    /* Workspace Landing Selector Dialog & Cards */
+    .workspace-select-dialog {
+      max-width: 840px;
+      width: 92%;
+      background: #0b0f17;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 2.25rem;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+
+    .workspace-select-head {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .ws-logo-icon {
+      font-size: 34px;
+      margin-bottom: 0.5rem;
+    }
+
+    .workspace-select-head h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .workspace-select-head p {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .workspace-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .workspace-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ws-card {
+      background: var(--surface-1);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .ws-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .ws-card-anime {
+      border-color: rgba(236, 72, 153, 0.3);
+      background: linear-gradient(180deg, rgba(236, 72, 153, 0.05) 0%, rgba(15, 23, 42, 0.6) 100%);
+    }
+
+    .ws-card-anime:hover {
+      border-color: #ec4899;
+      box-shadow: 0 16px 40px rgba(236, 72, 153, 0.22);
+    }
+
+    .ws-card-vexawall {
+      border-color: rgba(59, 130, 246, 0.3);
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, rgba(15, 23, 42, 0.6) 100%);
+    }
+
+    .ws-card-vexawall:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 16px 40px rgba(59, 130, 246, 0.22);
+    }
+
+    .ws-card-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .ws-card-anime .ws-card-badge {
+      background: rgba(236, 72, 153, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.35);
+    }
+
+    .ws-card-vexawall .ws-card-badge {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+
+    .ws-card-icon {
+      font-size: 28px;
+      margin-bottom: 0.75rem;
+    }
+
+    .ws-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .ws-card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .ws-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ws-tag {
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+
+    .ws-launch-btn {
+      width: 100%;
+      height: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border-radius: 8px;
+    }
+
+    .ws-btn-anime {
+      background: linear-gradient(135deg, #db2777 0%, #be185d 100%);
+      border: 1px solid #db2777;
+      color: #fff;
+    }
+
+    .ws-btn-anime:hover {
+      background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    }
+
+    .ws-btn-vexawall {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      border: 1px solid #2563eb;
+      color: #fff;
+    }
+
+    .ws-btn-vexawall:hover {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    }
+
+    .workspace-select-foot {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.25rem;
+    }
+
+    /* Header Workspace Switcher Toggle */
+    .workspace-switch-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-left: 1.25rem;
+    }
+
+    .ws-toggle-pill {
+      display: inline-flex;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .ws-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .ws-toggle-btn:hover {
+      color: #fff;
+    }
+
+    .ws-toggle-btn.active.vexawall-active {
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+    }
+
+    .ws-toggle-btn.active.anime-active {
+      background: rgba(236, 72, 153, 0.25);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.4);
+    }
+
+    /* Anime Categories Pill Bar */
+    .anime-cat-bar {
+      display: flex;
+      gap: 0.65rem;
+      overflow-x: auto;
+      padding: 0.5rem 0 1rem 0;
+      scrollbar-width: thin;
+    }
+
+    .anime-cat-chip {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .anime-cat-chip:hover {
+      border-color: rgba(236, 72, 153, 0.4);
+      background: var(--surface-2);
+    }
+
+    .anime-cat-chip.active {
+      border-color: #ec4899;
+      background: rgba(236, 72, 153, 0.15);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
+    }
+
+    .anime-cat-chip .chip-name {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .anime-cat-chip .chip-count {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 10px;
+      background: var(--surface-3);
+      color: var(--text-muted);
+    }
+
+    .anime-cat-chip.active .chip-count {
+      background: #ec4899;
+      color: #fff;
+    }
+
+    .anime-cat-chip .chip-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      object-fit: cover;
+      background: var(--surface-3);
+    }
+
+    /* Transfer Modal Category List */
+    .transfer-cat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-height: 280px;
+      overflow-y: auto;
+      margin: 1rem 0;
+    }
+
+    .transfer-cat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .transfer-cat-item:hover {
+      border-color: #9333ea;
+      background: rgba(147, 51, 234, 0.08);
+    }
+
+    .transfer-cat-item.selected {
+      border-color: #9333ea;
+      background: rgba(147, 51, 234, 0.22);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -1319,7 +1650,7 @@
   <!-- Top Header Bar -->
   <header>
     <div class="brand-wrap" onclick="showHomeView()">
-      <div class="logo-badge">
+      <div class="logo-badge" id="headerLogoBadge">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
           <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -1327,10 +1658,25 @@
         </svg>
       </div>
       <div>
-        <span class="brand-title">Wallpaper Studio</span>
+        <span class="brand-title" id="headerBrandTitle">Wallpaper Studio</span>
         <span class="brand-sep">&bull;</span>
-        <span class="brand-sub">GitHub Raw Asset Automation</span>
+        <span class="brand-sub" id="headerBrandSub">GitHub Raw Asset Automation</span>
       </div>
+    </div>
+
+    <!-- Workspace Switcher Pill in Header -->
+    <div class="workspace-switch-wrap">
+      <div class="ws-toggle-pill">
+        <button class="ws-toggle-btn active vexawall-active" id="pillWsVexawall" onclick="switchWorkspace('vexawall')">
+          <span>🖼️ Vexawall</span>
+        </button>
+        <button class="ws-toggle-btn" id="pillWsAnime" onclick="switchWorkspace('anime')">
+          <span>🌸 AnimeWall</span>
+        </button>
+      </div>
+      <button class="btn btn-xs btn-outline" onclick="openWorkspaceSelectorModal()" title="Switch Studio Landing View">
+        ⇄ Switch Studio
+      </button>
     </div>
 
     <div class="header-right">
@@ -1528,6 +1874,105 @@
         <!-- Rendered dynamically -->
       </div>
     </section>
+
+    <!-- VIEW 3: AnimeWall Studio Dedicated View -->
+    <section id="animeStudioView" style="display: none;">
+      <!-- Anime Toolbar -->
+      <div class="toolbar" style="margin-bottom: 0.75rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <h2 style="font-size: 17px; font-weight: 700; color: #fff;">🌸 AnimeWall Studio</h2>
+            <span class="pill-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border-color: rgba(236, 72, 153, 0.35);">
+              Dedicated Anime App Backend
+            </span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 3px;">
+            Organize anime wallpapers into sub-categories (Gojo, Naruto, All). Multi-tick wallpapers to transfer them between categories.
+          </p>
+        </div>
+        <div class="toolbar-actions">
+          <button class="btn btn-primary" onclick="openNewAnimeCategoryModal()" style="background: #db2777; border-color: #be185d;">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            + New Anime Category
+          </button>
+        </div>
+      </div>
+
+      <!-- Anime Categories Pills Bar -->
+      <div class="anime-cat-bar" id="animeCategoryBar">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Active Category Header & Multi-Select Action Toolbar -->
+      <div class="toolbar" style="margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+        <div class="breadcrumbs">
+          <span class="breadcrumb-item" style="color: #f472b6;">Category</span>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-active" id="activeAnimeCategoryTitle">All Wallpapers</span>
+          <span class="pill-badge" id="activeAnimeCategoryBadge" style="margin-left: 0.5rem;">0 wallpapers</span>
+        </div>
+
+        <div class="toolbar-actions">
+          <!-- Multi-Select Action Cluster -->
+          <div class="selection-cluster" id="animeSelectionCluster" style="display: none;">
+            <span class="selection-pill" style="border-color: rgba(147, 51, 234, 0.4); background: rgba(147, 51, 234, 0.15);">
+              <span id="animeSelectedCountText" style="color: #c084fc; font-weight: 600;">0 selected</span>
+              <button class="selection-clear-btn" onclick="clearAnimeSelection()">&times;</button>
+            </span>
+            <button class="btn btn-xs" id="btnTransferToCategory" onclick="openTransferCategoryModal()" style="background: #7e22ce; color: #fff; font-weight: 600; border: none; padding: 0 10px;">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+              Transfer to Category (<span id="animeTransferCount">0</span>)
+            </button>
+            <button class="btn btn-danger btn-xs" onclick="deleteSelectedAnimeWallpapers()">
+              Delete Selected
+            </button>
+          </div>
+
+          <button class="btn btn-xs" onclick="toggleSelectAllAnimeWallpapers()">
+            <span id="btnSelectAllAnimeText">Select All</span>
+          </button>
+
+          <button class="btn btn-xs" onclick="loadAnimeCategoryWallpapers(activeAnimeCategory)">
+            Refresh
+          </button>
+
+          <button class="btn btn-danger btn-xs" id="btnDeleteAnimeCategory" style="display: none;" onclick="deleteActiveAnimeCategory()">
+            Delete Category
+          </button>
+        </div>
+      </div>
+
+      <!-- Compact Upload Dropzone for Anime Studio -->
+      <div class="dropzone-compact" id="animeDropzone" onclick="document.getElementById('animeFileInput').click()">
+        <div class="dropzone-left">
+          <div class="dropzone-icon-box" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg>
+          </div>
+          <div class="dropzone-text">
+            <h4>Upload wallpapers into <span id="animeUploadCategoryName" style="color: #f472b6;">All Wallpapers</span></h4>
+            <p>1 full image saved untouched, 1 crisp 520px retina thumbnail generated, and synced to BOTH Vexawall and Anime catalogs automatically.</p>
+          </div>
+        </div>
+
+        <div class="dropzone-options" onclick="event.stopPropagation()">
+          <button class="btn btn-primary" style="background: #db2777; border-color: #be185d;" onclick="document.getElementById('animeFileInput').click()">
+            Upload Anime Wallpapers
+          </button>
+        </div>
+        <input type="file" id="animeFileInput" multiple accept="image/*" style="display: none;" onchange="handleAnimeFileSelection(event)">
+      </div>
+
+      <!-- Anime Wallpaper Grid -->
+      <div class="wall-grid size-md" id="animeWallpaperGrid" style="margin-top: 1.5rem;">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
   </main>
 
   <!-- Modal: Rearrange Categories Sequence -->
@@ -1722,6 +2167,121 @@
     </div>
   </div>
 
+  <!-- Modal: Workspace Selector (Landing Choice) -->
+  <div class="modal-overlay" id="modalWorkspaceSelect">
+    <div class="modal-dialog workspace-select-dialog">
+      <div class="workspace-select-head">
+        <div class="ws-logo-icon">🚀</div>
+        <h2>Select Studio Workspace</h2>
+        <p>Choose which wallpaper backend you want to continue working in. Both studios share wallpapers and auto-sync changes seamlessly.</p>
+      </div>
+
+      <div class="workspace-cards-grid">
+        <!-- 1. Anime Studio Card (Left) -->
+        <div class="ws-card ws-card-anime" onclick="selectWorkspaceFromModal('anime')">
+          <div class="ws-card-badge">🌸 DEDICATED APP</div>
+          <div class="ws-card-icon">🌸</div>
+          <h3>AnimeWall Studio</h3>
+          <p class="ws-card-desc">Dedicated backend for the Anime-focused wallpaper app. Organize anime wallpapers into sub-categories (Gojo, Naruto, All), transfer wallpapers with multi-tick checkboxes, and manage category covers.</p>
+          <div class="ws-card-meta">
+            <span class="ws-tag">159 Anime Wallpapers</span>
+            <span class="ws-tag">Anime Sub-Categories</span>
+            <span class="ws-tag">Multi-Tick Transfer</span>
+            <span class="ws-tag">Auto-Syncs Vexawall</span>
+          </div>
+          <button class="btn ws-launch-btn ws-btn-anime" onclick="event.stopPropagation(); selectWorkspaceFromModal('anime')">
+            Launch Anime Studio &rarr;
+          </button>
+        </div>
+
+        <!-- 2. Vexawall Studio Card (Right) -->
+        <div class="ws-card ws-card-vexawall" onclick="selectWorkspaceFromModal('vexawall')">
+          <div class="ws-card-badge">🖼️ MAIN APP</div>
+          <div class="ws-card-icon">🖼️</div>
+          <h3>Vexawall Studio</h3>
+          <p class="ws-card-desc">The master wallpaper backend for the main Wallnest app. Manage all 16 categories (Abstract, AMOLED, Cars, Anime, Nature), drag-and-drop sequencing, and global catalog generation.</p>
+          <div class="ws-card-meta">
+            <span class="ws-tag">2,474 Master Wallpapers</span>
+            <span class="ws-tag">16 Main Categories</span>
+            <span class="ws-tag">Sequence Ordering</span>
+            <span class="ws-tag">GitHub CDN Auto-Push</span>
+          </div>
+          <button class="btn ws-launch-btn ws-btn-vexawall" onclick="event.stopPropagation(); selectWorkspaceFromModal('vexawall')">
+            Launch Vexawall Studio &rarr;
+          </button>
+        </div>
+      </div>
+
+      <div class="workspace-select-foot">
+        <span>💡 Adding or pushing anime wallpapers in either studio automatically updates both Vexawall and AnimeWall!</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Transfer Anime Wallpapers to Category -->
+  <div class="modal-overlay" id="modalTransferCategory">
+    <div class="modal-dialog" style="max-width: 480px;">
+      <div class="modal-head">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="color: #9333ea; font-size: 16px;">📁</span>
+          <h3>Transfer Wallpapers to Category</h3>
+        </div>
+        <button class="btn btn-xs" onclick="closeModal('modalTransferCategory')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 0.5rem;">
+          Select which anime category to assign the <strong style="color: #fff;" id="transferModalCount">0</strong> selected wallpapers to:
+        </p>
+
+        <div class="transfer-cat-list" id="transferCategoryList">
+          <!-- Populated dynamically with radio items -->
+        </div>
+
+        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border);">
+          <div style="font-size: 11px; font-weight: 600; color: #fff; margin-bottom: 0.35rem;">Or create a new category &amp; transfer:</div>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="text" class="input-field" id="newCategoryTransferInput" placeholder="e.g. Gojo, Solo Leveling...">
+            <button class="btn btn-primary btn-xs" onclick="transferToBrandNewCategory()" style="background: #9333ea; border-color: #7e22ce; white-space: nowrap;">
+              Create &amp; Transfer
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-xs" onclick="closeModal('modalTransferCategory')">Cancel</button>
+        <button class="btn btn-primary btn-xs" id="btnConfirmTransfer" onclick="submitTransferToSelectedCategory()" style="background: #9333ea; border-color: #7e22ce;">
+          Confirm Transfer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: New Anime Category -->
+  <div class="modal-overlay" id="modalNewAnimeCategory">
+    <div class="modal-dialog" style="max-width: 420px;">
+      <div class="modal-head">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="color: #db2777;">🌸</span>
+          <h3>Create New Anime Category</h3>
+        </div>
+        <button class="btn btn-xs" onclick="closeModal('modalNewAnimeCategory')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="prop-group">
+          <label class="prop-label">Category Name</label>
+          <input type="text" class="input-field" id="inputNewAnimeCategoryName" placeholder="e.g. Gojo, Naruto, Demon Slayer">
+          <span style="font-size: 11px; color: var(--text-dim);">This category will be available in the Anime app and in the transfer menu.</span>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-xs" onclick="closeModal('modalNewAnimeCategory')">Cancel</button>
+        <button class="btn btn-primary btn-xs" onclick="submitCreateAnimeCategory()" style="background: #db2777; border-color: #be185d;">
+          Create Category
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Tray -->
   <div class="toast-tray" id="toastTray"></div>
 
@@ -1799,9 +2359,14 @@
 
     // Navigation Views
     function showHomeView() {
+      if (currentWorkspace === 'anime') {
+        loadAnimeStudio();
+        return;
+      }
       activeCategory = null;
       document.getElementById('categoriesView').style.display = 'block';
       document.getElementById('categoryDetailView').style.display = 'none';
+      document.getElementById('animeStudioView').style.display = 'none';
       selectedWallpapers.clear();
       updateSelectedUI();
       loadCategories();
@@ -2957,18 +3522,23 @@
     }
 
     // Delete single wallpaper
-    async function deleteSingleWallpaper(filename) {
+    async function deleteSingleWallpaper(filename, categoryOverride = null) {
       if (!confirm(`Delete ${filename}?`)) return;
+      const cat = categoryOverride || activeCategory;
       try {
         const res = await fetch('/api/wallpaper', {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ category: activeCategory, filename })
+          body: JSON.stringify({ category: cat, filename })
         });
         const data = await res.json();
         if (data.success) {
           showToast(`Deleted ${filename}`);
-          loadCategoryDetail(activeCategory);
+          if (currentWorkspace === 'anime') {
+            await loadAnimeStudio();
+          } else {
+            loadCategoryDetail(activeCategory);
+          }
           updateGitStatus();
         } else {
           showToast(data.error || 'Failed to delete', 'error');
@@ -3337,9 +3907,487 @@
       }
     }
 
+    // ==========================================
+    // WORKSPACE & ANIME STUDIO CONTROLLER
+    // ==========================================
+    let currentWorkspace = 'vexawall'; // 'vexawall' | 'anime'
+    let activeAnimeCategory = 'All';
+    let animeCategoriesData = [];
+    let selectedAnimeWallpapers = new Set();
+    let selectedTargetCategoryForTransfer = 'All';
+
+    function openWorkspaceSelectorModal() {
+      openModal('modalWorkspaceSelect');
+    }
+
+    function selectWorkspaceFromModal(ws) {
+      closeModal('modalWorkspaceSelect');
+      switchWorkspace(ws);
+    }
+
+    function switchWorkspace(ws) {
+      currentWorkspace = ws;
+      localStorage.setItem('currentWorkspace', ws);
+
+      const pillVex = document.getElementById('pillWsVexawall');
+      const pillAni = document.getElementById('pillWsAnime');
+      const btnHeaderReorder = document.getElementById('btnHeaderReorder');
+      const btnRebuildThumbs = document.getElementById('btnRebuildThumbs');
+      const brandTitle = document.getElementById('headerBrandTitle');
+      const brandSub = document.getElementById('headerBrandSub');
+      const logoBadge = document.getElementById('headerLogoBadge');
+
+      if (ws === 'anime') {
+        if (pillVex) pillVex.className = 'ws-toggle-btn';
+        if (pillAni) pillAni.className = 'ws-toggle-btn active anime-active';
+        if (btnHeaderReorder) btnHeaderReorder.style.display = 'none';
+        if (btnRebuildThumbs) btnRebuildThumbs.style.display = 'none';
+
+        if (brandTitle) brandTitle.textContent = 'AnimeWall Studio';
+        if (brandSub) brandSub.textContent = 'Anime-Only Asset Backend';
+        if (logoBadge) {
+          logoBadge.style.background = 'linear-gradient(135deg, #db2777 0%, #be185d 100%)';
+          logoBadge.style.borderColor = 'rgba(236, 72, 153, 0.4)';
+        }
+
+        document.getElementById('categoriesView').style.display = 'none';
+        document.getElementById('categoryDetailView').style.display = 'none';
+        document.getElementById('animeStudioView').style.display = 'block';
+
+        loadAnimeStudio();
+      } else {
+        if (pillVex) pillVex.className = 'ws-toggle-btn active vexawall-active';
+        if (pillAni) pillAni.className = 'ws-toggle-btn';
+        if (btnHeaderReorder) btnHeaderReorder.style.display = 'inline-flex';
+        if (btnRebuildThumbs) btnRebuildThumbs.style.display = 'inline-flex';
+
+        if (brandTitle) brandTitle.textContent = 'Vexawall Studio';
+        if (brandSub) brandSub.textContent = 'Master Wallpaper Backend';
+        if (logoBadge) {
+          logoBadge.style.background = 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)';
+          logoBadge.style.borderColor = 'rgba(59, 130, 246, 0.3)';
+        }
+
+        document.getElementById('animeStudioView').style.display = 'none';
+        showHomeView();
+      }
+    }
+
+    // Load Anime Studio
+    async function loadAnimeStudio() {
+      try {
+        const res = await fetch('/api/anime/categories');
+        const data = await res.json();
+        animeCategoriesData = data.categories || [];
+        renderAnimeCategoryBar();
+        await loadAnimeCategoryWallpapers(activeAnimeCategory);
+      } catch (err) {
+        showToast('Failed to load anime categories', 'error');
+      }
+    }
+
+    function renderAnimeCategoryBar() {
+      const bar = document.getElementById('animeCategoryBar');
+      if (!bar) return;
+      bar.innerHTML = '';
+
+      animeCategoriesData.forEach(cat => {
+        const chip = document.createElement('div');
+        const isActive = cat.name.toLowerCase() === activeAnimeCategory.toLowerCase();
+        chip.className = `anime-cat-chip ${isActive ? 'active' : ''}`;
+        chip.onclick = () => {
+          activeAnimeCategory = cat.name;
+          renderAnimeCategoryBar();
+          loadAnimeCategoryWallpapers(cat.name);
+        };
+
+        const thumbSrc = cat.localCoverThumbnail || (cat.previews && cat.previews[0]) || '';
+        chip.innerHTML = `
+          ${thumbSrc ? `<img src="${thumbSrc}" class="chip-thumb" alt="${cat.name}">` : ''}
+          <span class="chip-name">${cat.name === 'All' ? '⭐ All Wallpapers' : cat.name}</span>
+          <span class="chip-count">${cat.count}</span>
+        `;
+        bar.appendChild(chip);
+      });
+    }
+
+    async function loadAnimeCategoryWallpapers(catName) {
+      activeAnimeCategory = catName;
+      try {
+        const res = await fetch(`/api/anime/category/${encodeURIComponent(catName)}`);
+        const data = await res.json();
+
+        const titleEl = document.getElementById('activeAnimeCategoryTitle');
+        const badgeEl = document.getElementById('activeAnimeCategoryBadge');
+        const uploadEl = document.getElementById('animeUploadCategoryName');
+        const deleteBtn = document.getElementById('btnDeleteAnimeCategory');
+
+        if (titleEl) titleEl.textContent = catName === 'All' ? 'All Wallpapers' : catName;
+        if (badgeEl) badgeEl.textContent = `${data.count} wallpapers`;
+        if (uploadEl) uploadEl.textContent = catName === 'All' ? 'All Wallpapers' : catName;
+        if (deleteBtn) {
+          deleteBtn.style.display = catName.toLowerCase() === 'all' ? 'none' : 'inline-flex';
+        }
+
+        const grid = document.getElementById('animeWallpaperGrid');
+        grid.innerHTML = '';
+
+        if (!data.wallpapers || data.wallpapers.length === 0) {
+          grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-dim); padding: 4rem;">
+            No wallpapers in category "${catName}". Select wallpapers from "All Wallpapers" and click "Transfer to Category"!
+          </div>`;
+          clearAnimeSelection();
+          return;
+        }
+
+        data.wallpapers.forEach((w, idx) => {
+          const card = document.createElement('div');
+          card.className = 'wall-card' + (w.isCover ? ' is-cover' : '');
+          card.id = `anime_wall_${w.filename.replace(/[^a-zA-Z0-9]/g, '_')}`;
+          card.dataset.filename = w.filename;
+          const isSelected = selectedAnimeWallpapers.has(w.filename);
+          if (isSelected) card.classList.add('selected');
+
+          const localThumb = `/storage/images/Anime_thumb/${encodeURIComponent(w.filename)}`;
+          const localFull = `/storage/images/Anime/${encodeURIComponent(w.filename)}`;
+          const cdnUrl = w.url;
+
+          card.innerHTML = `
+            <div class="wall-card-img-wrap" onclick="onCardMediaClick(event, ${JSON.stringify({ ...w, localUrl: localFull, localThumbnailUrl: localThumb }).replace(/"/g, '&quot;')})">
+              <img src="${localThumb}" alt="${w.name}" loading="lazy">
+              <span class="wall-badge">#${idx + 1}</span>
+              ${w.isCover ? '<span class="tile-cover-badge" style="background: rgba(236,72,153,0.9);">⭐ COVER</span>' : ''}
+              ${w.animeCategory && w.animeCategory.toLowerCase() !== 'all' ? `<span class="tile-cover-badge" style="left: 8px; right: auto; background: rgba(147,51,234,0.9);">${w.animeCategory}</span>` : ''}
+              <div class="wall-card-check" onclick="event.stopPropagation(); toggleSelectAnimeWallpaper('${w.filename}')">
+                <input type="checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); toggleSelectAnimeWallpaper('${w.filename}')">
+              </div>
+              <div class="wall-card-actions" onclick="event.stopPropagation()">
+                <button class="icon-btn-round star-btn ${w.isCover ? 'active' : ''}" title="${w.isCover ? 'Current Category Cover' : 'Set as Category Cover'}" onclick="event.stopPropagation(); setAnimeCategoryCover('${catName}', '${w.filename}')">
+                  ⭐
+                </button>
+                <button class="icon-btn-round" title="Copy Direct GitHub link" onclick="event.stopPropagation(); copyToClipboard('${cdnUrl}')">
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                  </svg>
+                </button>
+                <button class="icon-btn-round danger" title="Delete wallpaper" onclick="event.stopPropagation(); deleteSingleWallpaper('${w.filename}', 'Anime')">
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="wall-card-foot" onclick="onCardMediaClick(event, ${JSON.stringify({ ...w, localUrl: localFull, localThumbnailUrl: localThumb }).replace(/"/g, '&quot;')})">
+              <span class="wall-card-name" title="${w.filename}">${w.filename}</span>
+              ${w.animeCategory && w.animeCategory.toLowerCase() !== 'all' ? `<span style="font-size: 10px; color: #c084fc; font-weight: 600;">${w.animeCategory}</span>` : ''}
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+
+        updateAnimeSelectedUI();
+      } catch (err) {
+        showToast('Failed to load anime category wallpapers', 'error');
+      }
+    }
+
+    function toggleSelectAnimeWallpaper(filename) {
+      if (selectedAnimeWallpapers.has(filename)) {
+        selectedAnimeWallpapers.delete(filename);
+      } else {
+        selectedAnimeWallpapers.add(filename);
+      }
+      updateAnimeSelectedUI();
+    }
+
+    function toggleSelectAllAnimeWallpapers() {
+      const cards = document.querySelectorAll('#animeWallpaperGrid .wall-card');
+      if (cards.length === 0) return;
+
+      const allFilenames = Array.from(cards).map(c => c.dataset.filename);
+      const isAllSelected = allFilenames.every(f => selectedAnimeWallpapers.has(f));
+
+      if (isAllSelected) {
+        allFilenames.forEach(f => selectedAnimeWallpapers.delete(f));
+      } else {
+        allFilenames.forEach(f => selectedAnimeWallpapers.add(f));
+      }
+      updateAnimeSelectedUI();
+    }
+
+    function clearAnimeSelection() {
+      selectedAnimeWallpapers.clear();
+      updateAnimeSelectedUI();
+    }
+
+    function updateAnimeSelectedUI() {
+      const count = selectedAnimeWallpapers.size;
+      const cluster = document.getElementById('animeSelectionCluster');
+      const text = document.getElementById('animeSelectedCountText');
+      const transferCount = document.getElementById('animeTransferCount');
+      const btnSelectAll = document.getElementById('btnSelectAllAnimeText');
+
+      if (cluster) cluster.style.display = count > 0 ? 'inline-flex' : 'none';
+      if (text) text.textContent = `${count} selected`;
+      if (transferCount) transferCount.textContent = count;
+
+      const cards = document.querySelectorAll('#animeWallpaperGrid .wall-card');
+      cards.forEach(card => {
+        const fn = card.dataset.filename;
+        const isChecked = selectedAnimeWallpapers.has(fn);
+        const cb = card.querySelector('input[type="checkbox"]');
+        if (cb) cb.checked = isChecked;
+        if (isChecked) {
+          card.classList.add('selected');
+        } else {
+          card.classList.remove('selected');
+        }
+      });
+
+      if (btnSelectAll && cards.length > 0) {
+        const allSelected = Array.from(cards).every(c => selectedAnimeWallpapers.has(c.dataset.filename));
+        btnSelectAll.textContent = allSelected ? 'Deselect All' : 'Select All';
+      }
+    }
+
+    // Transfer Modal & Operations
+    function openTransferCategoryModal() {
+      if (selectedAnimeWallpapers.size === 0) {
+        showToast('Please select at least 1 wallpaper to transfer', 'error');
+        return;
+      }
+
+      document.getElementById('transferModalCount').textContent = selectedAnimeWallpapers.size;
+      const list = document.getElementById('transferCategoryList');
+      list.innerHTML = '';
+
+      selectedTargetCategoryForTransfer = activeAnimeCategory;
+
+      animeCategoriesData.forEach(cat => {
+        const item = document.createElement('div');
+        const isSelected = cat.name.toLowerCase() === selectedTargetCategoryForTransfer.toLowerCase();
+        item.className = `transfer-cat-item ${isSelected ? 'selected' : ''}`;
+        item.onclick = () => {
+          document.querySelectorAll('.transfer-cat-item').forEach(el => el.classList.remove('selected'));
+          item.classList.add('selected');
+          selectedTargetCategoryForTransfer = cat.name;
+        };
+
+        item.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 14px;">${cat.name === 'All' ? '⭐' : '📁'}</span>
+            <strong style="color: #fff;">${cat.name === 'All' ? 'All Wallpapers (Default)' : cat.name}</strong>
+          </div>
+          <span style="font-size: 11px; color: var(--text-muted);">${cat.count} wallpapers</span>
+        `;
+        list.appendChild(item);
+      });
+
+      openModal('modalTransferCategory');
+    }
+
+    async function submitTransferToSelectedCategory() {
+      if (!selectedTargetCategoryForTransfer) {
+        showToast('Please select a target category', 'error');
+        return;
+      }
+      await executeTransfer(selectedTargetCategoryForTransfer);
+    }
+
+    async function transferToBrandNewCategory() {
+      const input = document.getElementById('newCategoryTransferInput');
+      const name = (input.value || '').trim();
+      if (!name) {
+        showToast('Please enter a category name', 'error');
+        return;
+      }
+      input.value = '';
+      await executeTransfer(name);
+    }
+
+    async function executeTransfer(targetCategory) {
+      const filenames = Array.from(selectedAnimeWallpapers);
+      if (filenames.length === 0) return;
+
+      const btn = document.getElementById('btnConfirmTransfer');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Transferring...';
+      }
+
+      try {
+        const res = await fetch('/api/anime/wallpapers/transfer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filenames, targetCategory })
+        });
+        const data = await res.json();
+        if (data.success) {
+          closeModal('modalTransferCategory');
+          showToast(`Transferred ${filenames.length} wallpapers to "${targetCategory}"!`);
+          clearAnimeSelection();
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to transfer wallpapers', 'error');
+        }
+      } catch (err) {
+        showToast('Transfer request failed', 'error');
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Confirm Transfer';
+        }
+      }
+    }
+
+    // Create New Anime Category Modal & Handler
+    function openNewAnimeCategoryModal() {
+      document.getElementById('inputNewAnimeCategoryName').value = '';
+      openModal('modalNewAnimeCategory');
+      setTimeout(() => document.getElementById('inputNewAnimeCategoryName').focus(), 100);
+    }
+
+    async function submitCreateAnimeCategory() {
+      const name = document.getElementById('inputNewAnimeCategoryName').value.trim();
+      if (!name) {
+        alert('Please enter a valid category name');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/anime/categories', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name })
+        });
+        const data = await res.json();
+        if (data.success) {
+          closeModal('modalNewAnimeCategory');
+          showToast(`Created Anime category "${data.category}"!`);
+          activeAnimeCategory = data.category;
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          alert(data.error || 'Failed to create anime category');
+        }
+      } catch (err) {
+        alert('Error creating category');
+      }
+    }
+
+    async function deleteActiveAnimeCategory() {
+      if (activeAnimeCategory.toLowerCase() === 'all') return;
+      if (!confirm(`Are you sure you want to delete the anime category "${activeAnimeCategory}"? Wallpapers will remain safely in "All Wallpapers".`)) return;
+
+      try {
+        const res = await fetch(`/api/anime/category/${encodeURIComponent(activeAnimeCategory)}`, {
+          method: 'DELETE'
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Deleted category "${activeAnimeCategory}". Wallpapers returned to All.`);
+          activeAnimeCategory = 'All';
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to delete category', 'error');
+        }
+      } catch (err) {
+        showToast('Failed to delete category', 'error');
+      }
+    }
+
+    async function setAnimeCategoryCover(catName, filename) {
+      try {
+        const res = await fetch('/api/anime/category/cover', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: catName, filename })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Set "${filename}" as cover for "${catName}"!`);
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to set cover', 'error');
+        }
+      } catch (err) {
+        showToast('Error setting cover', 'error');
+      }
+    }
+
+    async function deleteSelectedAnimeWallpapers() {
+      const count = selectedAnimeWallpapers.size;
+      if (count === 0) return;
+      if (!confirm(`Are you sure you want to PERMANENTLY delete ${count} wallpapers from both AnimeWall and Vexawall?`)) return;
+
+      try {
+        const res = await fetch('/api/wallpapers/delete-bulk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: 'Anime', filenames: Array.from(selectedAnimeWallpapers) })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Deleted ${count} wallpapers cleanly!`);
+          clearAnimeSelection();
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to delete wallpapers', 'error');
+        }
+      } catch (err) {
+        showToast('Delete request failed', 'error');
+      }
+    }
+
+    async function handleAnimeFileSelection(event) {
+      const files = event.target.files;
+      if (!files || files.length === 0) return;
+
+      const formData = new FormData();
+      formData.append('animeCategory', activeAnimeCategory);
+      for (const file of files) {
+        formData.append('files', file);
+      }
+
+      showToast(`Uploading ${files.length} wallpapers...`, 'info');
+      try {
+        const res = await fetch('/api/anime/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Uploaded ${data.count} wallpapers into "${activeAnimeCategory}"!`);
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Upload failed', 'error');
+        }
+      } catch (err) {
+        showToast('Upload error', 'error');
+      } finally {
+        event.target.value = '';
+      }
+    }
+
     // Init on page load
     window.addEventListener('DOMContentLoaded', () => {
-      loadCategories();
+      const savedWs = localStorage.getItem('currentWorkspace');
+      if (savedWs === 'anime') {
+        closeModal('modalWorkspaceSelect');
+        switchWorkspace('anime');
+      } else if (savedWs === 'vexawall') {
+        closeModal('modalWorkspaceSelect');
+        switchWorkspace('vexawall');
+      } else {
+        // Show landing modal choice!
+        openModal('modalWorkspaceSelect');
+        loadCategories();
+      }
       updateGitStatus();
       setInterval(updateGitStatus, 15000);
     });
