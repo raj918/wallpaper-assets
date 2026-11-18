@@ -1,16 +1,21 @@
 {
-  "version": 175,
+  "version": 177,
   "categories": [
     {
       "name": "All",
       "index": 1,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
+      "count": 164,
+      "coverFilename": "anime_1.jpg",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.jpg",
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
+      "previews": [
+        "/storage/images/Anime_thumb/anime_1.jpg",
+        "/storage/images/Anime_thumb/anime_2.jpg",
+        "/storage/images/Anime_thumb/anime_3.jpeg",
+        "/storage/images/Anime_thumb/anime_4.jpg"
+      ]
     }
   ]
 }

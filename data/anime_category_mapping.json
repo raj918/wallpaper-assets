@@ -2,7 +2,9 @@
   "categories": [
     "All"
   ],
-  "covers": {},
+  "covers": {
+    "All": "anime_1.jpg"
+  },
   "assignments": {},
   "categoryOrders": {
     "Gojo": [
