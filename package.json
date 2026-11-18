@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build:json": "node scripts/generate-json.js",
+    "build:anime": "node scripts/generate-json.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -76,7 +76,11 @@ wallpaper-assets/
   - Automatically regenerates `data/wallpapers.json`, `data/categories.json`, and bumps `data/version.json`.
 - **Dedicated App Integration Endpoints**:
   - Direct root access: `/categories.json`, `/wallpapers.json`, `/version.json`.
-  - See [APP_FETCHING_GUIDE.txt](file:///c:/Users/raj/Desktop/backnedvexawall/APP_FETCHING_GUIDE.txt) for ready-to-use React Native, Flutter, and JS snippets!
+  - **Standalone Anime App Endpoints**: `/anime_wallpapers.json`, `/anime.json`, `/anime_version.json`, `/api/anime`, `/api/anime-wallpapers`.
+  - See [APP_FETCHING_GUIDE.txt](file:///c:/Users/raj/Desktop/wallpaper-assets/APP_FETCHING_GUIDE.txt) & [ANIME_APP_FETCHING_GUIDE.txt](file:///c:/Users/raj/Desktop/wallpaper-assets/ANIME_APP_FETCHING_GUIDE.txt) for ready-to-use Android (Kotlin/Retrofit/Compose), React Native, and Flutter snippets!
+- **Dual Catalog Synchronization (Main & Anime)**:
+  - Any upload, delete, or reorder updates BOTH `data/wallpapers.json` and `data/anime_wallpapers.json` / `data/anime.json` simultaneously.
+  - When you push to GitHub, both the main and anime app catalogs are committed and pushed together in 1 click!
 - **No Cloudflare Required (100% GitHub & jsDelivr)**:
   - Zero external cloud services or S3 buckets needed.
   - Changes are pushed directly to GitHub (`origin main`).

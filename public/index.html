@@ -1703,7 +1703,16 @@
             <input type="checkbox" id="cfgAutoPush">
             <span>Auto Git Commit &amp; Push to GitHub on upload/delete/reorder</span>
           </label>
-          <span style="font-size: 11px; color: var(--text-dim);">When checked, every action is automatically committed and pushed to GitHub immediately.</span>
+          <span style="font-size: 11px; color: var(--text-dim);">When checked, every action is automatically committed and pushed to GitHub immediately (both Main and Anime catalogs).</span>
+        </div>
+
+        <div class="prop-group" style="margin-top: 1rem; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px;">
+          <div style="font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 6px;">📱 App API Endpoints</div>
+          <div style="font-size: 11px; color: var(--text-muted); line-height: 1.6;">
+            <div><strong>Main App:</strong> <a href="/wallpapers.json" target="_blank" style="color: var(--primary);">/wallpapers.json</a> &bull; <a href="/categories.json" target="_blank" style="color: var(--primary);">/categories.json</a></div>
+            <div><strong>Anime App:</strong> <a href="/anime_wallpapers.json" target="_blank" style="color: #ec4899;">/anime_wallpapers.json</a> &bull; <a href="/anime.json" target="_blank" style="color: #ec4899;">/anime.json</a> &bull; <a href="/api/anime" target="_blank" style="color: #ec4899;">/api/anime</a></div>
+            <div style="margin-top: 4px; font-size: 10px; color: var(--text-dim);">When pushing to GitHub, both Main and Anime JSON catalogs are committed and pushed together.</div>
+          </div>
         </div>
       </div>
       <div class="modal-foot">
@@ -3234,7 +3243,7 @@
         });
         const data = await res.json();
         if (data.success) {
-          showToast('Changes pushed to GitHub origin main!');
+          showToast('Pushed to GitHub origin main! (Main & Anime catalogs synced)');
           updateGitStatus();
         } else {
           showToast(data.error || 'Git push failed', 'error');

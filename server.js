@@ -17,6 +17,9 @@ const WALLPAPERS_JSON = path.join(DATA_DIR, 'wallpapers.json');
 const VERSION_JSON = path.join(DATA_DIR, 'version.json');
 const CATEGORIES_JSON = path.join(DATA_DIR, 'categories.json');
 const CATEGORY_COVERS_JSON = path.join(DATA_DIR, 'category_covers.json');
+const ANIME_WALLPAPERS_JSON = path.join(DATA_DIR, 'anime_wallpapers.json');
+const ANIME_JSON = path.join(DATA_DIR, 'anime.json');
+const ANIME_VERSION_JSON = path.join(DATA_DIR, 'anime_version.json');
 const CONFIG_FILE = path.join(ROOT_DIR, 'config.json');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 
@@ -60,6 +63,37 @@ app.get('/version.json', (req, res) => {
     res.sendFile(VERSION_JSON);
   } else {
     res.status(404).json({ error: 'version.json not found' });
+  }
+});
+
+// Dedicated root endpoints for AnimeWall 4K app
+app.get('/anime_wallpapers.json', (req, res) => {
+  if (fs.existsSync(ANIME_WALLPAPERS_JSON)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.sendFile(ANIME_WALLPAPERS_JSON);
+  } else {
+    res.status(404).json({ error: 'anime_wallpapers.json not found' });
+  }
+});
+
+app.get('/anime.json', (req, res) => {
+  if (fs.existsSync(ANIME_JSON)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.sendFile(ANIME_JSON);
+  } else if (fs.existsSync(ANIME_WALLPAPERS_JSON)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.sendFile(ANIME_WALLPAPERS_JSON);
+  } else {
+    res.status(404).json({ error: 'anime.json not found' });
+  }
+});
+
+app.get('/anime_version.json', (req, res) => {
+  if (fs.existsSync(ANIME_VERSION_JSON)) {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    res.sendFile(ANIME_VERSION_JSON);
+  } else {
+    res.status(404).json({ error: 'anime_version.json not found' });
   }
 });
 
@@ -293,7 +327,43 @@ function regenerateJsonFiles(customOrder = null) {
   };
   fs.writeFileSync(CATEGORIES_JSON, JSON.stringify(categoriesJsonData, null, 2) + '\n', 'utf8');
 
-  return { wallpapers, categoriesData: categoriesJsonData, versionData };
+  // Dedicated Anime JSON generation for AnimeWall 4K app
+  const animeCategoryName = categories.find(c => c.toLowerCase() === 'anime') || 'Anime';
+  const animeWallpapers = wallpapers
+    .filter(w => w.category && w.category.toLowerCase() === 'anime')
+    .map((w, idx) => ({
+      id: w.id,
+      category: w.category,
+      name: w.url.split('/').pop().replace(/\.[^/.]+$/, ''),
+      title: w.url.split('/').pop().replace(/\.[^/.]+$/, ''),
+      index: idx + 1,
+      isCover: w.isCover,
+      url: w.url,
+      thumb: w.thumb
+    }));
+
+  fs.writeFileSync(ANIME_WALLPAPERS_JSON, JSON.stringify(animeWallpapers, null, 2) + '\n', 'utf8');
+  fs.writeFileSync(ANIME_JSON, JSON.stringify(animeWallpapers, null, 2) + '\n', 'utf8');
+
+  const animeCoverFilename = covers[animeCategoryName] || (animeWallpapers.length > 0 ? animeWallpapers[0].url.split('/').pop() : null);
+  const animeCoverThumb = animeCoverFilename
+    ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}_thumb/${encodeURIComponent(animeCoverFilename)}`
+    : null;
+  const animeCoverFull = animeCoverFilename
+    ? `${cdnBase}/${encodeURIComponent(animeCategoryName)}/${encodeURIComponent(animeCoverFilename)}`
+    : null;
+
+  const animeVersionData = {
+    version: versionData.version,
+    totalWallpapers: animeWallpapers.length,
+    category: animeCategoryName,
+    coverThumbnail: animeCoverThumb,
+    coverWallpaper: animeCoverFull,
+    lastUpdated: versionData.lastUpdated
+  };
+  fs.writeFileSync(ANIME_VERSION_JSON, JSON.stringify(animeVersionData, null, 2) + '\n', 'utf8');
+
+  return { wallpapers, animeWallpapers, categoriesData: categoriesJsonData, versionData, animeVersionData };
 }
 
 // Helper: Calculate next sequential file name for a category
@@ -354,18 +424,44 @@ async function execGitSync(message = 'Admin Panel: Updated wallpapers and catalo
   const remote = (cfg.git && cfg.git.remote) || 'origin';
   const branch = (cfg.git && cfg.git.branch) || 'main';
 
-  // Add data and images
-  await execGitCommand('git add data/ images/');
+  // 1. Guarantee both main catalog and dedicated anime catalog are freshly generated and in-sync
+  regenerateJsonFiles();
 
-  // Check if anything to commit
+  // 2. Stage all catalog data files (main + anime) and image assets
+  await execGitCommand('git add -A data/ images/');
+
+  // 3. Commit staged changes if any exist
   const status = await execGitCommand('git status --porcelain');
   if (status) {
     await execGitCommand(`git commit -m "${message}"`);
   }
 
-  // Push to GitHub
+  // 4. Push to primary GitHub branch (origin main)
   const pushOutput = await execGitCommand(`git push ${remote} ${branch}`);
-  return { success: true, message: 'Pushed to GitHub successfully!', output: pushOutput };
+
+  // 5. If an 'anime' branch exists locally or remotely, push/sync to it as well
+  let animeBranchPush = null;
+  try {
+    const branches = await execGitCommand('git branch -a');
+    if (branches.includes('anime')) {
+      animeBranchPush = await execGitCommand(`git push ${remote} anime`);
+    }
+  } catch (e) {
+    // anime branch not present or not configured
+  }
+
+  return {
+    success: true,
+    message: 'Pushed both Main and Anime wallpapers to GitHub successfully!',
+    output: pushOutput,
+    animeBranchPush,
+    syncedCatalogs: {
+      main: 'data/wallpapers.json',
+      anime: ['data/anime_wallpapers.json', 'data/anime.json'],
+      categories: 'data/categories.json',
+      versions: ['data/version.json', 'data/anime_version.json']
+    }
+  };
 }
 
 // Multer upload config
@@ -459,6 +555,59 @@ app.get('/api/categories', (req, res) => {
       lastUpdated: versionInfo.lastUpdated,
       config: getConfig()
     });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// 3b. Dedicated Anime Wallpapers API (for standalone AnimeWall 4K app)
+// Accessible at GET /api/anime-wallpapers or GET /api/anime
+// Returns rich JSON metadata or raw array with ?format=array or ?raw=true
+app.get(['/api/anime', '/api/anime-wallpapers'], (req, res) => {
+  try {
+    if (!fs.existsSync(ANIME_WALLPAPERS_JSON)) {
+      regenerateJsonFiles();
+    }
+    const animeWallpapers = JSON.parse(fs.readFileSync(ANIME_WALLPAPERS_JSON, 'utf8'));
+    const versionData = fs.existsSync(ANIME_VERSION_JSON)
+      ? JSON.parse(fs.readFileSync(ANIME_VERSION_JSON, 'utf8'))
+      : { version: getVersionInfo().version, totalWallpapers: animeWallpapers.length };
+
+    // Support direct array format for mobile apps expecting pure List<WallpaperItem>
+    if (req.query.format === 'array' || req.query.raw === 'true') {
+      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+      return res.json(animeWallpapers);
+    }
+
+    res.json({
+      success: true,
+      version: versionData.version,
+      totalWallpapers: animeWallpapers.length,
+      category: versionData.category || 'Anime',
+      coverThumbnail: versionData.coverThumbnail || (animeWallpapers[0] ? animeWallpapers[0].thumb : null),
+      coverWallpaper: versionData.coverWallpaper || (animeWallpapers[0] ? animeWallpapers[0].url : null),
+      lastUpdated: versionData.lastUpdated,
+      wallpapers: animeWallpapers
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Dedicated Anime Version API
+app.get(['/api/anime/version', '/api/anime-version'], (req, res) => {
+  try {
+    if (fs.existsSync(ANIME_VERSION_JSON)) {
+      res.sendFile(ANIME_VERSION_JSON);
+    } else {
+      const versionInfo = getVersionInfo();
+      res.json({
+        version: versionInfo.version,
+        totalWallpapers: 0,
+        category: 'Anime',
+        lastUpdated: versionInfo.lastUpdated
+      });
+    }
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

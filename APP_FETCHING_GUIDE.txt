@@ -90,6 +90,24 @@ Response Format:
 
 
 ----------------------------------------------------------------------
+ENDPOINT 4: STANDALONE ANIME APP ENDPOINTS (ANIME-ONLY APPS)
+----------------------------------------------------------------------
+For standalone anime apps (e.g. AnimeWall 4K), dedicated endpoints return
+ONLY Anime wallpapers and its dedicated version:
+
+1. Anime Wallpapers JSON (Array):
+   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime_wallpapers.json
+   (or https://raw.githubusercontent.com/raj918/wallpaper-assets/main/data/anime_wallpapers.json)
+   (Local: http://localhost:3000/anime_wallpapers.json or /anime.json)
+
+2. Anime Version Check:
+   https://cdn.jsdelivr.net/gh/raj918/wallpaper-assets@main/data/anime_version.json
+   (Local: http://localhost:3000/anime_version.json)
+
+3. Full integration details & code snippets in: ANIME_APP_FETCHING_GUIDE.txt
+
+
+----------------------------------------------------------------------
 2. HOW TO GET THUMBNAILS VS FULL 4K WALLPAPERS IN YOUR APP
 ----------------------------------------------------------------------
 
