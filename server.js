@@ -828,7 +828,15 @@ app.get('/api/anime/category/:name', (req, res) => {
     if (!fs.existsSync(ANIME_WALLPAPERS_JSON)) {
       regenerateJsonFiles();
     }
-    const allAnime = JSON.parse(fs.readFileSync(ANIME_WALLPAPERS_JSON, 'utf8'));
+    const allAnime = JSON.parse(fs.readFileSync(ANIME_WALLPAPERS_JSON, 'utf8')).map(w => {
+      const filename = w.filename || decodeURIComponent(w.url.split('/').pop().split('?')[0]);
+      return {
+        ...w,
+        filename,
+        localUrl: `/storage/images/Anime/${encodeURIComponent(filename)}`,
+        localThumbnailUrl: `/storage/images/Anime_thumb/${encodeURIComponent(filename)}`
+      };
+    });
     let filtered;
     if (catName.toLowerCase() === 'all') {
       filtered = allAnime;
