@@ -1,5 +1,5 @@
 {
-  "version": 133,
+  "version": 135,
   "categories": [
     {
       "name": "All",
@@ -20,7 +20,7 @@
     {
       "name": "Gojo",
       "index": 2,
-      "count": 8,
+      "count": 7,
       "coverFilename": "anime_67.webp",
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_67.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_67.webp",
@@ -29,8 +29,8 @@
       "previews": [
         "/storage/images/Anime_thumb/anime_67.webp",
         "/storage/images/Anime_thumb/anime_10.jpg",
-        "/storage/images/Anime_thumb/anime_26.jpg",
-        "/storage/images/Anime_thumb/anime_71.jpeg"
+        "/storage/images/Anime_thumb/anime_71.jpeg",
+        "/storage/images/Anime_thumb/anime_83.jpg"
       ]
     },
     {
