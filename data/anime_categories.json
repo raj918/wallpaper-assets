@@ -1,97 +1,9 @@
 {
-  "version": 166,
+  "version": 175,
   "categories": [
     {
       "name": "All",
       "index": 1,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Goku",
-      "index": 2,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Solo Leveling",
-      "index": 3,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Berserk",
-      "index": 4,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Attack on Titan",
-      "index": 5,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Anya (Spy x Family)",
-      "index": 6,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Anime Heroes",
-      "index": 7,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Samurai & Ronin",
-      "index": 8,
-      "count": 0,
-      "coverFilename": null,
-      "coverThumbnail": null,
-      "coverWallpaper": null,
-      "localCoverThumbnail": null,
-      "localCoverWallpaper": null,
-      "previews": []
-    },
-    {
-      "name": "Aesthetic & Scenery",
-      "index": 9,
       "count": 0,
       "coverFilename": null,
       "coverThumbnail": null,
