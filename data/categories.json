@@ -1,5 +1,5 @@
 {
-  "version": 197,
+  "version": 199,
   "categories": [
     {
       "name": "Anime",
@@ -9,7 +9,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.webp",
       "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_1.webp"
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.webp",
+      "previews": [
+        "/storage/images/Anime_thumb/anime_1.webp",
+        "/storage/images/Anime_thumb/anime_2.webp",
+        "/storage/images/Anime_thumb/anime_3.webp",
+        "/storage/images/Anime_thumb/anime_4.webp"
+      ]
     },
     {
       "name": "Superheroes",
@@ -19,7 +25,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Superheroes_thumb/superheroes_1.jpeg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Superheroes/superheroes_1.jpeg",
       "localCoverThumbnail": "/storage/images/Superheroes_thumb/superheroes_1.jpeg",
-      "localCoverWallpaper": "/storage/images/Superheroes/superheroes_1.jpeg"
+      "localCoverWallpaper": "/storage/images/Superheroes/superheroes_1.jpeg",
+      "previews": [
+        "/storage/images/Superheroes_thumb/superheroes_1.jpeg",
+        "/storage/images/Superheroes_thumb/superheroes_2.jpeg",
+        "/storage/images/Superheroes_thumb/superheroes_3.webp",
+        "/storage/images/Superheroes_thumb/superheroes_4.webp"
+      ]
     },
     {
       "name": "amoled",
@@ -29,7 +41,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled_thumb/1.jpeg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled/1.jpeg",
       "localCoverThumbnail": "/storage/images/amoled_thumb/1.jpeg",
-      "localCoverWallpaper": "/storage/images/amoled/1.jpeg"
+      "localCoverWallpaper": "/storage/images/amoled/1.jpeg",
+      "previews": [
+        "/storage/images/amoled_thumb/1.jpeg",
+        "/storage/images/amoled_thumb/2.jpg",
+        "/storage/images/amoled_thumb/3.jpeg",
+        "/storage/images/amoled_thumb/4.jpeg"
+      ]
     },
     {
       "name": "Landscape",
@@ -39,7 +57,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Landscape_thumb/landscape_1.jpeg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Landscape/landscape_1.jpeg",
       "localCoverThumbnail": "/storage/images/Landscape_thumb/landscape_1.jpeg",
-      "localCoverWallpaper": "/storage/images/Landscape/landscape_1.jpeg"
+      "localCoverWallpaper": "/storage/images/Landscape/landscape_1.jpeg",
+      "previews": [
+        "/storage/images/Landscape_thumb/landscape_1.jpeg",
+        "/storage/images/Landscape_thumb/landscape_2.webp",
+        "/storage/images/Landscape_thumb/landscape_3.webp",
+        "/storage/images/Landscape_thumb/landscape_4.webp"
+      ]
     },
     {
       "name": "abstract",
@@ -49,7 +73,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract_thumb/abstract_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/abstract/abstract_1.webp",
       "localCoverThumbnail": "/storage/images/abstract_thumb/abstract_1.webp",
-      "localCoverWallpaper": "/storage/images/abstract/abstract_1.webp"
+      "localCoverWallpaper": "/storage/images/abstract/abstract_1.webp",
+      "previews": [
+        "/storage/images/abstract_thumb/abstract_1.webp",
+        "/storage/images/abstract_thumb/abstract_2.webp",
+        "/storage/images/abstract_thumb/abstract_3.webp",
+        "/storage/images/abstract_thumb/abstract_4.webp"
+      ]
     },
     {
       "name": "cars",
@@ -59,7 +89,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/cars/1.jpg",
       "localCoverThumbnail": "/storage/images/cars_thumb/1.jpg",
-      "localCoverWallpaper": "/storage/images/cars/1.jpg"
+      "localCoverWallpaper": "/storage/images/cars/1.jpg",
+      "previews": [
+        "/storage/images/cars_thumb/1.jpg",
+        "/storage/images/cars_thumb/2.jpg",
+        "/storage/images/cars_thumb/3.jpg",
+        "/storage/images/cars_thumb/4.jpg"
+      ]
     },
     {
       "name": "Minimal",
@@ -69,7 +105,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal_thumb/minimal_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Minimal/minimal_1.webp",
       "localCoverThumbnail": "/storage/images/Minimal_thumb/minimal_1.webp",
-      "localCoverWallpaper": "/storage/images/Minimal/minimal_1.webp"
+      "localCoverWallpaper": "/storage/images/Minimal/minimal_1.webp",
+      "previews": [
+        "/storage/images/Minimal_thumb/minimal_1.webp",
+        "/storage/images/Minimal_thumb/minimal_2.webp",
+        "/storage/images/Minimal_thumb/minimal_3.webp",
+        "/storage/images/Minimal_thumb/minimal_4.webp"
+      ]
     },
     {
       "name": "iphone",
@@ -79,7 +121,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone_thumb/iphone_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/iphone/iphone_1.webp",
       "localCoverThumbnail": "/storage/images/iphone_thumb/iphone_1.webp",
-      "localCoverWallpaper": "/storage/images/iphone/iphone_1.webp"
+      "localCoverWallpaper": "/storage/images/iphone/iphone_1.webp",
+      "previews": [
+        "/storage/images/iphone_thumb/iphone_1.webp",
+        "/storage/images/iphone_thumb/iphone_2.webp",
+        "/storage/images/iphone_thumb/iphone_3.webp",
+        "/storage/images/iphone_thumb/iphone_4.jpeg"
+      ]
     },
     {
       "name": "animal",
@@ -89,7 +137,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal_thumb/animal_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/animal/animal_1.webp",
       "localCoverThumbnail": "/storage/images/animal_thumb/animal_1.webp",
-      "localCoverWallpaper": "/storage/images/animal/animal_1.webp"
+      "localCoverWallpaper": "/storage/images/animal/animal_1.webp",
+      "previews": [
+        "/storage/images/animal_thumb/animal_1.webp",
+        "/storage/images/animal_thumb/animal_2.jpg",
+        "/storage/images/animal_thumb/animal_3.jpeg",
+        "/storage/images/animal_thumb/animal_4.jpeg"
+      ]
     },
     {
       "name": "material",
@@ -99,7 +153,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/material/1.jpg",
       "localCoverThumbnail": "/storage/images/material_thumb/1.jpg",
-      "localCoverWallpaper": "/storage/images/material/1.jpg"
+      "localCoverWallpaper": "/storage/images/material/1.jpg",
+      "previews": [
+        "/storage/images/material_thumb/1.jpg",
+        "/storage/images/material_thumb/2.jpg",
+        "/storage/images/material_thumb/3.jpg",
+        "/storage/images/material_thumb/4.jpg"
+      ]
     },
     {
       "name": "nature",
@@ -109,7 +169,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/nature/1.jpg",
       "localCoverThumbnail": "/storage/images/nature_thumb/1.jpg",
-      "localCoverWallpaper": "/storage/images/nature/1.jpg"
+      "localCoverWallpaper": "/storage/images/nature/1.jpg",
+      "previews": [
+        "/storage/images/nature_thumb/1.jpg",
+        "/storage/images/nature_thumb/2.jpg",
+        "/storage/images/nature_thumb/3.jpg",
+        "/storage/images/nature_thumb/4.jpg"
+      ]
     },
     {
       "name": "new added",
@@ -119,7 +185,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added_thumb/new%20added_1.jpeg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/new%20added/new%20added_1.jpeg",
       "localCoverThumbnail": "/storage/images/new%20added_thumb/new%20added_1.jpeg",
-      "localCoverWallpaper": "/storage/images/new%20added/new%20added_1.jpeg"
+      "localCoverWallpaper": "/storage/images/new%20added/new%20added_1.jpeg",
+      "previews": [
+        "/storage/images/new%20added_thumb/new%20added_1.jpeg",
+        "/storage/images/new%20added_thumb/new%20added_2.jpeg",
+        "/storage/images/new%20added_thumb/new%20added_3.jpeg",
+        "/storage/images/new%20added_thumb/new%20added_4.jpeg"
+      ]
     },
     {
       "name": "Oppo",
@@ -129,7 +201,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Oppo_thumb/oppo_1.webp",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Oppo/oppo_1.webp",
       "localCoverThumbnail": "/storage/images/Oppo_thumb/oppo_1.webp",
-      "localCoverWallpaper": "/storage/images/Oppo/oppo_1.webp"
+      "localCoverWallpaper": "/storage/images/Oppo/oppo_1.webp",
+      "previews": [
+        "/storage/images/Oppo_thumb/oppo_1.webp",
+        "/storage/images/Oppo_thumb/oppo_2.jpg",
+        "/storage/images/Oppo_thumb/oppo_3.jpg",
+        "/storage/images/Oppo_thumb/oppo_4.jpg"
+      ]
     },
     {
       "name": "space",
@@ -139,7 +217,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/space_thumb/space_1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/space/space_1.jpg",
       "localCoverThumbnail": "/storage/images/space_thumb/space_1.jpg",
-      "localCoverWallpaper": "/storage/images/space/space_1.jpg"
+      "localCoverWallpaper": "/storage/images/space/space_1.jpg",
+      "previews": [
+        "/storage/images/space_thumb/space_1.jpg",
+        "/storage/images/space_thumb/space_2.jpg",
+        "/storage/images/space_thumb/space_3.jpg",
+        "/storage/images/space_thumb/space_4.jpg"
+      ]
     },
     {
       "name": "winter",
@@ -149,7 +233,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/winter_thumb/1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/winter/1.jpg",
       "localCoverThumbnail": "/storage/images/winter_thumb/1.jpg",
-      "localCoverWallpaper": "/storage/images/winter/1.jpg"
+      "localCoverWallpaper": "/storage/images/winter/1.jpg",
+      "previews": [
+        "/storage/images/winter_thumb/1.jpg",
+        "/storage/images/winter_thumb/2.jpg",
+        "/storage/images/winter_thumb/3.jpg",
+        "/storage/images/winter_thumb/4.jpg"
+      ]
     },
     {
       "name": "city",
@@ -159,7 +249,13 @@
       "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city_thumb/city_1.jpg",
       "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/city/city_1.jpg",
       "localCoverThumbnail": "/storage/images/city_thumb/city_1.jpg",
-      "localCoverWallpaper": "/storage/images/city/city_1.jpg"
+      "localCoverWallpaper": "/storage/images/city/city_1.jpg",
+      "previews": [
+        "/storage/images/city_thumb/city_1.jpg",
+        "/storage/images/city_thumb/city_2.jpg",
+        "/storage/images/city_thumb/city_3.jpg",
+        "/storage/images/city_thumb/city_4.jpg"
+      ]
     }
   ],
   "covers": {
