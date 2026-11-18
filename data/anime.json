@@ -115,7 +115,7 @@
     "name": "anime_10",
     "title": "anime_10",
     "index": 10,
-    "isCover": true,
+    "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_10.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_10.jpg"
   },
@@ -799,7 +799,7 @@
     "name": "anime_67",
     "title": "anime_67",
     "index": 67,
-    "isCover": false,
+    "isCover": true,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_67.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_67.webp"
   },
