@@ -913,6 +913,56 @@ app.post('/api/anime/wallpapers/transfer', async (req, res) => {
   }
 });
 
+// Remove Wallpapers from a specific category (unassigns back to "All" without deleting the file from disk)
+app.post('/api/anime/wallpapers/remove', async (req, res) => {
+  try {
+    const { category, filenames } = req.body;
+    if (!category || !Array.isArray(filenames) || filenames.length === 0) {
+      return res.status(400).json({ error: 'category and filenames array are required' });
+    }
+
+    const mapping = getAnimeCategoryMapping();
+    const catLower = category.trim().toLowerCase();
+
+    // Remove category assignment so the wallpaper safely reverts to "All Wallpapers"
+    for (const f of filenames) {
+      if (mapping.assignments[f] && mapping.assignments[f].toLowerCase() === catLower) {
+        delete mapping.assignments[f];
+      }
+    }
+
+    // If the category cover was one of these, reset it
+    if (mapping.covers[category] && filenames.includes(mapping.covers[category])) {
+      delete mapping.covers[category];
+    }
+
+    saveAnimeCategoryMapping(mapping);
+    const { versionData, animeCategoriesData } = regenerateJsonFiles();
+
+    const cfg = getConfig();
+    let pushedToGit = false;
+    if (cfg.git && cfg.git.autoPush) {
+      try {
+        await execGitSync(`Admin: Removed ${filenames.length} wallpapers from anime category "${category}"`);
+        pushedToGit = true;
+      } catch (gitErr) {
+        console.warn('Auto-Push error:', gitErr.message);
+      }
+    }
+
+    res.json({
+      success: true,
+      removedCount: filenames.length,
+      category,
+      version: versionData.version,
+      categories: animeCategoriesData.categories,
+      pushedToGit
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Set Cover for Anime Category
 app.post('/api/anime/category/cover', async (req, res) => {
   try {
@@ -1493,6 +1543,23 @@ app.delete('/api/wallpaper', async (req, res) => {
     if (fs.existsSync(mainFile)) fs.unlinkSync(mainFile);
     if (fs.existsSync(thumbFile)) fs.unlinkSync(thumbFile);
 
+    // If deleting an anime wallpaper from disk, clean up any anime category assignments
+    if (category.toLowerCase() === 'anime') {
+      const mapping = getAnimeCategoryMapping();
+      let mappingChanged = false;
+      if (mapping.assignments[filename]) {
+        delete mapping.assignments[filename];
+        mappingChanged = true;
+      }
+      for (const [cName, coverFn] of Object.entries(mapping.covers)) {
+        if (coverFn === filename) {
+          delete mapping.covers[cName];
+          mappingChanged = true;
+        }
+      }
+      if (mappingChanged) saveAnimeCategoryMapping(mapping);
+    }
+
     const { versionData } = regenerateJsonFiles();
 
     const cfg = getConfig();
@@ -1525,6 +1592,25 @@ app.post('/api/wallpapers/delete-bulk', async (req, res) => {
       const thumbFile = path.join(IMAGES_DIR, `${category}_thumb`, filename);
       if (fs.existsSync(mainFile)) fs.unlinkSync(mainFile);
       if (fs.existsSync(thumbFile)) fs.unlinkSync(thumbFile);
+    }
+
+    // If deleting anime wallpapers from disk, clean up any anime category assignments
+    if (category.toLowerCase() === 'anime') {
+      const mapping = getAnimeCategoryMapping();
+      let mappingChanged = false;
+      for (const filename of filenames) {
+        if (mapping.assignments[filename]) {
+          delete mapping.assignments[filename];
+          mappingChanged = true;
+        }
+        for (const [cName, coverFn] of Object.entries(mapping.covers)) {
+          if (coverFn === filename) {
+            delete mapping.covers[cName];
+            mappingChanged = true;
+          }
+        }
+      }
+      if (mappingChanged) saveAnimeCategoryMapping(mapping);
     }
 
     const { versionData } = regenerateJsonFiles();

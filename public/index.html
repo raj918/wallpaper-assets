@@ -203,6 +203,18 @@
       color: #fff;
     }
 
+    .btn-warning {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+
+    .btn-warning:hover {
+      background: #d97706;
+      border-color: #d97706;
+      color: #fff;
+    }
+
     .btn-outline {
       background: transparent;
       border-color: var(--border);
@@ -1927,8 +1939,8 @@
               </svg>
               Transfer to Category (<span id="animeTransferCount">0</span>)
             </button>
-            <button class="btn btn-danger btn-xs" onclick="deleteSelectedAnimeWallpapers()">
-              Delete Selected
+            <button class="btn btn-danger btn-xs" id="btnAnimeBulkDeleteOrRemove" onclick="handleAnimeBulkDeleteOrRemove()">
+              <span id="btnAnimeBulkActionText">Delete Selected</span>
             </button>
           </div>
 
@@ -3400,10 +3412,10 @@
       inspectingItem = item;
       document.getElementById('inspectorImg').src = item.localUrl;
       document.getElementById('inspFilename').textContent = item.filename;
-      document.getElementById('inspCategory').textContent = activeCategory;
-      document.getElementById('inspSize').textContent = formatBytes(item.sizeBytes);
-      document.getElementById('inspCdnUrl').textContent = item.cdnUrl;
-      document.getElementById('inspThumbUrl').textContent = item.cdnThumbnailUrl;
+      document.getElementById('inspCategory').textContent = currentWorkspace === 'anime' ? activeAnimeCategory : activeCategory;
+      document.getElementById('inspSize').textContent = item.sizeBytes ? formatBytes(item.sizeBytes) : 'HD 4K';
+      document.getElementById('inspCdnUrl').textContent = item.cdnUrl || item.url || '';
+      document.getElementById('inspThumbUrl').textContent = item.cdnThumbnailUrl || item.thumbnailUrl || '';
 
       const coverBtn = document.getElementById('inspBtnCover');
       if (coverBtn) {
@@ -3412,9 +3424,20 @@
           coverBtn.style.opacity = '0.75';
           coverBtn.disabled = true;
         } else {
-          coverBtn.textContent = '⭐ Set as Category Thumbnail';
+          coverBtn.textContent = currentWorkspace === 'anime' ? '⭐ Set as Anime Category Cover' : '⭐ Set as Category Thumbnail';
           coverBtn.style.opacity = '1';
           coverBtn.disabled = false;
+        }
+      }
+
+      const inspDeleteBtn = document.querySelector('#modalInspector .modal-foot .btn-danger');
+      if (inspDeleteBtn) {
+        if (currentWorkspace === 'anime' && activeAnimeCategory.toLowerCase() !== 'all') {
+          inspDeleteBtn.textContent = `Remove from ${activeAnimeCategory}`;
+          inspDeleteBtn.className = 'btn btn-warning';
+        } else {
+          inspDeleteBtn.textContent = 'Delete Wallpaper';
+          inspDeleteBtn.className = 'btn btn-danger';
         }
       }
 
@@ -3424,11 +3447,24 @@
     async function setCoverFromInspector() {
       if (!inspectingItem) return;
       closeModal('modalInspector');
+      if (currentWorkspace === 'anime') {
+        await setAnimeCategoryCover(activeAnimeCategory, inspectingItem.filename);
+        return;
+      }
       await setCategoryCover(inspectingItem.category || activeCategory, inspectingItem.filename);
     }
 
     async function deleteInspectingWallpaper() {
       if (!inspectingItem) return;
+      if (currentWorkspace === 'anime') {
+        closeModal('modalInspector');
+        if (activeAnimeCategory.toLowerCase() === 'all') {
+          deleteAnimeSinglePermanent(inspectingItem.filename);
+        } else {
+          removeSingleFromAnimeCategory(inspectingItem.filename, activeAnimeCategory);
+        }
+        return;
+      }
       if (!confirm(`Delete ${inspectingItem.filename}?`)) return;
       await deleteSingleWallpaper(inspectingItem.filename);
       closeModal('modalInspector');
@@ -3997,6 +4033,7 @@
         chip.className = `anime-cat-chip ${isActive ? 'active' : ''}`;
         chip.onclick = () => {
           activeAnimeCategory = cat.name;
+          clearAnimeSelection();
           renderAnimeCategoryBar();
           loadAnimeCategoryWallpapers(cat.name);
         };
@@ -4071,11 +4108,19 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                 </button>
-                <button class="icon-btn-round danger" title="Delete wallpaper" onclick="event.stopPropagation(); deleteSingleWallpaper('${fn}', 'Anime')">
-                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                  </svg>
-                </button>
+                ${catName.toLowerCase() === 'all' ? `
+                  <button class="icon-btn-round danger" title="Permanently delete from disk & all catalogs" onclick="event.stopPropagation(); deleteAnimeSinglePermanent('${fn}')">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                ` : `
+                  <button class="icon-btn-round" style="background: rgba(245, 158, 11, 0.25); border: 1px solid rgba(245, 158, 11, 0.6); color: #fbbf24;" title="Remove from ${catName} (Keeps safe in All Wallpapers)" onclick="event.stopPropagation(); removeSingleFromAnimeCategory('${fn}', '${catName}')">
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                `}
               </div>
             </div>
             <div class="wall-card-foot" onclick="onCardMediaClick(event, ${JSON.stringify({ ...w, filename: fn, localUrl: localFull, localThumbnailUrl: localThumb }).replace(/"/g, '&quot;')})">
@@ -4132,6 +4177,20 @@
       if (cluster) cluster.style.display = count > 0 ? 'inline-flex' : 'none';
       if (text) text.textContent = `${count} selected`;
       if (transferCount) transferCount.textContent = count;
+
+      const bulkBtn = document.getElementById('btnAnimeBulkDeleteOrRemove');
+      const bulkText = document.getElementById('btnAnimeBulkActionText');
+      if (bulkBtn && bulkText) {
+        if (activeAnimeCategory.toLowerCase() === 'all') {
+          bulkBtn.className = 'btn btn-danger btn-xs';
+          bulkText.textContent = `Delete Permanently (${count})`;
+          bulkBtn.title = `Permanently delete ${count} wallpapers from disk and both catalogs`;
+        } else {
+          bulkBtn.className = 'btn btn-warning btn-xs';
+          bulkText.textContent = `Remove from ${activeAnimeCategory} (${count})`;
+          bulkBtn.title = `Remove ${count} wallpapers from "${activeAnimeCategory}" (they remain safe in "All Wallpapers")`;
+        }
+      }
 
       const cards = document.querySelectorAll('#animeWallpaperGrid .wall-card');
       cards.forEach(card => {
@@ -4320,10 +4379,90 @@
       }
     }
 
+    function handleAnimeBulkDeleteOrRemove() {
+      if (activeAnimeCategory.toLowerCase() === 'all') {
+        deleteSelectedAnimeWallpapers();
+      } else {
+        removeSelectedFromAnimeCategory();
+      }
+    }
+
+    async function removeSingleFromAnimeCategory(filename, category) {
+      if (!confirm(`Remove "${filename}" from category "${category}"?\n\nNote: The wallpaper will remain safely in "All Wallpapers" and on disk.`)) return;
+
+      try {
+        const res = await fetch('/api/anime/wallpapers/remove', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category, filenames: [filename] })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Removed from "${category}". Saved safely in "All Wallpapers".`);
+          selectedAnimeWallpapers.delete(filename);
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to remove wallpaper from category', 'error');
+        }
+      } catch (err) {
+        showToast('Network error: ' + err.message, 'error');
+      }
+    }
+
+    async function removeSelectedFromAnimeCategory() {
+      const filenames = Array.from(selectedAnimeWallpapers);
+      if (filenames.length === 0) return;
+      const category = activeAnimeCategory;
+      if (!confirm(`Remove ${filenames.length} wallpaper(s) from category "${category}"?\n\nNote: All wallpapers will remain safely in "All Wallpapers" and on disk.`)) return;
+
+      try {
+        const res = await fetch('/api/anime/wallpapers/remove', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category, filenames })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Removed ${filenames.length} wallpaper(s) from "${category}". Kept safe in All!`);
+          clearAnimeSelection();
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to remove wallpapers from category', 'error');
+        }
+      } catch (err) {
+        showToast('Network error: ' + err.message, 'error');
+      }
+    }
+
+    async function deleteAnimeSinglePermanent(filename) {
+      if (!confirm(`⚠️ PERMANENT DELETE WARNING:\n\nYou are in "All Wallpapers".\nDeleting "${filename}" will permanently erase it from disk and BOTH Vexawall & AnimeWall catalogs.\n\nAre you sure you want to proceed?`)) return;
+
+      try {
+        const res = await fetch('/api/wallpaper', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category: 'Anime', filename })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast(`Permanently deleted "${filename}"`);
+          selectedAnimeWallpapers.delete(filename);
+          await loadAnimeStudio();
+          updateGitStatus();
+        } else {
+          showToast(data.error || 'Failed to delete wallpaper', 'error');
+        }
+      } catch (err) {
+        showToast('Network error: ' + err.message, 'error');
+      }
+    }
+
     async function deleteSelectedAnimeWallpapers() {
       const count = selectedAnimeWallpapers.size;
       if (count === 0) return;
-      if (!confirm(`Are you sure you want to PERMANENTLY delete ${count} wallpapers from both AnimeWall and Vexawall?`)) return;
+      if (!confirm(`⚠️ PERMANENT DELETE WARNING:\n\nYou are in "All Wallpapers".\nDeleting will PERMANENTLY erase ${count} wallpapers from disk and BOTH Vexawall & AnimeWall catalogs.\n\nAre you sure you want to proceed?`)) return;
 
       try {
         const res = await fetch('/api/wallpapers/delete-bulk', {
@@ -4333,7 +4472,7 @@
         });
         const data = await res.json();
         if (data.success) {
-          showToast(`Deleted ${count} wallpapers cleanly!`);
+          showToast(`Permanently deleted ${count} wallpapers cleanly!`);
           clearAnimeSelection();
           await loadAnimeStudio();
           updateGitStatus();
@@ -4341,7 +4480,7 @@
           showToast(data.error || 'Failed to delete wallpapers', 'error');
         }
       } catch (err) {
-        showToast('Delete request failed', 'error');
+        showToast('Delete request failed: ' + err.message, 'error');
       }
     }
 
