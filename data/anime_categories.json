@@ -1,5 +1,5 @@
 {
-  "version": 187,
+  "version": 189,
   "categories": [
     {
       "name": "All",
@@ -12,8 +12,8 @@
       "localCoverWallpaper": "/storage/images/Anime/anime_1.jpg",
       "previews": [
         "/storage/images/Anime_thumb/anime_1.jpg",
-        "/storage/images/Anime_thumb/anime_2.jpeg",
-        "/storage/images/Anime_thumb/anime_3.webp",
+        "/storage/images/Anime_thumb/anime_2.webp",
+        "/storage/images/Anime_thumb/anime_3.jpeg",
         "/storage/images/Anime_thumb/anime_4.webp"
       ]
     }
