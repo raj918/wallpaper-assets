@@ -1,31 +1,33 @@
 {
-  "version": 115,
+  "version": 118,
   "categories": [
     {
       "name": "All",
       "index": 1,
-      "count": 159,
-      "coverFilename": "anime_1.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
+      "count": 156,
+      "coverFilename": "anime_4.webp",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_4.webp",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_4.webp",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_4.webp",
+      "localCoverWallpaper": "/storage/images/Anime/anime_4.webp",
       "previews": [
-        "/storage/images/Anime_thumb/anime_1.jpg",
-        "/storage/images/Anime_thumb/anime_2.jpeg",
-        "/storage/images/Anime_thumb/anime_3.jpg",
-        "/storage/images/Anime_thumb/anime_4.webp"
+        "/storage/images/Anime_thumb/anime_4.webp",
+        "/storage/images/Anime_thumb/anime_5.webp",
+        "/storage/images/Anime_thumb/anime_6.webp",
+        "/storage/images/Anime_thumb/anime_7.webp"
       ]
     },
     {
       "name": "Gojo",
       "index": 2,
-      "count": 3,
-      "coverFilename": "anime_1.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
+      "count": 1,
+      "coverFilename": "anime_158.webp",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_158.webp",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_158.webp",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_158.webp",
+      "localCoverWallpaper": "/storage/images/Anime/anime_158.webp",
       "previews": [
-        "/storage/images/Anime_thumb/anime_1.jpg",
-        "/storage/images/Anime_thumb/anime_2.jpeg",
-        "/storage/images/Anime_thumb/anime_3.jpg"
+        "/storage/images/Anime_thumb/anime_158.webp"
       ]
     }
   ]

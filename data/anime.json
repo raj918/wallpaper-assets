@@ -1,51 +1,15 @@
 [
   {
-    "id": "Anime_anime_1_413357",
-    "filename": "anime_1.jpg",
-    "category": "Anime",
-    "animeCategory": "Gojo",
-    "name": "anime_1",
-    "title": "anime_1",
-    "index": 1,
-    "isCover": true,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.jpg?cover=true"
-  },
-  {
-    "id": "Anime_anime_2_15d4ff",
-    "filename": "anime_2.jpeg",
-    "category": "Anime",
-    "animeCategory": "Gojo",
-    "name": "anime_2",
-    "title": "anime_2",
-    "index": 2,
-    "isCover": false,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_2.jpeg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_2.jpeg"
-  },
-  {
-    "id": "Anime_anime_3_bab3b6",
-    "filename": "anime_3.jpg",
-    "category": "Anime",
-    "animeCategory": "Gojo",
-    "name": "anime_3",
-    "title": "anime_3",
-    "index": 3,
-    "isCover": false,
-    "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_3.jpg",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_3.jpg"
-  },
-  {
     "id": "Anime_anime_4_d41499",
     "filename": "anime_4.webp",
     "category": "Anime",
     "animeCategory": "All",
     "name": "anime_4",
     "title": "anime_4",
-    "index": 4,
-    "isCover": false,
+    "index": 1,
+    "isCover": true,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_4.webp",
-    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_4.webp"
+    "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_4.webp?cover=true"
   },
   {
     "id": "Anime_anime_5_f34983",
@@ -54,7 +18,7 @@
     "animeCategory": "All",
     "name": "anime_5",
     "title": "anime_5",
-    "index": 5,
+    "index": 2,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_5.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_5.webp"
@@ -66,7 +30,7 @@
     "animeCategory": "All",
     "name": "anime_6",
     "title": "anime_6",
-    "index": 6,
+    "index": 3,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_6.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_6.webp"
@@ -78,7 +42,7 @@
     "animeCategory": "All",
     "name": "anime_7",
     "title": "anime_7",
-    "index": 7,
+    "index": 4,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_7.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_7.webp"
@@ -90,7 +54,7 @@
     "animeCategory": "All",
     "name": "anime_8",
     "title": "anime_8",
-    "index": 8,
+    "index": 5,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_8.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_8.webp"
@@ -102,7 +66,7 @@
     "animeCategory": "All",
     "name": "anime_9",
     "title": "anime_9",
-    "index": 9,
+    "index": 6,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_9.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_9.jpeg"
@@ -114,7 +78,7 @@
     "animeCategory": "All",
     "name": "anime_10",
     "title": "anime_10",
-    "index": 10,
+    "index": 7,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_10.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_10.jpg"
@@ -126,7 +90,7 @@
     "animeCategory": "All",
     "name": "anime_11",
     "title": "anime_11",
-    "index": 11,
+    "index": 8,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_11.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_11.jpg"
@@ -138,7 +102,7 @@
     "animeCategory": "All",
     "name": "anime_12",
     "title": "anime_12",
-    "index": 12,
+    "index": 9,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_12.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_12.jpg"
@@ -150,7 +114,7 @@
     "animeCategory": "All",
     "name": "anime_13",
     "title": "anime_13",
-    "index": 13,
+    "index": 10,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_13.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_13.jpg"
@@ -162,7 +126,7 @@
     "animeCategory": "All",
     "name": "anime_14",
     "title": "anime_14",
-    "index": 14,
+    "index": 11,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_14.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_14.jpg"
@@ -174,7 +138,7 @@
     "animeCategory": "All",
     "name": "anime_15",
     "title": "anime_15",
-    "index": 15,
+    "index": 12,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_15.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_15.jpg"
@@ -186,7 +150,7 @@
     "animeCategory": "All",
     "name": "anime_16",
     "title": "anime_16",
-    "index": 16,
+    "index": 13,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_16.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_16.webp"
@@ -198,7 +162,7 @@
     "animeCategory": "All",
     "name": "anime_17",
     "title": "anime_17",
-    "index": 17,
+    "index": 14,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_17.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_17.jpeg"
@@ -210,7 +174,7 @@
     "animeCategory": "All",
     "name": "anime_18",
     "title": "anime_18",
-    "index": 18,
+    "index": 15,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_18.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_18.webp"
@@ -222,7 +186,7 @@
     "animeCategory": "All",
     "name": "anime_19",
     "title": "anime_19",
-    "index": 19,
+    "index": 16,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_19.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_19.jpg"
@@ -234,7 +198,7 @@
     "animeCategory": "All",
     "name": "anime_20",
     "title": "anime_20",
-    "index": 20,
+    "index": 17,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_20.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_20.jpeg"
@@ -246,7 +210,7 @@
     "animeCategory": "All",
     "name": "anime_21",
     "title": "anime_21",
-    "index": 21,
+    "index": 18,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_21.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_21.webp"
@@ -258,7 +222,7 @@
     "animeCategory": "All",
     "name": "anime_22",
     "title": "anime_22",
-    "index": 22,
+    "index": 19,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_22.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_22.webp"
@@ -270,7 +234,7 @@
     "animeCategory": "All",
     "name": "anime_23",
     "title": "anime_23",
-    "index": 23,
+    "index": 20,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_23.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_23.webp"
@@ -282,7 +246,7 @@
     "animeCategory": "All",
     "name": "anime_24",
     "title": "anime_24",
-    "index": 24,
+    "index": 21,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_24.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_24.jpeg"
@@ -294,7 +258,7 @@
     "animeCategory": "All",
     "name": "anime_25",
     "title": "anime_25",
-    "index": 25,
+    "index": 22,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_25.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_25.webp"
@@ -306,7 +270,7 @@
     "animeCategory": "All",
     "name": "anime_26",
     "title": "anime_26",
-    "index": 26,
+    "index": 23,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_26.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_26.jpeg"
@@ -318,7 +282,7 @@
     "animeCategory": "All",
     "name": "anime_27",
     "title": "anime_27",
-    "index": 27,
+    "index": 24,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_27.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_27.jpeg"
@@ -330,7 +294,7 @@
     "animeCategory": "All",
     "name": "anime_28",
     "title": "anime_28",
-    "index": 28,
+    "index": 25,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_28.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_28.jpg"
@@ -342,7 +306,7 @@
     "animeCategory": "All",
     "name": "anime_29",
     "title": "anime_29",
-    "index": 29,
+    "index": 26,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_29.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_29.jpg"
@@ -354,7 +318,7 @@
     "animeCategory": "All",
     "name": "anime_30",
     "title": "anime_30",
-    "index": 30,
+    "index": 27,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_30.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_30.jpg"
@@ -366,7 +330,7 @@
     "animeCategory": "All",
     "name": "anime_31",
     "title": "anime_31",
-    "index": 31,
+    "index": 28,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_31.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_31.jpg"
@@ -378,7 +342,7 @@
     "animeCategory": "All",
     "name": "anime_32",
     "title": "anime_32",
-    "index": 32,
+    "index": 29,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_32.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_32.jpg"
@@ -390,7 +354,7 @@
     "animeCategory": "All",
     "name": "anime_33",
     "title": "anime_33",
-    "index": 33,
+    "index": 30,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_33.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_33.jpeg"
@@ -402,7 +366,7 @@
     "animeCategory": "All",
     "name": "anime_34",
     "title": "anime_34",
-    "index": 34,
+    "index": 31,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_34.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_34.webp"
@@ -414,7 +378,7 @@
     "animeCategory": "All",
     "name": "anime_35",
     "title": "anime_35",
-    "index": 35,
+    "index": 32,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_35.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_35.webp"
@@ -426,7 +390,7 @@
     "animeCategory": "All",
     "name": "anime_36",
     "title": "anime_36",
-    "index": 36,
+    "index": 33,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_36.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_36.webp"
@@ -438,7 +402,7 @@
     "animeCategory": "All",
     "name": "anime_37",
     "title": "anime_37",
-    "index": 37,
+    "index": 34,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_37.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_37.webp"
@@ -450,7 +414,7 @@
     "animeCategory": "All",
     "name": "anime_38",
     "title": "anime_38",
-    "index": 38,
+    "index": 35,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_38.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_38.jpg"
@@ -462,7 +426,7 @@
     "animeCategory": "All",
     "name": "anime_39",
     "title": "anime_39",
-    "index": 39,
+    "index": 36,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_39.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_39.webp"
@@ -474,7 +438,7 @@
     "animeCategory": "All",
     "name": "anime_40",
     "title": "anime_40",
-    "index": 40,
+    "index": 37,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_40.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_40.jpeg"
@@ -486,7 +450,7 @@
     "animeCategory": "All",
     "name": "anime_41",
     "title": "anime_41",
-    "index": 41,
+    "index": 38,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_41.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_41.webp"
@@ -498,7 +462,7 @@
     "animeCategory": "All",
     "name": "anime_42",
     "title": "anime_42",
-    "index": 42,
+    "index": 39,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_42.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_42.jpg"
@@ -510,7 +474,7 @@
     "animeCategory": "All",
     "name": "anime_43",
     "title": "anime_43",
-    "index": 43,
+    "index": 40,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_43.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_43.jpeg"
@@ -522,7 +486,7 @@
     "animeCategory": "All",
     "name": "anime_44",
     "title": "anime_44",
-    "index": 44,
+    "index": 41,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_44.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_44.webp"
@@ -534,7 +498,7 @@
     "animeCategory": "All",
     "name": "anime_45",
     "title": "anime_45",
-    "index": 45,
+    "index": 42,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_45.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_45.webp"
@@ -546,7 +510,7 @@
     "animeCategory": "All",
     "name": "anime_46",
     "title": "anime_46",
-    "index": 46,
+    "index": 43,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_46.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_46.webp"
@@ -558,7 +522,7 @@
     "animeCategory": "All",
     "name": "anime_47",
     "title": "anime_47",
-    "index": 47,
+    "index": 44,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_47.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_47.jpg"
@@ -570,7 +534,7 @@
     "animeCategory": "All",
     "name": "anime_48",
     "title": "anime_48",
-    "index": 48,
+    "index": 45,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_48.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_48.jpeg"
@@ -582,7 +546,7 @@
     "animeCategory": "All",
     "name": "anime_49",
     "title": "anime_49",
-    "index": 49,
+    "index": 46,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_49.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_49.webp"
@@ -594,7 +558,7 @@
     "animeCategory": "All",
     "name": "anime_50",
     "title": "anime_50",
-    "index": 50,
+    "index": 47,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_50.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_50.jpg"
@@ -606,7 +570,7 @@
     "animeCategory": "All",
     "name": "anime_51",
     "title": "anime_51",
-    "index": 51,
+    "index": 48,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_51.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_51.webp"
@@ -618,7 +582,7 @@
     "animeCategory": "All",
     "name": "anime_52",
     "title": "anime_52",
-    "index": 52,
+    "index": 49,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_52.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_52.webp"
@@ -630,7 +594,7 @@
     "animeCategory": "All",
     "name": "anime_53",
     "title": "anime_53",
-    "index": 53,
+    "index": 50,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_53.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_53.webp"
@@ -642,7 +606,7 @@
     "animeCategory": "All",
     "name": "anime_54",
     "title": "anime_54",
-    "index": 54,
+    "index": 51,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_54.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_54.webp"
@@ -654,7 +618,7 @@
     "animeCategory": "All",
     "name": "anime_55",
     "title": "anime_55",
-    "index": 55,
+    "index": 52,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_55.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_55.jpg"
@@ -666,7 +630,7 @@
     "animeCategory": "All",
     "name": "anime_56",
     "title": "anime_56",
-    "index": 56,
+    "index": 53,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_56.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_56.webp"
@@ -678,7 +642,7 @@
     "animeCategory": "All",
     "name": "anime_57",
     "title": "anime_57",
-    "index": 57,
+    "index": 54,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_57.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_57.webp"
@@ -690,7 +654,7 @@
     "animeCategory": "All",
     "name": "anime_58",
     "title": "anime_58",
-    "index": 58,
+    "index": 55,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_58.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_58.webp"
@@ -702,7 +666,7 @@
     "animeCategory": "All",
     "name": "anime_59",
     "title": "anime_59",
-    "index": 59,
+    "index": 56,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_59.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_59.jpeg"
@@ -714,7 +678,7 @@
     "animeCategory": "All",
     "name": "anime_60",
     "title": "anime_60",
-    "index": 60,
+    "index": 57,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_60.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_60.jpeg"
@@ -726,7 +690,7 @@
     "animeCategory": "All",
     "name": "anime_61",
     "title": "anime_61",
-    "index": 61,
+    "index": 58,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_61.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_61.webp"
@@ -738,7 +702,7 @@
     "animeCategory": "All",
     "name": "anime_62",
     "title": "anime_62",
-    "index": 62,
+    "index": 59,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_62.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_62.webp"
@@ -750,7 +714,7 @@
     "animeCategory": "All",
     "name": "anime_63",
     "title": "anime_63",
-    "index": 63,
+    "index": 60,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_63.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_63.webp"
@@ -762,7 +726,7 @@
     "animeCategory": "All",
     "name": "anime_64",
     "title": "anime_64",
-    "index": 64,
+    "index": 61,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_64.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_64.webp"
@@ -774,7 +738,7 @@
     "animeCategory": "All",
     "name": "anime_65",
     "title": "anime_65",
-    "index": 65,
+    "index": 62,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_65.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_65.jpg"
@@ -786,7 +750,7 @@
     "animeCategory": "All",
     "name": "anime_66",
     "title": "anime_66",
-    "index": 66,
+    "index": 63,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_66.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_66.webp"
@@ -798,7 +762,7 @@
     "animeCategory": "All",
     "name": "anime_67",
     "title": "anime_67",
-    "index": 67,
+    "index": 64,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_67.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_67.jpg"
@@ -810,7 +774,7 @@
     "animeCategory": "All",
     "name": "anime_68",
     "title": "anime_68",
-    "index": 68,
+    "index": 65,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_68.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_68.jpg"
@@ -822,7 +786,7 @@
     "animeCategory": "All",
     "name": "anime_69",
     "title": "anime_69",
-    "index": 69,
+    "index": 66,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_69.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_69.webp"
@@ -834,7 +798,7 @@
     "animeCategory": "All",
     "name": "anime_70",
     "title": "anime_70",
-    "index": 70,
+    "index": 67,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_70.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_70.webp"
@@ -846,7 +810,7 @@
     "animeCategory": "All",
     "name": "anime_71",
     "title": "anime_71",
-    "index": 71,
+    "index": 68,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_71.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_71.webp"
@@ -858,7 +822,7 @@
     "animeCategory": "All",
     "name": "anime_72",
     "title": "anime_72",
-    "index": 72,
+    "index": 69,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_72.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_72.webp"
@@ -870,7 +834,7 @@
     "animeCategory": "All",
     "name": "anime_73",
     "title": "anime_73",
-    "index": 73,
+    "index": 70,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_73.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_73.jpg"
@@ -882,7 +846,7 @@
     "animeCategory": "All",
     "name": "anime_74",
     "title": "anime_74",
-    "index": 74,
+    "index": 71,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_74.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_74.jpeg"
@@ -894,7 +858,7 @@
     "animeCategory": "All",
     "name": "anime_75",
     "title": "anime_75",
-    "index": 75,
+    "index": 72,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_75.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_75.webp"
@@ -906,7 +870,7 @@
     "animeCategory": "All",
     "name": "anime_76",
     "title": "anime_76",
-    "index": 76,
+    "index": 73,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_76.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_76.webp"
@@ -918,7 +882,7 @@
     "animeCategory": "All",
     "name": "anime_77",
     "title": "anime_77",
-    "index": 77,
+    "index": 74,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_77.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_77.jpg"
@@ -930,7 +894,7 @@
     "animeCategory": "All",
     "name": "anime_78",
     "title": "anime_78",
-    "index": 78,
+    "index": 75,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_78.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_78.webp"
@@ -942,7 +906,7 @@
     "animeCategory": "All",
     "name": "anime_79",
     "title": "anime_79",
-    "index": 79,
+    "index": 76,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_79.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_79.jpg"
@@ -954,7 +918,7 @@
     "animeCategory": "All",
     "name": "anime_80",
     "title": "anime_80",
-    "index": 80,
+    "index": 77,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_80.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_80.webp"
@@ -966,7 +930,7 @@
     "animeCategory": "All",
     "name": "anime_81",
     "title": "anime_81",
-    "index": 81,
+    "index": 78,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_81.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_81.webp"
@@ -978,7 +942,7 @@
     "animeCategory": "All",
     "name": "anime_82",
     "title": "anime_82",
-    "index": 82,
+    "index": 79,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_82.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_82.webp"
@@ -990,7 +954,7 @@
     "animeCategory": "All",
     "name": "anime_83",
     "title": "anime_83",
-    "index": 83,
+    "index": 80,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_83.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_83.webp"
@@ -1002,7 +966,7 @@
     "animeCategory": "All",
     "name": "anime_84",
     "title": "anime_84",
-    "index": 84,
+    "index": 81,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_84.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_84.jpeg"
@@ -1014,7 +978,7 @@
     "animeCategory": "All",
     "name": "anime_85",
     "title": "anime_85",
-    "index": 85,
+    "index": 82,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_85.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_85.webp"
@@ -1026,7 +990,7 @@
     "animeCategory": "All",
     "name": "anime_86",
     "title": "anime_86",
-    "index": 86,
+    "index": 83,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_86.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_86.jpg"
@@ -1038,7 +1002,7 @@
     "animeCategory": "All",
     "name": "anime_87",
     "title": "anime_87",
-    "index": 87,
+    "index": 84,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_87.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_87.jpg"
@@ -1050,7 +1014,7 @@
     "animeCategory": "All",
     "name": "anime_88",
     "title": "anime_88",
-    "index": 88,
+    "index": 85,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_88.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_88.jpeg"
@@ -1062,7 +1026,7 @@
     "animeCategory": "All",
     "name": "anime_89",
     "title": "anime_89",
-    "index": 89,
+    "index": 86,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_89.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_89.jpg"
@@ -1074,7 +1038,7 @@
     "animeCategory": "All",
     "name": "anime_90",
     "title": "anime_90",
-    "index": 90,
+    "index": 87,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_90.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_90.jpg"
@@ -1086,7 +1050,7 @@
     "animeCategory": "All",
     "name": "anime_91",
     "title": "anime_91",
-    "index": 91,
+    "index": 88,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_91.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_91.jpeg"
@@ -1098,7 +1062,7 @@
     "animeCategory": "All",
     "name": "anime_92",
     "title": "anime_92",
-    "index": 92,
+    "index": 89,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_92.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_92.webp"
@@ -1110,7 +1074,7 @@
     "animeCategory": "All",
     "name": "anime_93",
     "title": "anime_93",
-    "index": 93,
+    "index": 90,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_93.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_93.webp"
@@ -1122,7 +1086,7 @@
     "animeCategory": "All",
     "name": "anime_94",
     "title": "anime_94",
-    "index": 94,
+    "index": 91,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_94.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_94.jpg"
@@ -1134,7 +1098,7 @@
     "animeCategory": "All",
     "name": "anime_95",
     "title": "anime_95",
-    "index": 95,
+    "index": 92,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_95.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_95.webp"
@@ -1146,7 +1110,7 @@
     "animeCategory": "All",
     "name": "anime_96",
     "title": "anime_96",
-    "index": 96,
+    "index": 93,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_96.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_96.webp"
@@ -1158,7 +1122,7 @@
     "animeCategory": "All",
     "name": "anime_97",
     "title": "anime_97",
-    "index": 97,
+    "index": 94,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_97.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_97.jpg"
@@ -1170,7 +1134,7 @@
     "animeCategory": "All",
     "name": "anime_98",
     "title": "anime_98",
-    "index": 98,
+    "index": 95,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_98.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_98.webp"
@@ -1182,7 +1146,7 @@
     "animeCategory": "All",
     "name": "anime_99",
     "title": "anime_99",
-    "index": 99,
+    "index": 96,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_99.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_99.jpg"
@@ -1194,7 +1158,7 @@
     "animeCategory": "All",
     "name": "anime_100",
     "title": "anime_100",
-    "index": 100,
+    "index": 97,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_100.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_100.jpg"
@@ -1206,7 +1170,7 @@
     "animeCategory": "All",
     "name": "anime_101",
     "title": "anime_101",
-    "index": 101,
+    "index": 98,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_101.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_101.jpg"
@@ -1218,7 +1182,7 @@
     "animeCategory": "All",
     "name": "anime_102",
     "title": "anime_102",
-    "index": 102,
+    "index": 99,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_102.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_102.jpg"
@@ -1230,7 +1194,7 @@
     "animeCategory": "All",
     "name": "anime_103",
     "title": "anime_103",
-    "index": 103,
+    "index": 100,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_103.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_103.jpeg"
@@ -1242,7 +1206,7 @@
     "animeCategory": "All",
     "name": "anime_104",
     "title": "anime_104",
-    "index": 104,
+    "index": 101,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_104.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_104.jpeg"
@@ -1254,7 +1218,7 @@
     "animeCategory": "All",
     "name": "anime_105",
     "title": "anime_105",
-    "index": 105,
+    "index": 102,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_105.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_105.jpeg"
@@ -1266,7 +1230,7 @@
     "animeCategory": "All",
     "name": "anime_106",
     "title": "anime_106",
-    "index": 106,
+    "index": 103,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_106.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_106.jpeg"
@@ -1278,7 +1242,7 @@
     "animeCategory": "All",
     "name": "anime_107",
     "title": "anime_107",
-    "index": 107,
+    "index": 104,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_107.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_107.jpeg"
@@ -1290,7 +1254,7 @@
     "animeCategory": "All",
     "name": "anime_108",
     "title": "anime_108",
-    "index": 108,
+    "index": 105,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_108.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_108.webp"
@@ -1302,7 +1266,7 @@
     "animeCategory": "All",
     "name": "anime_109",
     "title": "anime_109",
-    "index": 109,
+    "index": 106,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_109.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_109.webp"
@@ -1314,7 +1278,7 @@
     "animeCategory": "All",
     "name": "anime_110",
     "title": "anime_110",
-    "index": 110,
+    "index": 107,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_110.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_110.webp"
@@ -1326,7 +1290,7 @@
     "animeCategory": "All",
     "name": "anime_111",
     "title": "anime_111",
-    "index": 111,
+    "index": 108,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_111.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_111.webp"
@@ -1338,7 +1302,7 @@
     "animeCategory": "All",
     "name": "anime_112",
     "title": "anime_112",
-    "index": 112,
+    "index": 109,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_112.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_112.webp"
@@ -1350,7 +1314,7 @@
     "animeCategory": "All",
     "name": "anime_113",
     "title": "anime_113",
-    "index": 113,
+    "index": 110,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_113.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_113.jpg"
@@ -1362,7 +1326,7 @@
     "animeCategory": "All",
     "name": "anime_114",
     "title": "anime_114",
-    "index": 114,
+    "index": 111,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_114.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_114.webp"
@@ -1374,7 +1338,7 @@
     "animeCategory": "All",
     "name": "anime_115",
     "title": "anime_115",
-    "index": 115,
+    "index": 112,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_115.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_115.jpg"
@@ -1386,7 +1350,7 @@
     "animeCategory": "All",
     "name": "anime_116",
     "title": "anime_116",
-    "index": 116,
+    "index": 113,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_116.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_116.jpeg"
@@ -1398,7 +1362,7 @@
     "animeCategory": "All",
     "name": "anime_117",
     "title": "anime_117",
-    "index": 117,
+    "index": 114,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_117.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_117.jpg"
@@ -1410,7 +1374,7 @@
     "animeCategory": "All",
     "name": "anime_118",
     "title": "anime_118",
-    "index": 118,
+    "index": 115,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_118.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_118.webp"
@@ -1422,7 +1386,7 @@
     "animeCategory": "All",
     "name": "anime_119",
     "title": "anime_119",
-    "index": 119,
+    "index": 116,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_119.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_119.jpg"
@@ -1434,7 +1398,7 @@
     "animeCategory": "All",
     "name": "anime_120",
     "title": "anime_120",
-    "index": 120,
+    "index": 117,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_120.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_120.jpeg"
@@ -1446,7 +1410,7 @@
     "animeCategory": "All",
     "name": "anime_121",
     "title": "anime_121",
-    "index": 121,
+    "index": 118,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_121.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_121.jpeg"
@@ -1458,7 +1422,7 @@
     "animeCategory": "All",
     "name": "anime_122",
     "title": "anime_122",
-    "index": 122,
+    "index": 119,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_122.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_122.webp"
@@ -1470,7 +1434,7 @@
     "animeCategory": "All",
     "name": "anime_123",
     "title": "anime_123",
-    "index": 123,
+    "index": 120,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_123.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_123.jpeg"
@@ -1482,7 +1446,7 @@
     "animeCategory": "All",
     "name": "anime_124",
     "title": "anime_124",
-    "index": 124,
+    "index": 121,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_124.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_124.jpg"
@@ -1494,7 +1458,7 @@
     "animeCategory": "All",
     "name": "anime_125",
     "title": "anime_125",
-    "index": 125,
+    "index": 122,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_125.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_125.jpg"
@@ -1506,7 +1470,7 @@
     "animeCategory": "All",
     "name": "anime_126",
     "title": "anime_126",
-    "index": 126,
+    "index": 123,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_126.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_126.jpg"
@@ -1518,7 +1482,7 @@
     "animeCategory": "All",
     "name": "anime_127",
     "title": "anime_127",
-    "index": 127,
+    "index": 124,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_127.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_127.webp"
@@ -1530,7 +1494,7 @@
     "animeCategory": "All",
     "name": "anime_128",
     "title": "anime_128",
-    "index": 128,
+    "index": 125,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_128.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_128.webp"
@@ -1542,7 +1506,7 @@
     "animeCategory": "All",
     "name": "anime_129",
     "title": "anime_129",
-    "index": 129,
+    "index": 126,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_129.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_129.jpg"
@@ -1554,7 +1518,7 @@
     "animeCategory": "All",
     "name": "anime_130",
     "title": "anime_130",
-    "index": 130,
+    "index": 127,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_130.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_130.webp"
@@ -1566,7 +1530,7 @@
     "animeCategory": "All",
     "name": "anime_131",
     "title": "anime_131",
-    "index": 131,
+    "index": 128,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_131.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_131.webp"
@@ -1578,7 +1542,7 @@
     "animeCategory": "All",
     "name": "anime_132",
     "title": "anime_132",
-    "index": 132,
+    "index": 129,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_132.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_132.jpg"
@@ -1590,7 +1554,7 @@
     "animeCategory": "All",
     "name": "anime_133",
     "title": "anime_133",
-    "index": 133,
+    "index": 130,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_133.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_133.webp"
@@ -1602,7 +1566,7 @@
     "animeCategory": "All",
     "name": "anime_134",
     "title": "anime_134",
-    "index": 134,
+    "index": 131,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_134.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_134.webp"
@@ -1614,7 +1578,7 @@
     "animeCategory": "All",
     "name": "anime_135",
     "title": "anime_135",
-    "index": 135,
+    "index": 132,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_135.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_135.jpg"
@@ -1626,7 +1590,7 @@
     "animeCategory": "All",
     "name": "anime_136",
     "title": "anime_136",
-    "index": 136,
+    "index": 133,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_136.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_136.jpeg"
@@ -1638,7 +1602,7 @@
     "animeCategory": "All",
     "name": "anime_137",
     "title": "anime_137",
-    "index": 137,
+    "index": 134,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_137.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_137.jpg"
@@ -1650,7 +1614,7 @@
     "animeCategory": "All",
     "name": "anime_138",
     "title": "anime_138",
-    "index": 138,
+    "index": 135,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_138.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_138.jpg"
@@ -1662,7 +1626,7 @@
     "animeCategory": "All",
     "name": "anime_139",
     "title": "anime_139",
-    "index": 139,
+    "index": 136,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_139.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_139.jpg"
@@ -1674,7 +1638,7 @@
     "animeCategory": "All",
     "name": "anime_140",
     "title": "anime_140",
-    "index": 140,
+    "index": 137,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_140.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_140.webp"
@@ -1686,7 +1650,7 @@
     "animeCategory": "All",
     "name": "anime_141",
     "title": "anime_141",
-    "index": 141,
+    "index": 138,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_141.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_141.jpg"
@@ -1698,7 +1662,7 @@
     "animeCategory": "All",
     "name": "anime_142",
     "title": "anime_142",
-    "index": 142,
+    "index": 139,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_142.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_142.jpg"
@@ -1710,7 +1674,7 @@
     "animeCategory": "All",
     "name": "anime_143",
     "title": "anime_143",
-    "index": 143,
+    "index": 140,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_143.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_143.webp"
@@ -1722,7 +1686,7 @@
     "animeCategory": "All",
     "name": "anime_144",
     "title": "anime_144",
-    "index": 144,
+    "index": 141,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_144.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_144.webp"
@@ -1734,7 +1698,7 @@
     "animeCategory": "All",
     "name": "anime_145",
     "title": "anime_145",
-    "index": 145,
+    "index": 142,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_145.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_145.jpeg"
@@ -1746,7 +1710,7 @@
     "animeCategory": "All",
     "name": "anime_146",
     "title": "anime_146",
-    "index": 146,
+    "index": 143,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_146.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_146.jpg"
@@ -1758,7 +1722,7 @@
     "animeCategory": "All",
     "name": "anime_147",
     "title": "anime_147",
-    "index": 147,
+    "index": 144,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_147.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_147.webp"
@@ -1770,7 +1734,7 @@
     "animeCategory": "All",
     "name": "anime_148",
     "title": "anime_148",
-    "index": 148,
+    "index": 145,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_148.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_148.webp"
@@ -1782,7 +1746,7 @@
     "animeCategory": "All",
     "name": "anime_149",
     "title": "anime_149",
-    "index": 149,
+    "index": 146,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_149.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_149.jpeg"
@@ -1794,7 +1758,7 @@
     "animeCategory": "All",
     "name": "anime_150",
     "title": "anime_150",
-    "index": 150,
+    "index": 147,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_150.jpeg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_150.jpeg"
@@ -1806,7 +1770,7 @@
     "animeCategory": "All",
     "name": "anime_151",
     "title": "anime_151",
-    "index": 151,
+    "index": 148,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_151.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_151.jpg"
@@ -1818,7 +1782,7 @@
     "animeCategory": "All",
     "name": "anime_152",
     "title": "anime_152",
-    "index": 152,
+    "index": 149,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_152.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_152.webp"
@@ -1830,7 +1794,7 @@
     "animeCategory": "All",
     "name": "anime_153",
     "title": "anime_153",
-    "index": 153,
+    "index": 150,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_153.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_153.webp"
@@ -1842,7 +1806,7 @@
     "animeCategory": "All",
     "name": "anime_154",
     "title": "anime_154",
-    "index": 154,
+    "index": 151,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_154.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_154.jpg"
@@ -1854,7 +1818,7 @@
     "animeCategory": "All",
     "name": "anime_155",
     "title": "anime_155",
-    "index": 155,
+    "index": 152,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_155.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_155.webp"
@@ -1866,7 +1830,7 @@
     "animeCategory": "All",
     "name": "anime_156",
     "title": "anime_156",
-    "index": 156,
+    "index": 153,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_156.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_156.webp"
@@ -1878,7 +1842,7 @@
     "animeCategory": "All",
     "name": "anime_157",
     "title": "anime_157",
-    "index": 157,
+    "index": 154,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_157.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_157.webp"
@@ -1887,11 +1851,11 @@
     "id": "Anime_anime_158_aefde9",
     "filename": "anime_158.webp",
     "category": "Anime",
-    "animeCategory": "All",
+    "animeCategory": "Gojo",
     "name": "anime_158",
     "title": "anime_158",
-    "index": 158,
-    "isCover": false,
+    "index": 155,
+    "isCover": true,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_158.webp",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_158.webp"
   },
@@ -1902,7 +1866,7 @@
     "animeCategory": "All",
     "name": "anime_159",
     "title": "anime_159",
-    "index": 159,
+    "index": 156,
     "isCover": false,
     "url": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_159.jpg",
     "thumb": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_159.jpg"
