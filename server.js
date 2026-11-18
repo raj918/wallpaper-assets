@@ -113,7 +113,8 @@ function getAnimeCategoryMapping() {
   const defaults = {
     categories: ['All'],
     covers: {},
-    assignments: {} // filename -> categoryName
+    assignments: {}, // filename -> categoryName
+    categoryOrders: {} // categoryName -> [filenames]
   };
   if (fs.existsSync(ANIME_CATEGORY_MAPPING_JSON)) {
     try {
@@ -123,7 +124,8 @@ function getAnimeCategoryMapping() {
       return {
         categories: cats,
         covers: data.covers || {},
-        assignments: data.assignments || {}
+        assignments: data.assignments || {},
+        categoryOrders: data.categoryOrders || {}
       };
     } catch (e) {
       console.error('Error reading anime category mapping:', e);
@@ -409,6 +411,15 @@ function regenerateJsonFiles(customOrder = null) {
       catWallpapers = animeWallpapers; // "All" contains ALL anime wallpapers!
     } else {
       catWallpapers = animeWallpapers.filter(w => w.animeCategory === cat);
+      const catOrder = animeMapping.categoryOrders && animeMapping.categoryOrders[cat];
+      if (Array.isArray(catOrder)) {
+        const orderMap = new Map(catOrder.map((fn, i) => [fn, i]));
+        catWallpapers.sort((a, b) => {
+          const ia = orderMap.has(a.filename) ? orderMap.get(a.filename) : 999999;
+          const ib = orderMap.has(b.filename) ? orderMap.get(b.filename) : 999999;
+          return ia - ib;
+        });
+      }
     }
 
     let catCoverFile = animeCovers[cat];
@@ -838,13 +849,21 @@ app.get('/api/anime/category/:name', (req, res) => {
       };
     });
     let filtered;
+    const mapping = getAnimeCategoryMapping();
     if (catName.toLowerCase() === 'all') {
       filtered = allAnime;
     } else {
       filtered = allAnime.filter(w => (w.animeCategory || '').toLowerCase() === catName.toLowerCase());
+      const catOrder = mapping.categoryOrders && mapping.categoryOrders[catName];
+      if (Array.isArray(catOrder)) {
+        const orderMap = new Map(catOrder.map((fn, i) => [fn, i]));
+        filtered.sort((a, b) => {
+          const ia = orderMap.has(a.filename) ? orderMap.get(a.filename) : 999999;
+          const ib = orderMap.has(b.filename) ? orderMap.get(b.filename) : 999999;
+          return ia - ib;
+        });
+      }
     }
-
-    const mapping = getAnimeCategoryMapping();
     const coverFilename = mapping.covers[catName] || (filtered.length > 0 ? filtered[0].filename : null);
 
     res.json({
@@ -959,6 +978,152 @@ app.post('/api/anime/wallpapers/remove', async (req, res) => {
       pushedToGit
     });
   } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Reorder Wallpapers in Anime Studio (Supports both "All" master sequential reorder and custom category reordering)
+app.post('/api/anime/wallpapers/reorder', async (req, res) => {
+  try {
+    const { category, filenames } = req.body;
+    if (!category || !Array.isArray(filenames) || filenames.length === 0) {
+      return res.status(400).json({ error: 'Category and filenames array required' });
+    }
+
+    if (category.toLowerCase() === 'all') {
+      // Reordering "All Wallpapers" in Anime Studio reorders the physical images in images/Anime sequentially!
+      const catDir = path.join(IMAGES_DIR, 'Anime');
+      const thumbDir = path.join(IMAGES_DIR, 'Anime_thumb');
+
+      // Verify files
+      for (const f of filenames) {
+        if (!fs.existsSync(path.join(catDir, f))) {
+          return res.status(400).json({ error: `File not found: ${f}` });
+        }
+      }
+
+      const catPrefix = 'anime';
+      const now = Date.now();
+      const renames = [];
+
+      filenames.forEach((oldName, idx) => {
+        const ext = path.extname(oldName).toLowerCase();
+        const targetName = `${catPrefix}_${idx + 1}${ext}`;
+        const tempName = `__reorder_${now}_${idx}_${oldName}`;
+
+        const srcMain = path.join(catDir, oldName);
+        const tempMain = path.join(catDir, tempName);
+        if (fs.existsSync(srcMain)) fs.renameSync(srcMain, tempMain);
+
+        const srcThumb = path.join(thumbDir, oldName);
+        const tempThumb = path.join(thumbDir, tempName);
+        if (fs.existsSync(srcThumb)) fs.renameSync(srcThumb, tempThumb);
+
+        renames.push({ oldName, tempName, targetName, ext });
+      });
+
+      renames.forEach(({ tempName, targetName }) => {
+        const tempMain = path.join(catDir, tempName);
+        const finalMain = path.join(catDir, targetName);
+        if (fs.existsSync(tempMain)) fs.renameSync(tempMain, finalMain);
+
+        const tempThumb = path.join(thumbDir, tempName);
+        const finalThumb = path.join(thumbDir, targetName);
+        if (fs.existsSync(tempThumb)) fs.renameSync(tempThumb, finalThumb);
+      });
+
+      const targetCover = renames[0].targetName;
+      const covers = getCategoryCovers();
+      covers['Anime'] = targetCover;
+      saveCategoryCovers(covers);
+
+      const mapping = getAnimeCategoryMapping();
+      const renameMap = new Map();
+      renames.forEach(r => renameMap.set(r.oldName, r.targetName));
+
+      const newAssignments = {};
+      for (const [oldFn, cat] of Object.entries(mapping.assignments || {})) {
+        const newFn = renameMap.get(oldFn) || oldFn;
+        newAssignments[newFn] = cat;
+      }
+      mapping.assignments = newAssignments;
+
+      const newCovers = { ...mapping.covers };
+      for (const [cat, coverFn] of Object.entries(newCovers)) {
+        if (renameMap.has(coverFn)) {
+          newCovers[cat] = renameMap.get(coverFn);
+        }
+      }
+      newCovers['All'] = targetCover;
+      mapping.covers = newCovers;
+
+      if (mapping.categoryOrders) {
+        const newCategoryOrders = {};
+        for (const [cat, orderList] of Object.entries(mapping.categoryOrders)) {
+          if (Array.isArray(orderList)) {
+            newCategoryOrders[cat] = orderList.map(fn => renameMap.get(fn) || fn);
+          }
+        }
+        mapping.categoryOrders = newCategoryOrders;
+      }
+
+      saveAnimeCategoryMapping(mapping);
+
+      const { versionData } = regenerateJsonFiles();
+
+      const cfg = getConfig();
+      let pushedToGit = false;
+      if (cfg.git && cfg.git.autoPush) {
+        try {
+          await execGitSync(`Admin: Reordered ${filenames.length} anime wallpapers in All Wallpapers`);
+          pushedToGit = true;
+        } catch (gitErr) {
+          console.warn('Auto-Push error:', gitErr.message);
+        }
+      }
+
+      return res.json({
+        success: true,
+        category: 'All',
+        newVersion: versionData.version,
+        coverFilename: targetCover,
+        count: filenames.length,
+        pushedToGit
+      });
+    } else {
+      // Reordering inside a custom anime category (e.g. Gojo, Naruto)
+      const mapping = getAnimeCategoryMapping();
+      if (!mapping.categoryOrders) mapping.categoryOrders = {};
+      mapping.categoryOrders[category] = filenames;
+
+      // Whichever wallpaper is placed at #1 (filenames[0]) becomes the category cover!
+      mapping.covers[category] = filenames[0];
+
+      saveAnimeCategoryMapping(mapping);
+      const { versionData } = regenerateJsonFiles();
+
+      const cfg = getConfig();
+      let pushedToGit = false;
+      if (cfg.git && cfg.git.autoPush) {
+        try {
+          await execGitSync(`Admin: Reordered ${filenames.length} wallpapers in anime category "${category}"`);
+          pushedToGit = true;
+        } catch (gitErr) {
+          console.warn('Auto-Push error:', gitErr.message);
+        }
+      }
+
+      return res.json({
+        success: true,
+        category,
+        newVersion: versionData.version,
+        coverFilename: filenames[0],
+        count: filenames.length,
+        pushedToGit
+      });
+    }
+  } catch (err) {
+    console.error('Anime wallpaper reorder error:', err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -1410,6 +1575,41 @@ app.post('/api/wallpapers/reorder', async (req, res) => {
     const covers = getCategoryCovers();
     covers[category] = targetCover;
     saveCategoryCovers(covers);
+
+    // If reordering Anime category from Vexawall, keep anime mapping in sync
+    if (category.toLowerCase() === 'anime') {
+      const mapping = getAnimeCategoryMapping();
+      const renameMap = new Map();
+      renames.forEach(r => renameMap.set(r.oldName, r.targetName));
+
+      const newAssignments = {};
+      for (const [oldFn, cat] of Object.entries(mapping.assignments || {})) {
+        const newFn = renameMap.get(oldFn) || oldFn;
+        newAssignments[newFn] = cat;
+      }
+      mapping.assignments = newAssignments;
+
+      const newCovers = { ...mapping.covers };
+      for (const [cat, coverFn] of Object.entries(newCovers)) {
+        if (renameMap.has(coverFn)) {
+          newCovers[cat] = renameMap.get(coverFn);
+        }
+      }
+      newCovers['All'] = targetCover;
+      mapping.covers = newCovers;
+
+      if (mapping.categoryOrders) {
+        const newCategoryOrders = {};
+        for (const [cat, orderList] of Object.entries(mapping.categoryOrders)) {
+          if (Array.isArray(orderList)) {
+            newCategoryOrders[cat] = orderList.map(fn => renameMap.get(fn) || fn);
+          }
+        }
+        mapping.categoryOrders = newCategoryOrders;
+      }
+
+      saveAnimeCategoryMapping(mapping);
+    }
 
     const { versionData } = regenerateJsonFiles();
 

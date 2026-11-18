@@ -208,13 +208,18 @@ async function run() {
 
   // Generate dedicated Anime JSON catalogs for standalone Anime app
   const animeCategory = categories.find(c => c.toLowerCase() === 'anime') || 'Anime';
-  let animeMapping = { categories: ['All'], covers: {}, assignments: {} };
+  let animeMapping = { categories: ['All'], covers: {}, assignments: {}, categoryOrders: {} };
   if (fs.existsSync(ANIME_CATEGORY_MAPPING_JSON)) {
     try {
       const data = JSON.parse(fs.readFileSync(ANIME_CATEGORY_MAPPING_JSON, 'utf8'));
       const cats = Array.isArray(data.categories) && data.categories.length > 0 ? data.categories : ['All'];
       if (!cats.includes('All')) cats.unshift('All');
-      animeMapping = { categories: cats, covers: data.covers || {}, assignments: data.assignments || {} };
+      animeMapping = {
+        categories: cats,
+        covers: data.covers || {},
+        assignments: data.assignments || {},
+        categoryOrders: data.categoryOrders || {}
+      };
     } catch (e) {}
   }
 
@@ -243,7 +248,16 @@ async function run() {
   // Build anime categories list
   const animeCategoriesList = [];
   animeMapping.categories.forEach((cat, idx) => {
-    const catWallpapers = cat === 'All' ? animeWallpapers : animeWallpapers.filter(w => w.animeCategory === cat);
+    let catWallpapers = cat === 'All' ? animeWallpapers : animeWallpapers.filter(w => w.animeCategory === cat);
+    const catOrder = animeMapping.categoryOrders && animeMapping.categoryOrders[cat];
+    if (Array.isArray(catOrder)) {
+      const orderMap = new Map(catOrder.map((fn, i) => [fn, i]));
+      catWallpapers.sort((a, b) => {
+        const ia = orderMap.has(a.filename) ? orderMap.get(a.filename) : 999999;
+        const ib = orderMap.has(b.filename) ? orderMap.get(b.filename) : 999999;
+        return ia - ib;
+      });
+    }
     let catCoverFile = animeMapping.covers[cat];
     if (!catCoverFile || !catWallpapers.some(w => w.filename === catCoverFile)) {
       catCoverFile = catWallpapers.length > 0 ? catWallpapers[0].filename : null;

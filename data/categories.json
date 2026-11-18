@@ -1,20 +1,20 @@
 {
-  "version": 123,
+  "version": 127,
   "categories": [
     {
       "name": "Anime",
       "index": 1,
       "count": 156,
-      "coverFilename": "anime_4.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_4.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_4.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_4.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_4.webp",
+      "coverFilename": "anime_1.webp",
+      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.webp",
+      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.webp",
+      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.webp",
+      "localCoverWallpaper": "/storage/images/Anime/anime_1.webp",
       "previews": [
-        "/storage/images/Anime_thumb/anime_4.webp",
-        "/storage/images/Anime_thumb/anime_5.webp",
-        "/storage/images/Anime_thumb/anime_6.webp",
-        "/storage/images/Anime_thumb/anime_7.webp"
+        "/storage/images/Anime_thumb/anime_1.webp",
+        "/storage/images/Anime_thumb/anime_2.webp",
+        "/storage/images/Anime_thumb/anime_3.webp",
+        "/storage/images/Anime_thumb/anime_4.webp"
       ]
     },
     {
@@ -259,7 +259,7 @@
     }
   ],
   "covers": {
-    "Anime": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_4.webp",
+    "Anime": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.webp",
     "Superheroes": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Superheroes_thumb/superheroes_1.jpeg",
     "amoled": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/amoled_thumb/1.jpeg",
     "Landscape": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Landscape_thumb/landscape_1.jpeg",

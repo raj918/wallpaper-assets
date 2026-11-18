@@ -4,13 +4,24 @@
     "Gojo"
   ],
   "covers": {
-    "All": "anime_4.webp",
-    "Gojo": "anime_158.webp"
+    "All": "anime_1.webp",
+    "Gojo": "anime_155.webp"
   },
   "assignments": {
     "anime_1.jpg": "Gojo",
     "anime_2.jpeg": "Gojo",
     "anime_3.jpg": "Gojo",
-    "anime_158.webp": "Gojo"
+    "anime_155.webp": "Gojo",
+    "anime_2.webp": "Gojo",
+    "anime_1.webp": "Gojo",
+    "anime_3.webp": "Gojo"
+  },
+  "categoryOrders": {
+    "Gojo": [
+      "anime_155.webp",
+      "anime_3.webp",
+      "anime_1.webp",
+      "anime_2.webp"
+    ]
   }
 }
