@@ -1,291 +1,104 @@
 {
-  "version": 155,
+  "version": 166,
   "categories": [
     {
       "name": "All",
       "index": 1,
-      "count": 156,
-      "coverFilename": "anime_1.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_1.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_1.webp",
-        "/storage/images/Anime_thumb/anime_2.webp",
-        "/storage/images/Anime_thumb/anime_3.webp",
-        "/storage/images/Anime_thumb/anime_4.webp"
-      ]
-    },
-    {
-      "name": "Gojo",
-      "index": 2,
-      "count": 7,
-      "coverFilename": "anime_1.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_1.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_1.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_1.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_1.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_1.webp",
-        "/storage/images/Anime_thumb/anime_14.jpg",
-        "/storage/images/Anime_thumb/anime_71.jpeg",
-        "/storage/images/Anime_thumb/anime_83.jpg"
-      ]
-    },
-    {
-      "name": "Sukuna",
-      "index": 3,
-      "count": 8,
-      "coverFilename": "anime_5.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_5.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_5.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_5.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_5.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_5.webp",
-        "/storage/images/Anime_thumb/anime_32.jpg",
-        "/storage/images/Anime_thumb/anime_31.jpg",
-        "/storage/images/Anime_thumb/anime_63.jpg"
-      ]
-    },
-    {
-      "name": "Toji",
-      "index": 4,
-      "count": 6,
-      "coverFilename": "anime_12.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_12.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_12.jpg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_12.jpg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_12.jpg",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_12.jpg",
-        "/storage/images/Anime_thumb/anime_86.jpg",
-        "/storage/images/Anime_thumb/anime_87.jpg",
-        "/storage/images/Anime_thumb/anime_129.jpg"
-      ]
-    },
-    {
-      "name": "Luffy",
-      "index": 5,
-      "count": 8,
-      "coverFilename": "anime_149.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_149.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_149.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_149.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_149.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_149.webp",
-        "/storage/images/Anime_thumb/anime_19.jpg",
-        "/storage/images/Anime_thumb/anime_28.jpg",
-        "/storage/images/Anime_thumb/anime_48.jpeg"
-      ]
-    },
-    {
-      "name": "Zoro",
-      "index": 6,
-      "count": 4,
-      "coverFilename": "anime_114.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_114.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_114.jpg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_114.jpg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_114.jpg",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_114.jpg",
-        "/storage/images/Anime_thumb/anime_42.jpg",
-        "/storage/images/Anime_thumb/anime_94.jpg",
-        "/storage/images/Anime_thumb/anime_143.jpg"
-      ]
-    },
-    {
-      "name": "Naruto",
-      "index": 7,
-      "count": 9,
-      "coverFilename": "anime_126.jpg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_126.jpg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_126.jpg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_126.jpg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_126.jpg",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_126.jpg",
-        "/storage/images/Anime_thumb/anime_20.jpeg",
-        "/storage/images/Anime_thumb/anime_13.jpg",
-        "/storage/images/Anime_thumb/anime_33.jpeg"
-      ]
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Goku",
-      "index": 8,
-      "count": 12,
-      "coverFilename": "anime_145.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_145.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_145.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_145.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_145.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_145.webp",
-        "/storage/images/Anime_thumb/anime_66.jpg",
-        "/storage/images/Anime_thumb/anime_10.jpeg",
-        "/storage/images/Anime_thumb/anime_15.jpg"
-      ]
-    },
-    {
-      "name": "Demon Slayer",
-      "index": 9,
-      "count": 8,
-      "coverFilename": "anime_131.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_131.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_131.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_131.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_131.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_131.webp",
-        "/storage/images/Anime_thumb/anime_74.jpg",
-        "/storage/images/Anime_thumb/anime_27.jpeg",
-        "/storage/images/Anime_thumb/anime_46.webp"
-      ]
+      "index": 2,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Solo Leveling",
-      "index": 10,
-      "count": 6,
-      "coverFilename": "anime_53.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_53.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_53.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_53.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_53.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_53.webp",
-        "/storage/images/Anime_thumb/anime_54.jpg",
-        "/storage/images/Anime_thumb/anime_60.webp",
-        "/storage/images/Anime_thumb/anime_65.jpg"
-      ]
+      "index": 3,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Berserk",
-      "index": 11,
-      "count": 5,
-      "coverFilename": "anime_67.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_67.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_67.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_67.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_67.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_67.webp",
-        "/storage/images/Anime_thumb/anime_50.jpg",
-        "/storage/images/Anime_thumb/anime_45.webp",
-        "/storage/images/Anime_thumb/anime_91.jpg"
-      ]
+      "index": 4,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Attack on Titan",
-      "index": 12,
-      "count": 4,
-      "coverFilename": "anime_62.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_62.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_62.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_62.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_62.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_62.webp",
-        "/storage/images/Anime_thumb/anime_146.jpeg",
-        "/storage/images/Anime_thumb/anime_107.webp",
-        "/storage/images/Anime_thumb/anime_108.webp"
-      ]
+      "index": 5,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Anya (Spy x Family)",
-      "index": 13,
-      "count": 3,
-      "coverFilename": "anime_40.jpeg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_40.jpeg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_40.jpeg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_40.jpeg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_40.jpeg",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_40.jpeg",
-        "/storage/images/Anime_thumb/anime_24.jpeg",
-        "/storage/images/Anime_thumb/anime_100.jpeg"
-      ]
-    },
-    {
-      "name": "Makima",
-      "index": 14,
-      "count": 3,
-      "coverFilename": "anime_57.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_57.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_57.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_57.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_57.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_57.webp",
-        "/storage/images/Anime_thumb/anime_99.jpg",
-        "/storage/images/Anime_thumb/anime_138.jpg"
-      ]
-    },
-    {
-      "name": "Pokemon",
-      "index": 15,
-      "count": 5,
-      "coverFilename": "anime_8.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_8.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_8.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_8.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_8.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_8.webp",
-        "/storage/images/Anime_thumb/anime_21.webp",
-        "/storage/images/Anime_thumb/anime_23.webp",
-        "/storage/images/Anime_thumb/anime_88.jpeg"
-      ]
+      "index": 6,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Anime Heroes",
-      "index": 16,
-      "count": 9,
-      "coverFilename": "anime_59.jpeg",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_59.jpeg",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_59.jpeg",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_59.jpeg",
-      "localCoverWallpaper": "/storage/images/Anime/anime_59.jpeg",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_59.jpeg",
-        "/storage/images/Anime_thumb/anime_103.jpeg",
-        "/storage/images/Anime_thumb/anime_4.webp",
-        "/storage/images/Anime_thumb/anime_81.jpeg"
-      ]
+      "index": 7,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Samurai & Ronin",
-      "index": 17,
-      "count": 12,
-      "coverFilename": "anime_39.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_39.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_39.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_39.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_39.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_39.webp",
-        "/storage/images/Anime_thumb/anime_11.jpg",
-        "/storage/images/Anime_thumb/anime_25.webp",
-        "/storage/images/Anime_thumb/anime_58.jpeg"
-      ]
+      "index": 8,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     },
     {
       "name": "Aesthetic & Scenery",
-      "index": 18,
-      "count": 46,
-      "coverFilename": "anime_6.webp",
-      "coverThumbnail": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime_thumb/anime_6.webp",
-      "coverWallpaper": "https://raw.githubusercontent.com/raj918/wallpaper-assets/main/images/Anime/anime_6.webp",
-      "localCoverThumbnail": "/storage/images/Anime_thumb/anime_6.webp",
-      "localCoverWallpaper": "/storage/images/Anime/anime_6.webp",
-      "previews": [
-        "/storage/images/Anime_thumb/anime_6.webp",
-        "/storage/images/Anime_thumb/anime_80.webp",
-        "/storage/images/Anime_thumb/anime_2.webp",
-        "/storage/images/Anime_thumb/anime_3.webp"
-      ]
+      "index": 9,
+      "count": 0,
+      "coverFilename": null,
+      "coverThumbnail": null,
+      "coverWallpaper": null,
+      "localCoverThumbnail": null,
+      "localCoverWallpaper": null,
+      "previews": []
     }
   ]
 }
